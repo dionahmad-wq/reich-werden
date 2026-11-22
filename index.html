@@ -140,6 +140,11 @@
   .project-thumb { height: 140px; border-radius: 12px; margin-bottom: 16px; display: grid; place-items: center; background: linear-gradient(135deg, #0f172a, #1e293b); color: #facc15; }
   .project-thumb svg { width: 56px; height: 56px; }
   .project .more { margin-top: auto; padding-top: 10px; font-weight: 700; color: var(--brand); }
+  .project .tag { align-self: flex-start; font-size: .75rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 8px; background: #fef3c7; color: #92400e; }
+  .project .tag.real { background: var(--brand-soft); color: var(--brand-dark); }
+  .thumb-barber { background: radial-gradient(120px 80px at 80% 20%, rgba(212,166,70,.35), transparent 70%), #111 !important; color: #d4a646 !important; font-family: Georgia, serif; font-size: 1.6rem; letter-spacing: .18em; text-transform: uppercase; }
+  .thumb-imbiss { background: linear-gradient(160deg, #b91c1c, #7f1d1d) !important; color: #fff7ed !important; font-weight: 900; font-size: 1.4rem; }
+  .thumb-baecker { background: radial-gradient(120px 80px at 85% 15%, rgba(251,191,36,.6), transparent 70%), #fffaf0 !important; color: #78350f !important; font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; border: 1px solid #f1e4c8; }
   .project.placeholder { border-style: dashed; box-shadow: none; background: transparent; }
   .project.placeholder .project-thumb { background: repeating-linear-gradient(45deg, #f1f5f9, #f1f5f9 10px, #e2e8f0 10px, #e2e8f0 20px); color: #94a3b8; }
 
@@ -425,14 +430,36 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Projekte</span>
-        <h2>Was ich schon gebaut habe</h2>
-        <p class="lead">Ich fange gerade erst an, deshalb ist die Liste noch kurz. Dafür bekommst du volle Aufmerksamkeit und Einführungspreise.</p>
+        <h2>Projekte &amp; Beispiele</h2>
+        <p class="lead">Ich fange gerade erst an. Damit du trotzdem siehst, was möglich ist, habe ich Beispielseiten für <strong>erfundene Läden</strong> gebaut. Tipp sie an, sie funktionieren auch auf dem Handy.</p>
       </div>
       <div class="grid grid-3" id="project-list">
+        <a class="card project" href="beispiele/barbershop/">
+          <div class="project-thumb thumb-barber">Klinge ✂</div>
+          <span class="tag">Beispiel</span>
+          <h3>Barbershop</h3>
+          <p>Dunkles, edles Design mit Preisliste, Galerie, Öffnungszeiten mit „Jetzt geöffnet“-Anzeige und WhatsApp-Button.</p>
+          <span class="more">Beispiel ansehen →</span>
+        </a>
+        <a class="card project" href="beispiele/imbiss/">
+          <div class="project-thumb thumb-imbiss">🥙 Grillhaus</div>
+          <span class="tag">Beispiel</span>
+          <h3>Imbiss &amp; Grill</h3>
+          <p>Speisekarte zum Durchtippen nach Kategorien, Halal-Hinweis, Öffnungszeiten und Bestell-Buttons.</p>
+          <span class="more">Beispiel ansehen →</span>
+        </a>
+        <a class="card project" href="beispiele/baeckerei/">
+          <div class="project-thumb thumb-baecker">☀ Sonnenkorn</div>
+          <span class="tag">Beispiel</span>
+          <h3>Bäckerei</h3>
+          <p>Helles, freundliches Design mit Sortiment, Frühstücksangebot und Öffnungszeiten.</p>
+          <span class="more">Beispiel ansehen →</span>
+        </a>
         <a class="card project" href="zakat-rechner/">
           <div class="project-thumb">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h4"/></svg>
           </div>
+          <span class="tag real">Eigenes Projekt</span>
           <h3>Vermögens- &amp; Zakat-Rechner</h3>
           <p>Meine erste eigene Webseite: ein halal Spar- und Zakat-Rechner, der komplett im Browser läuft, auf Handy und PC.</p>
           <span class="more">Seite ansehen →</span>

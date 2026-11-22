@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beispielseite: Backstube Sonnenkorn | Webdesign Salzgitter</title>
+<meta name="description" content="Beispielseite von Webdesign Salzgitter: So könnte die Webseite einer Bäckerei aussehen. Die Bäckerei ist erfunden.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Beispielseite: Bäckerei | Webdesign Salzgitter">
+<meta property="og:description" content="So könnte die Webseite deiner Bäckerei aussehen. Beispiel, die Bäckerei ist erfunden.">
+<meta name="theme-color" content="#a16207">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23fbbf24'/><circle cx='50' cy='50' r='22' fill='%23fff8eb'/></svg>">
+<style>
+  :root { --bg: #fffaf0; --brown: #78350f; --brown-2: #a16207; --sun: #fbbf24; --wheat: #fef3c7; --text: #292524; --muted: #6b5e55; --line: #f1e4c8; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.65; font-size: 1.0625rem; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  .demo-bar { background: var(--brown); color: var(--wheat); font-size: .9rem; padding: 10px 20px; text-align: center; }
+  .demo-bar a { color: #fff; font-weight: 700; }
+  header { border-bottom: 1px solid var(--line); background: rgba(255,250,240,.94); position: sticky; top: 0; z-index: 20; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--brown); font-family: Georgia, "Times New Roman", serif; font-size: 1.3rem; font-weight: 700; white-space: nowrap; }
+  .logo svg { width: 34px; height: 34px; flex: none; }
+  nav { display: none; gap: 22px; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--brown); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 12px; font-weight: 700; text-decoration: none; cursor: pointer; border: 2px solid var(--brown); font-size: 1rem; }
+  .btn-brown { background: var(--brown); color: #fff; }
+  .btn-light { background: transparent; color: var(--brown); }
+  .btn-sm { padding: 8px 14px; font-size: .9rem; }
+  .hero { padding: 56px 0 64px; background: radial-gradient(500px 260px at 90% 10%, rgba(251,191,36,.35), transparent 70%); }
+  .hero-grid { display: grid; gap: 32px; align-items: center; }
+  .kicker { color: var(--brown-2); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .85rem; }
+  h1, h2 { font-family: Georgia, "Times New Roman", serif; color: var(--brown); line-height: 1.15; }
+  h1 { font-size: clamp(2.2rem, 8.5vw, 3.6rem); margin: 10px 0 14px; }
+  h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); margin: 0 0 10px; }
+  .hero p { color: var(--muted); font-size: 1.12rem; max-width: 32rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .bread { max-width: 380px; margin: 0 auto; width: 100%; }
+  .bread svg { width: 100%; height: auto; display: block; }
+  .today-box { margin-top: 22px; display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-size: .95rem; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: #dc2626; flex: none; }
+  .dot.open { background: #16a34a; }
+  section { padding: 64px 0; }
+  .alt { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .lead { color: var(--muted); max-width: 40rem; margin: 0 0 26px; }
+  .cards { display: grid; gap: 16px; }
+  .card { background: var(--bg); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+  .alt .card { background: var(--bg); }
+  .card .emoji { font-size: 2rem; line-height: 1; }
+  .card h3 { margin: 10px 0 6px; color: var(--brown); font-size: 1.2rem; }
+  .card p { margin: 0; color: var(--muted); }
+  .card .price { display: inline-block; margin-top: 10px; font-weight: 800; color: var(--brown-2); }
+  .offer { background: var(--brown); color: var(--wheat); border-radius: 22px; padding: 28px; display: grid; gap: 14px; }
+  .offer h2 { color: #fff; margin: 0; }
+  .offer p { margin: 0; }
+  .offer .big { font-size: 2.6rem; font-family: Georgia, serif; color: var(--sun); line-height: 1; }
+  .info { display: grid; gap: 22px; }
+  .hours { list-style: none; padding: 0; margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  .hours li { display: flex; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid var(--line); }
+  .hours li:last-child { border-bottom: 0; }
+  .hours li.today { background: var(--wheat); font-weight: 800; color: var(--brown); }
+  .note { color: var(--muted); font-size: .9rem; margin-top: 14px; }
+  footer { padding: 30px 0 40px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
+  footer a { color: var(--brown); }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px); background: var(--brown); color: var(--wheat); padding: 12px 18px; border-radius: 10px; font-weight: 600; font-size: .95rem; opacity: 0; pointer-events: none; transition: .2s; z-index: 40; width: max-content; max-width: calc(100% - 32px); text-align: center; }
+  .toast.show { opacity: 1; transform: translateX(-50%); }
+  @media (min-width: 760px) {
+    nav { display: flex; }
+    .hero-grid { grid-template-columns: 1.15fr 1fr; }
+    .cards { grid-template-columns: repeat(3, 1fr); }
+    .offer { grid-template-columns: 1.4fr 1fr; align-items: center; padding: 36px; }
+    .info { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="demo-bar">🛈 <strong>Beispielseite:</strong> Diese Bäckerei gibt es nicht. So könnte deine Webseite aussehen. <a href="../../#kontakt">Eigene Seite anfragen →</a></div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#fbbf24"/><path d="M9 24c0-6 5-10 11-10s11 4 11 10c0 2-1 3-3 3H12c-2 0-3-1-3-3z" fill="#a16207"/><path d="M15 17l2 6M20 15v7M25 17l-2 6" stroke="#fef3c7" stroke-width="1.6" stroke-linecap="round"/></svg>
+      Backstube Sonnenkorn
+    </a>
+    <nav aria-label="Navigation"><a href="#sortiment">Sortiment</a><a href="#fruehstueck">Frühstück</a><a href="#infos">Öffnungszeiten</a></nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Familienbäckerei · Salzgitter</span>
+        <h1>Jeden Morgen frisch aus dem Ofen.</h1>
+        <p>Brot, Brötchen und Kuchen nach eigenen Rezepten, jeden Tag ab 6 Uhr frisch für dich gebacken.</p>
+        <div class="actions">
+          <a class="btn btn-brown" href="#sortiment">Unser Sortiment</a>
+          <a class="btn btn-light demo-link" href="#infos">Torte vorbestellen</a>
+        </div>
+        <div class="today-box"><span class="dot" id="dot"></span><span id="status">…</span></div>
+      </div>
+      <div class="bread" aria-hidden="true">
+        <svg viewBox="0 0 320 240">
+          <circle cx="230" cy="60" r="44" fill="#fde68a"/>
+          <ellipse cx="160" cy="205" rx="140" ry="16" fill="#f1e4c8"/>
+          <path d="M40 180c0-60 50-100 120-100s120 40 120 100c0 12-8 20-20 20H60c-12 0-20-8-20-20z" fill="#b45309"/>
+          <path d="M52 176c0-52 46-86 108-86s108 34 108 86" fill="none" stroke="#d97706" stroke-width="6" opacity=".5"/>
+          <path d="M100 110l14 40M150 96l4 46M200 104l-8 44" stroke="#fde68a" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="sortiment">
+    <div class="wrap">
+      <h2>Unser Sortiment</h2>
+      <p class="lead">Alles aus eigener Herstellung. Was es heute gibt, sehen deine Kunden sofort, auch vom Handy aus.</p>
+      <div class="cards">
+        <div class="card"><div class="emoji">🍞</div><h3>Brote</h3><p>Roggenmisch, Dinkel-Vollkorn, Sonnenblumenkern und unser Bauernbrot.</p><span class="price">ab 3,20 €</span></div>
+        <div class="card"><div class="emoji">🥐</div><h3>Brötchen &amp; Gebäck</h3><p>Weizen- und Körnerbrötchen, Laugenstangen, Croissants und Simit.</p><span class="price">ab 0,45 €</span></div>
+        <div class="card"><div class="emoji">🎂</div><h3>Kuchen &amp; Torten</h3><p>Blechkuchen jeden Tag, Torten für Geburtstage und Feiern auf Bestellung.</p><span class="price">Stück ab 2,30 €</span></div>
+      </div>
+      <p class="note">Beispielsortiment. Bei deiner Seite stehen hier deine Produkte und Preise.</p>
+    </div>
+  </section>
+
+  <section id="fruehstueck">
+    <div class="wrap">
+      <div class="offer">
+        <div>
+          <h2>Frühstück zum Mitnehmen</h2>
+          <p>2 belegte Brötchen nach Wahl und ein Kaffee oder Tee. Montag bis Samstag bis 11 Uhr.</p>
+        </div>
+        <div><span class="big">5,90 €</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="infos">
+    <div class="wrap info">
+      <div>
+        <h2>Öffnungszeiten</h2>
+        <ul class="hours" id="hours"></ul>
+      </div>
+      <div>
+        <h2>Hier findest du uns</h2>
+        <p style="margin:0 0 16px">Backstube Sonnenkorn<br>Musterstraße 1<br>38226 Salzgitter</p>
+        <div class="actions" style="margin-top:0">
+          <a class="btn btn-brown demo-link" href="#infos">Anrufen</a>
+          <a class="btn btn-light demo-link" href="#infos">Route planen</a>
+        </div>
+        <p class="note">Torten bitte 3 Tage vorher bestellen, gern per Telefon oder WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Beispielseite von <a href="../../">Webdesign Salzgitter</a>. Die Backstube Sonnenkorn ist erfunden, Adresse und Preise sind Platzhalter.</div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Nur ein Beispiel: Auf deiner echten Seite funktioniert dieser Button.</div>
+
+<script>
+// Öffnungszeiten (Montag zuerst), Minuten ab Mitternacht. null = geschlossen
+const HOURS = [["Montag", 360, 1080], ["Dienstag", 360, 1080], ["Mittwoch", 360, 1080], ["Donnerstag", 360, 1080], ["Freitag", 360, 1080], ["Samstag", 360, 780], ["Sonntag", 450, 660]];
+(function () {
+  const fmt = m => String(Math.floor(m / 60)).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0");
+  const now = new Date(), today = (now.getDay() + 6) % 7, min = now.getHours() * 60 + now.getMinutes();
+  document.getElementById("hours").innerHTML = HOURS.map(([d, a, b], i) =>
+    '<li class="' + (i === today ? "today" : "") + '"><span>' + d + '</span><span>' + (a == null ? "geschlossen" : fmt(a) + " – " + fmt(b)) + '</span></li>').join("");
+  const [, a, b] = HOURS[today];
+  const open = a != null && min >= a && min < b;
+  document.getElementById("dot").classList.toggle("open", open);
+  document.getElementById("status").textContent = open ? "Jetzt geöffnet bis " + fmt(b) + " Uhr"
+    : (a != null && min < a ? "Heute ab " + fmt(a) + " Uhr frische Brötchen" : "Gerade geschlossen, morgen früh wieder frisch");
+
+  const toast = document.getElementById("toast"); let t;
+  document.querySelectorAll(".demo-link").forEach(el => el.addEventListener("click", e => {
+    e.preventDefault(); toast.classList.add("show");
+    clearTimeout(t); t = setTimeout(() => toast.classList.remove("show"), 2600);
+  }));
+})();
+</script>
+</body>
+</html>

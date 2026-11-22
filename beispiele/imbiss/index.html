@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beispielseite: Grillhaus Lindenhof | Webdesign Salzgitter</title>
+<meta name="description" content="Beispielseite von Webdesign Salzgitter: So könnte die Webseite eines Imbisses mit Speisekarte aussehen. Der Laden ist erfunden.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Beispielseite: Imbiss mit Speisekarte | Webdesign Salzgitter">
+<meta property="og:description" content="So könnte die Webseite deines Imbisses aussehen. Beispiel, der Laden ist erfunden.">
+<meta name="theme-color" content="#b91c1c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23b91c1c'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='%23fff7ed' font-family='Arial' font-weight='bold'>G</text></svg>">
+<style>
+  :root { --red: #b91c1c; --red-dark: #7f1d1d; --cream: #fff7ed; --orange: #f97316; --text: #1c1917; --muted: #57534e; --line: #fed7aa; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--cream); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; font-size: 1.0625rem; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  .demo-bar { background: #1c1917; color: #fde68a; font-size: .9rem; padding: 10px 20px; text-align: center; }
+  .demo-bar a { color: #fff; font-weight: 700; }
+  header { background: var(--red); color: #fff; position: sticky; top: 0; z-index: 20; box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 62px; gap: 12px; }
+  .logo { color: #fff; text-decoration: none; font-weight: 900; font-size: 1.25rem; letter-spacing: -.01em; min-width: 0; line-height: 1.2; padding: 6px 0; }
+  @media (max-width: 379px) { .logo { font-size: 1.05rem; } }
+  .logo small { display: block; font-weight: 500; font-size: .72rem; opacity: .85; letter-spacing: .08em; text-transform: uppercase; margin-top: -4px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; border-radius: 999px; font-weight: 800; text-decoration: none; border: 0; cursor: pointer; font-size: 1rem; }
+  .btn-white { background: #fff; color: var(--red); }
+  .btn-red { background: var(--red); color: #fff; }
+  .btn-outline { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.8); }
+  .btn-sm { padding: 9px 16px; font-size: .9rem; }
+  .hero { background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 100%); color: #fff; padding: 48px 0 0; overflow: hidden; }
+  .hero-grid { display: grid; gap: 24px; align-items: end; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; background: #16a34a; color: #fff; font-weight: 800; font-size: .85rem; padding: 6px 12px; border-radius: 999px; }
+  h1 { font-size: clamp(2.2rem, 9vw, 3.8rem); line-height: 1.05; margin: 14px 0 12px; font-weight: 900; letter-spacing: -.02em; }
+  .hero p { font-size: 1.1rem; opacity: .92; max-width: 32rem; margin: 0 0 22px; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+  .chips span { background: rgba(255,255,255,.14); padding: 6px 12px; border-radius: 999px; font-size: .9rem; }
+  .plate { max-width: 340px; margin: 0 auto -40px; }
+  .plate svg { width: 100%; height: auto; display: block; }
+  section { padding: 64px 0; }
+  .menu { padding-top: 84px; }
+  h2 { font-size: clamp(1.8rem, 6vw, 2.5rem); margin: 0 0 8px; font-weight: 900; letter-spacing: -.02em; }
+  .sub { color: var(--muted); margin: 0 0 22px; }
+  .tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 18px; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: none; border: 2px solid var(--red); background: #fff; color: var(--red); border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: .95rem; cursor: pointer; font-family: inherit; }
+  .tab[aria-selected="true"] { background: var(--red); color: #fff; }
+  .items { display: grid; gap: 12px; }
+  .item { background: #fff; border-radius: 14px; padding: 16px 18px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .item .nr { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--line); color: var(--red-dark); font-weight: 800; display: grid; place-items: center; font-size: .85rem; }
+  .item .txt { flex: 1; min-width: 0; }
+  .item strong { display: block; }
+  .item .desc { color: var(--muted); font-size: .92rem; }
+  .item .price { font-weight: 900; color: var(--red); white-space: nowrap; font-size: 1.1rem; }
+  .note { color: var(--muted); font-size: .9rem; margin-top: 14px; }
+  .info { background: #fff; }
+  .info-grid { display: grid; gap: 20px; }
+  .box { background: var(--cream); border-radius: 16px; padding: 22px; }
+  .box h3 { margin: 0 0 12px; font-size: 1.2rem; }
+  .hours { list-style: none; margin: 0; padding: 0; }
+  .hours li { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid var(--line); }
+  .hours li.today { color: var(--red); font-weight: 800; }
+  .open-pill { display: inline-block; margin-bottom: 12px; padding: 4px 12px; border-radius: 999px; font-weight: 800; font-size: .85rem; background: #fee2e2; color: var(--red-dark); }
+  .open-pill.open { background: #dcfce7; color: #14532d; }
+  .contact-list { display: grid; gap: 10px; }
+  .contact-list .btn { width: 100%; }
+  footer { background: #1c1917; color: #d6d3d1; padding: 28px 0 40px; font-size: .9rem; }
+  footer a { color: #fde68a; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px); background: #1c1917; color: #fde68a; padding: 12px 18px; border-radius: 10px; font-weight: 600; font-size: .95rem; opacity: 0; pointer-events: none; transition: .2s; z-index: 40; width: max-content; max-width: calc(100% - 32px); text-align: center; }
+  .toast.show { opacity: 1; transform: translateX(-50%); }
+  @media (min-width: 760px) {
+    .hero-grid { grid-template-columns: 1.2fr 1fr; }
+    .plate { margin: 0 0 -60px; }
+    .items { grid-template-columns: 1fr 1fr; }
+    .info-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="demo-bar">🛈 <strong>Beispielseite:</strong> Diesen Laden gibt es nicht. So könnte deine Webseite aussehen. <a href="../../#kontakt">Eigene Seite anfragen →</a></div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Grillhaus Lindenhof<small>Döner · Grill · Pide</small></a>
+    <a class="btn btn-white btn-sm demo-link" href="#kontakt">Bestellen</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge">✓ 100 % Halal</span>
+        <h1>Frisch vom Grill. Jeden Tag.</h1>
+        <p>Döner, Dürüm, Lahmacun und Grillteller, frisch zubereitet. Zum Mitnehmen oder vor Ort essen.</p>
+        <div class="actions">
+          <a class="btn btn-white" href="#karte">Speisekarte</a>
+          <a class="btn btn-outline demo-link" href="#kontakt">Vorbestellen</a>
+        </div>
+        <div class="chips"><span>🥙 Döner ab 6,50 €</span><span>🥗 Vegetarisch</span><span>🚶 Zum Mitnehmen</span></div>
+      </div>
+      <div class="plate" aria-hidden="true">
+        <svg viewBox="0 0 300 220">
+          <ellipse cx="150" cy="190" rx="130" ry="24" fill="rgba(0,0,0,.25)"/>
+          <ellipse cx="150" cy="170" rx="135" ry="40" fill="#fff7ed"/>
+          <ellipse cx="150" cy="166" rx="110" ry="30" fill="#fed7aa"/>
+          <path d="M70 160 Q150 40 230 160 Z" fill="#f59e0b"/>
+          <path d="M84 158 Q150 62 216 158 Z" fill="#fbbf24"/>
+          <path d="M100 150 Q120 120 140 150 M130 140 Q150 105 170 140 M160 150 Q180 118 200 150" stroke="#92400e" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <circle cx="118" cy="128" r="7" fill="#16a34a"/><circle cx="182" cy="126" r="7" fill="#16a34a"/>
+          <circle cx="150" cy="112" r="8" fill="#dc2626"/><circle cx="135" cy="140" r="6" fill="#dc2626"/><circle cx="168" cy="140" r="6" fill="#fef3c7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="karte">
+    <div class="wrap">
+      <h2>Speisekarte</h2>
+      <p class="sub">Tipp auf eine Kategorie.</p>
+      <div class="tabs" role="tablist" aria-label="Kategorien" id="tabs"></div>
+      <div class="items" id="items" role="tabpanel" aria-live="polite"></div>
+      <p class="note">Beispielkarte. Auf deiner Seite steht deine echte Karte, und Preisänderungen trage ich für dich ein.</p>
+    </div>
+  </section>
+
+  <section class="info" id="kontakt">
+    <div class="wrap info-grid">
+      <div class="box">
+        <h3>Öffnungszeiten</h3>
+        <span class="open-pill" id="pill">…</span>
+        <ul class="hours" id="hours"></ul>
+      </div>
+      <div class="box">
+        <h3>Adresse</h3>
+        <p style="margin:0 0 12px">Grillhaus Lindenhof<br>Musterstraße 1<br>38226 Salzgitter</p>
+        <p style="margin:0;color:var(--muted);font-size:.95rem">Parkplätze direkt vor der Tür. Barrierefreier Eingang.</p>
+      </div>
+      <div class="box">
+        <h3>Bestellen &amp; Kontakt</h3>
+        <div class="contact-list">
+          <a class="btn btn-red demo-link" href="#kontakt">📞 Anrufen</a>
+          <a class="btn btn-red demo-link" href="#kontakt" style="background:#128c4a">WhatsApp-Bestellung</a>
+          <a class="btn btn-red demo-link" href="#kontakt" style="background:#1c1917">Route planen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Beispielseite von <a href="../../">Webdesign Salzgitter</a>. Grillhaus Lindenhof ist erfunden, Adresse und Preise sind Platzhalter.</div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Nur ein Beispiel: Auf deiner echten Seite funktioniert dieser Button.</div>
+
+<script>
+// Speisekarte: einfach hier ändern, die Seite baut sich selbst
+const MENU = {
+  "Döner & Dürüm": [
+    ["Döner im Brot", "Kalb oder Hähnchen, Salat, Soße nach Wahl", "6,50"],
+    ["Dürüm", "im Yufka gerollt", "7,50"],
+    ["Döner-Teller", "mit Pommes oder Reis und Salat", "11,90"],
+    ["Döner-Box", "Pommes, Fleisch, Soße", "6,90"]
+  ],
+  "Vom Grill": [
+    ["Adana-Teller", "scharfer Hackspieß, Bulgur, Salat", "13,90"],
+    ["Hähnchen-Spieß", "mit Reis und Grillgemüse", "12,90"],
+    ["Köfte-Teller", "hausgemachte Frikadellen", "12,50"]
+  ],
+  "Pide & Lahmacun": [
+    ["Lahmacun", "mit Salat und Zitrone", "4,50"],
+    ["Pide mit Hack", "aus dem Steinofen", "9,50"],
+    ["Pide mit Käse & Ei", "vegetarisch", "8,50"]
+  ],
+  "Vegetarisch": [
+    ["Falafel-Dürüm", "mit Hummus und Salat", "7,00"],
+    ["Halloumi im Brot", "gegrillt, mit Salat", "7,50"],
+    ["Gemischter Salat", "mit Schafskäse", "6,50"]
+  ],
+  "Getränke": [
+    ["Ayran", "0,25 l", "1,80"],
+    ["Softdrinks", "0,33 l Dose", "2,20"],
+    ["Türkischer Tee", "frisch aufgebrüht", "1,50"],
+    ["Wasser", "0,5 l", "1,80"]
+  ]
+};
+const HOURS = [["Montag", 660, 1320], ["Dienstag", 660, 1320], ["Mittwoch", 660, 1320], ["Donnerstag", 660, 1320], ["Freitag", 660, 1380], ["Samstag", 660, 1380], ["Sonntag", 720, 1320]];
+
+(function () {
+  const tabs = document.getElementById("tabs"), items = document.getElementById("items");
+  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const show = cat => {
+    tabs.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.cat === cat));
+    let n = 0;
+    items.innerHTML = MENU[cat].map(([name, desc, price]) =>
+      '<div class="item"><span class="nr">' + (++n) + '</span><span class="txt"><strong>' + esc(name) + '</strong><span class="desc">' + esc(desc) + '</span></span><span class="price">' + esc(price) + ' €</span></div>').join("");
+  };
+  Object.keys(MENU).forEach((cat, i) => {
+    const b = document.createElement("button");
+    b.className = "tab"; b.type = "button"; b.role = "tab"; b.textContent = cat; b.dataset.cat = cat;
+    b.addEventListener("click", () => show(cat));
+    tabs.appendChild(b);
+  });
+  show(Object.keys(MENU)[0]);
+
+  const fmt = m => String(Math.floor(m / 60) % 24).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0");
+  const now = new Date(), today = (now.getDay() + 6) % 7, min = now.getHours() * 60 + now.getMinutes();
+  document.getElementById("hours").innerHTML = HOURS.map(([d, a, b], i) =>
+    '<li class="' + (i === today ? "today" : "") + '"><span>' + d + '</span><span>' + fmt(a) + ' – ' + fmt(b) + '</span></li>').join("");
+  const [, a, b] = HOURS[today];
+  const open = min >= a && min < b, pill = document.getElementById("pill");
+  pill.classList.toggle("open", open);
+  pill.textContent = open ? "Jetzt geöffnet bis " + fmt(b) + " Uhr" : (min < a ? "Öffnet heute um " + fmt(a) + " Uhr" : "Gerade geschlossen");
+
+  const toast = document.getElementById("toast"); let t;
+  document.querySelectorAll(".demo-link").forEach(el => el.addEventListener("click", e => {
+    e.preventDefault(); toast.classList.add("show");
+    clearTimeout(t); t = setTimeout(() => toast.classList.remove("show"), 2600);
+  }));
+})();
+</script>
+</body>
+</html>

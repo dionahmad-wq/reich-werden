@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beispielseite: Barbershop Klinge | Webdesign Salzgitter</title>
+<meta name="description" content="Beispielseite von Webdesign Salzgitter: So könnte die Webseite eines Barbershops aussehen. Der Laden ist erfunden.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Beispielseite: Barbershop | Webdesign Salzgitter">
+<meta property="og:description" content="So könnte die Webseite deines Barbershops aussehen. Beispiel, der Laden ist erfunden.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='%23d4a646' font-family='Georgia'>K</text></svg>">
+<style>
+  :root { --bg: #0e0e0e; --surface: #181818; --line: #2a2a2a; --text: #f2efe9; --muted: #a8a29e; --gold: #d4a646; --gold-soft: rgba(212,166,70,.12); }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; font-size: 1.0625rem; }
+  a { color: var(--gold); }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  .demo-bar { background: #fde68a; color: #422006; font-size: .9rem; padding: 10px 20px; text-align: center; position: relative; z-index: 30; }
+  .demo-bar a { color: #422006; font-weight: 700; }
+  header { position: sticky; top: 0; z-index: 20; background: rgba(14,14,14,.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 62px; gap: 12px; }
+  .logo { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text); text-decoration: none; white-space: nowrap; }
+  .logo span { color: var(--gold); }
+  nav { display: none; gap: 22px; }
+  nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+  nav a:hover { color: var(--gold); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 4px; font-weight: 700; text-decoration: none; letter-spacing: .04em; border: 1.5px solid var(--gold); cursor: pointer; font-size: 1rem; }
+  .btn-gold { background: var(--gold); color: #111; }
+  .btn-ghost { background: transparent; color: var(--gold); }
+  .btn-sm { padding: 9px 14px; font-size: .85rem; }
+  .hero { padding: 72px 0 80px; background:
+      radial-gradient(600px 300px at 85% 20%, rgba(212,166,70,.18), transparent 70%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.02) 0 2px, transparent 2px 14px), var(--bg); }
+  .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .2em; font-size: .8rem; font-weight: 700; }
+  h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; line-height: 1.15; margin: .3em 0 .5em; }
+  h1 { font-size: clamp(2.3rem, 9vw, 4rem); }
+  h2 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+  .hero p { color: var(--muted); max-width: 34rem; font-size: 1.1rem; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .status { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; font-size: .95rem; color: var(--muted); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: #ef4444; box-shadow: 0 0 0 4px rgba(239,68,68,.18); }
+  .dot.open { background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.18); }
+  section { padding: 72px 0; border-top: 1px solid var(--line); }
+  .prices { display: grid; gap: 4px; margin-top: 24px; }
+  .price-row { display: flex; align-items: baseline; gap: 12px; padding: 16px 0; border-bottom: 1px dashed var(--line); }
+  .price-row .name { font-weight: 600; }
+  .price-row .desc { display: block; color: var(--muted); font-size: .9rem; font-weight: 400; }
+  .price-row .fill { flex: 1; }
+  .price-row .val { color: var(--gold); font-family: Georgia, serif; font-size: 1.3rem; white-space: nowrap; }
+  .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 24px; }
+  .tile { aspect-ratio: 1; border-radius: 6px; display: grid; place-items: center; color: rgba(212,166,70,.75); border: 1px solid var(--line); }
+  .tile svg { width: 42%; height: 42%; }
+  .tile:nth-child(1) { background: linear-gradient(160deg, #2b2116, #111); }
+  .tile:nth-child(2) { background: linear-gradient(200deg, #1f1f1f, #0b0b0b); }
+  .tile:nth-child(3) { background: linear-gradient(120deg, #1b1712, #2a2116); }
+  .tile:nth-child(4) { background: linear-gradient(30deg, #141414, #262019); }
+  .note { color: var(--muted); font-size: .9rem; margin-top: 12px; }
+  .info { display: grid; gap: 28px; }
+  .hours { width: 100%; border-collapse: collapse; }
+  .hours td { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .hours td:last-child { text-align: right; color: var(--muted); }
+  .hours tr.today td { color: var(--gold); font-weight: 700; }
+  .map { position: relative; aspect-ratio: 4 / 3; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: #151515; }
+  .map svg { width: 100%; height: 100%; display: block; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 22px; }
+  footer { padding: 32px 0 90px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
+  .wa-float { position: fixed; right: 16px; bottom: 16px; z-index: 25; background: #128c4a; color: #fff; border: 0; border-radius: 999px; padding: 14px 18px; font-weight: 700; display: inline-flex; gap: 8px; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.4); text-decoration: none; }
+  .wa-float svg { width: 22px; height: 22px; }
+  .toast { position: fixed; left: 50%; bottom: 84px; transform: translateX(-50%) translateY(20px); background: #fde68a; color: #422006; padding: 12px 18px; border-radius: 10px; font-weight: 600; font-size: .95rem; opacity: 0; pointer-events: none; transition: .2s; z-index: 40; width: max-content; max-width: calc(100% - 32px); text-align: center; }
+  .toast.show { opacity: 1; transform: translateX(-50%); }
+  @media (min-width: 760px) {
+    nav { display: flex; }
+    .gallery { grid-template-columns: repeat(4, 1fr); }
+    .info { grid-template-columns: 1fr 1fr; }
+    .hero { padding: 110px 0 120px; }
+  }
+</style>
+</head>
+<body>
+<div class="demo-bar">🛈 <strong>Beispielseite:</strong> Diesen Laden gibt es nicht. So könnte deine Webseite aussehen. <a href="../../#kontakt">Eigene Seite anfragen →</a></div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Klinge <span>✂</span></a>
+    <nav aria-label="Navigation">
+      <a href="#preise">Preise</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#infos">Öffnungszeiten</a>
+    </nav>
+    <a class="btn btn-gold btn-sm demo-link" href="#termin">Termin</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="border-top:0">
+    <div class="wrap">
+      <span class="eyebrow">Barbershop · Salzgitter</span>
+      <h1>Sauberer Schnitt.<br>Ehrliche Preise.</h1>
+      <p>Fades, klassische Herrenschnitte und Bartpflege. Ohne Termin oder mit Termin per WhatsApp, ganz wie du willst.</p>
+      <div class="actions">
+        <a class="btn btn-gold demo-link" href="#termin">Termin per WhatsApp</a>
+        <a class="btn btn-ghost" href="#preise">Preise ansehen</a>
+      </div>
+      <div class="status"><span class="dot" id="dot"></span><span id="status-text">Öffnungszeiten werden geladen …</span></div>
+    </div>
+  </section>
+
+  <section id="preise">
+    <div class="wrap">
+      <span class="eyebrow">Preisliste</span>
+      <h2>Unsere Preise</h2>
+      <div class="prices">
+        <div class="price-row"><span class="name">Herrenschnitt<span class="desc">Waschen, Schneiden, Styling</span></span><span class="fill"></span><span class="val">18 €</span></div>
+        <div class="price-row"><span class="name">Skin Fade<span class="desc">Übergang bis auf die Haut</span></span><span class="fill"></span><span class="val">22 €</span></div>
+        <div class="price-row"><span class="name">Bart trimmen &amp; Konturen<span class="desc">mit Rasiermesser</span></span><span class="fill"></span><span class="val">12 €</span></div>
+        <div class="price-row"><span class="name">Haare + Bart<span class="desc">das Komplettpaket</span></span><span class="fill"></span><span class="val">28 €</span></div>
+        <div class="price-row"><span class="name">Kinderschnitt<span class="desc">bis 12 Jahre</span></span><span class="fill"></span><span class="val">14 €</span></div>
+      </div>
+      <p class="note">Beispielpreise. Bei einer echten Seite stehen hier deine Preise, und ich ändere sie, wenn sie sich ändern.</p>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <div class="wrap">
+      <span class="eyebrow">Galerie</span>
+      <h2>Einblicke</h2>
+      <div class="gallery" aria-label="Platzhalter für Fotos">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M7 3h10l-1 6H8z"/><path d="M12 9v12"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10a8 8 0 0 1 16 0v10"/><path d="M8 20v-6h8v6"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg></div>
+      </div>
+      <p class="note">Hier kommen bei einer echten Seite deine eigenen Fotos rein: Laden, Schnitte, Team.</p>
+    </div>
+  </section>
+
+  <section id="infos">
+    <div class="wrap info">
+      <div>
+        <span class="eyebrow">Öffnungszeiten</span>
+        <h2>Wann wir da sind</h2>
+        <table class="hours" id="hours">
+          <tr data-day="1"><td>Montag</td><td>10:00 – 19:00</td></tr>
+          <tr data-day="2"><td>Dienstag</td><td>10:00 – 19:00</td></tr>
+          <tr data-day="3"><td>Mittwoch</td><td>10:00 – 19:00</td></tr>
+          <tr data-day="4"><td>Donnerstag</td><td>10:00 – 20:00</td></tr>
+          <tr data-day="5"><td>Freitag</td><td>10:00 – 20:00</td></tr>
+          <tr data-day="6"><td>Samstag</td><td>09:00 – 17:00</td></tr>
+          <tr data-day="0"><td>Sonntag</td><td>geschlossen</td></tr>
+        </table>
+      </div>
+      <div id="termin">
+        <span class="eyebrow">Anfahrt &amp; Kontakt</span>
+        <h2>So findest du uns</h2>
+        <div class="map" aria-label="Kartenplatzhalter">
+          <svg viewBox="0 0 400 300" aria-hidden="true">
+            <rect width="400" height="300" fill="#161616"/>
+            <path d="M0 210 L400 170" stroke="#2c2c2c" stroke-width="22"/>
+            <path d="M140 0 L180 300" stroke="#2c2c2c" stroke-width="16"/>
+            <path d="M0 80 L400 110" stroke="#242424" stroke-width="10"/>
+            <path d="M300 0 L280 300" stroke="#242424" stroke-width="10"/>
+            <circle cx="232" cy="150" r="34" fill="rgba(212,166,70,.15)"/>
+            <path d="M232 124c-11 0-19 8-19 19 0 14 19 33 19 33s19-19 19-33c0-11-8-19-19-19z" fill="#d4a646"/>
+            <circle cx="232" cy="143" r="6" fill="#111"/>
+          </svg>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <strong>Barbershop Klinge</strong><br>
+          <span style="color:var(--muted)">Musterstraße 1 · 38226 Salzgitter</span>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">
+            <a class="btn btn-gold btn-sm demo-link" href="#termin">WhatsApp</a>
+            <a class="btn btn-ghost btn-sm demo-link" href="#termin">Anrufen</a>
+            <a class="btn btn-ghost btn-sm demo-link" href="#termin">Route planen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Beispielseite von <a href="../../">Webdesign Salzgitter</a>. Barbershop Klinge ist erfunden, Adresse und Preise sind Platzhalter.
+  </div>
+</footer>
+
+<a class="wa-float demo-link" href="#termin" aria-label="WhatsApp (Beispiel)">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>
+  WhatsApp
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite">Nur ein Beispiel: Auf deiner echten Seite funktioniert dieser Button.</div>
+
+<script>
+// Öffnungszeiten: [Wochentag 0=So … 6=Sa] → [von, bis] in Minuten
+const HOURS = { 1: [600, 1140], 2: [600, 1140], 3: [600, 1140], 4: [600, 1200], 5: [600, 1200], 6: [540, 1020] };
+(function () {
+  const now = new Date();
+  const day = now.getDay(), min = now.getHours() * 60 + now.getMinutes();
+  const row = document.querySelector('#hours tr[data-day="' + day + '"]');
+  if (row) row.classList.add("today");
+  const h = HOURS[day];
+  const open = h && min >= h[0] && min < h[1];
+  const fmt = m => String(Math.floor(m / 60)).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0");
+  document.getElementById("dot").classList.toggle("open", !!open);
+  document.getElementById("status-text").textContent = open
+    ? "Jetzt geöffnet · bis " + fmt(h[1]) + " Uhr"
+    : (h && min < h[0] ? "Heute ab " + fmt(h[0]) + " Uhr geöffnet" : "Gerade geschlossen");
+
+  const toast = document.getElementById("toast");
+  let t;
+  document.querySelectorAll(".demo-link").forEach(a => a.addEventListener("click", e => {
+    e.preventDefault();
+    toast.classList.add("show");
+    clearTimeout(t); t = setTimeout(() => toast.classList.remove("show"), 2600);
+  }));
+})();
+</script>
+</body>
+</html>
