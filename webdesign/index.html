@@ -193,6 +193,10 @@
     .steps li { padding-left: 0; padding-top: 62px; }
     .fab { display: none; }
   }
+  @media (max-width: 379px) {
+    .btn-small { padding: 10px; }
+    .btn-small .btn-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { transition: none !important; }
@@ -210,7 +214,7 @@
   <div class="wrap">
     <a class="logo" href="#start" aria-label="Zum Seitenanfang">
       <svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0f766e"/><path d="M22 38h56v36a6 6 0 0 1-6 6H28a6 6 0 0 1-6-6z" fill="#fff"/><path d="M18 38l8-16h48l8 16z" fill="#fbbf24"/><rect x="42" y="56" width="16" height="24" rx="2" fill="#0f766e"/></svg>
-      <span data-config="name">Dion Ahmad</span>
+      <span data-config="brand">Webdesign Salzgitter</span>
     </a>
     <nav aria-label="Hauptnavigation">
       <a href="#warum">Warum</a>
@@ -220,7 +224,7 @@
       <a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-wa btn-sm btn-small" data-wa="general" href="#kontakt">
-      <svg aria-hidden="true"><use href="#i-wa"/></svg>Schreib mir
+      <svg aria-hidden="true"><use href="#i-wa"/></svg><span class="btn-label">Schreib mir</span>
     </a>
   </div>
 </header>
@@ -500,6 +504,7 @@
 // ============================================================
 const CONFIG = {
   name: "Dion Ahmad",
+  brand: "Webdesign Salzgitter",         // Text oben links neben dem Logo, "" = nur Logo
   region: "Salzgitter & Braunschweig",
   whatsapp: "491773714000",           // nur Ziffern, mit Ländervorwahl, ohne + und ohne 0 davor
   email: "dionahmad2009@gmail.com",   // optional, "" = ausblenden
@@ -521,6 +526,10 @@ const CONFIG = {
   const email = clean(CONFIG.email);
 
   // Name & Region einsetzen oder ausblenden
+  const brand = clean(CONFIG.brand);
+  document.querySelectorAll('[data-config="brand"]').forEach(el => {
+    if (brand) el.textContent = brand; else el.hidden = true;
+  });
   document.querySelectorAll('[data-config="name"]').forEach(el => {
     if (name) el.textContent = name; else el.hidden = true;
   });
