@@ -14,4 +14,6 @@ Einfach `index.html` im Browser öffnen. Es wird nichts installiert und es gibt 
 
 Online stellen (kostenlos): Im GitHub-Repo unter **Settings → Pages** den Branch auswählen.
 
+📋 **Wie du damit Geld verdienst:** siehe [PLAN.md](PLAN.md)
+
 > Weder Anlageberatung noch Fatwa. Frag im Zweifel einen Gelehrten deines Vertrauens.

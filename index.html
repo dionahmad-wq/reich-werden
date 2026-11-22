@@ -4,8 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reich werden – halal &amp; ehrlich</title>
+<meta name="description" content="Halal Vermögensaufbau ohne Zinsen: Vermögens-Rechner, Zakat-Rechner, 14 halal Ideen zum Geld verdienen und Warnsignale für Abzocke.">
+<meta name="theme-color" content="#0f172a">
+<meta property="og:title" content="Reich werden – halal &amp; ehrlich">
+<meta property="og:description" content="Vermögens-Rechner, Zakat-Rechner und halal Ideen zum Geld verdienen.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
 <style>
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(15,23,42,.92); backdrop-filter: blur(8px);
+        border-bottom: 1px solid #1e293b; }
+  nav div { max-width: 820px; margin: 0 auto; padding: 10px 20px; display: flex; gap: 6px; overflow-x: auto; }
+  nav a { color: #cbd5e1; text-decoration: none; white-space: nowrap; padding: 6px 12px; border-radius: 8px; font-size: .9rem; }
+  nav a:hover, nav a:focus-visible { background: #1e293b; color: #facc15; }
+  .grid > div { display: flex; flex-direction: column; justify-content: flex-end; }
+  input:focus, select:focus, button:focus-visible { outline: 2px solid #facc15; outline-offset: 1px; }
+  footer { text-align: center; color: #64748b; font-size: .85rem; padding: 10px 20px 40px; }
+  @media (max-width: 500px) { h1 { font-size: 1.7rem; } .card { padding: 16px; } }
   body {
     margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     background: #0f172a; color: #e2e8f0; line-height: 1.5;
@@ -51,11 +67,18 @@
 </style>
 </head>
 <body>
+<nav aria-label="Inhalt"><div>
+  <a href="#rechner">📈 Vermögen</a>
+  <a href="#zakat">🕌 Zakat</a>
+  <a href="#ideen">💡 Geld verdienen</a>
+  <a href="#regeln">✅ Regeln</a>
+  <a href="#warnungen">🚩 Warnungen</a>
+</div></nav>
 <main>
   <h1>Reich werden <span>– halal &amp; ehrlich</span></h1>
   <p class="sub">Ohne Zinsen (Riba), ohne Glücksspiel (Maysir), ohne Abzocke. Stattdessen: halal verdienen, regelmäßig sparen, in echte Unternehmen investieren und Geduld haben (Sabr).</p>
 
-  <section class="card">
+  <section class="card" id="rechner">
     <h2>📈 Vermögens-Rechner (halal)</h2>
     <p class="note" style="margin-top:0">Hier gibt es keine Zinsen. Das Wachstum entsteht durch Gewinne und Wertsteigerung von Unternehmen, an denen du beteiligt bist, zum Beispiel über einen schariakonformen Aktien-ETF. Das ist Handel und Beteiligung, kein Riba. Dafür trägst du auch das Risiko von Verlusten.</p>
     <div class="grid">
@@ -112,8 +135,8 @@
       <div class="stat"><div class="k">Nisab</div><div class="v" id="zNisab">–</div></div>
       <div class="stat"><div class="k">Deine Zakat (2,5 %)</div><div class="v green" id="zDue">–</div></div>
     </div>
-    <p class="zmsg" id="zMsg"></p>
-    <p class="note">Nicht zakatpflichtig sind zum Beispiel deine selbst genutzte Wohnung, dein Auto, Möbel, Kleidung und Arbeitsgeräte. Beim Schmuck sind sich die Rechtsschulen uneinig. Bei Aktien und ETFs rechnen manche Gelehrte nur einen Teil an (den zakatpflichtigen Anteil der Firmen). Hier wird zur Sicherheit der volle Marktwert genommen. Im Zweifel frag einen Gelehrten.</p>
+    <p class="zmsg" id="zMsg" aria-live="polite"></p>
+    <p class="note">Nicht zakatpflichtig sind zum Beispiel deine selbst genutzte Wohnung, dein Auto, Möbel, Kleidung und Arbeitsgeräte. Beim Schmuck sind sich die Rechtsschulen uneinig. Bei Aktien und ETFs rechnen manche Gelehrte nur einen Teil an (den zakatpflichtigen Anteil der Firmen). Hier wird zur Sicherheit der volle Marktwert genommen. Im Zweifel frag einen Gelehrten. Deine Eingaben werden nur auf deinem Gerät gespeichert.</p>
   </section>
 
   <section class="card" id="ideen">
@@ -138,7 +161,7 @@
     <p class="note">Gut zu wissen: In Deutschland dürfen Jugendliche ab 13 mit Erlaubnis der Eltern leichte Arbeiten machen (max. 2 Stunden pro Tag, nicht während der Schulzeit). Wenn du regelmäßig etwas verkaufst oder anbietest, brauchst du je nach Umfang eine Gewerbeanmeldung. Das geht ab 18, oder vorher mit Zustimmung der Eltern und des Familiengerichts.</p>
   </section>
 
-  <section class="card">
+  <section class="card" id="regeln">
     <h2>✅ 8 Regeln für halal Vermögensaufbau</h2>
     <ul>
       <li><b>Halal verdienen.</b> Barakah beginnt beim Einkommen: ehrliche Arbeit, ehrlicher Handel, niemanden betrügen.</li>
@@ -152,7 +175,7 @@
     </ul>
   </section>
 
-  <section class="card warn">
+  <section class="card warn" id="warnungen">
     <h2>🚩 Finger weg, wenn …</h2>
     <ul>
       <li>dir jemand „garantierte“ Renditen verspricht. Feste Zinsen sind Riba, und echte Beteiligung ist nie garantiert.</li>
@@ -165,6 +188,10 @@
     <p class="note">Diese Seite ist weder Anlageberatung noch eine Fatwa. Gelehrte sehen manche Details unterschiedlich. Frag im Zweifel einen Imam oder Gelehrten deines Vertrauens. Wenn du unter 18 bist: Ein Depot geht nur zusammen mit deinen Eltern als Junior-Depot.</p>
   </section>
 </main>
+<footer>
+  Mit Niyyah gebaut: Möge es dir und anderen nützen. 🤲<br>
+  Keine Anlageberatung und keine Fatwa. Alle Berechnungen laufen nur in deinem Browser, es werden keine Daten gesendet.
+</footer>
 
 <script>
 const $ = id => document.getElementById(id);
@@ -249,7 +276,20 @@ function zakat() {
   $('zMsg').textContent = msg;
 }
 
-document.querySelectorAll('.z').forEach(i => i.addEventListener('input', zakat));
+const Z_KEY = 'zakat-eingaben';
+try {
+  const saved = JSON.parse(localStorage.getItem(Z_KEY) || '{}');
+  document.querySelectorAll('.z').forEach(i => {
+    if (!(i.id in saved)) return;
+    if (i.type === 'checkbox') i.checked = saved[i.id]; else i.value = saved[i.id];
+  });
+} catch (e) {}
+function saveZakat() {
+  const data = {};
+  document.querySelectorAll('.z').forEach(i => data[i.id] = i.type === 'checkbox' ? i.checked : i.value);
+  try { localStorage.setItem(Z_KEY, JSON.stringify(data)); } catch (e) {}
+}
+document.querySelectorAll('.z').forEach(i => i.addEventListener('input', () => { zakat(); saveZakat(); }));
 zakat();
 const IDEAS = [
   { e: '📚', t: 'Nachhilfe geben', d: 'Erklär jüngeren Schülern Mathe, Deutsch, Englisch oder Arabisch. Fang bei Nachbarn, in der Moschee oder mit einem Aushang im Supermarkt an.', m: 'ca. 10–25 € / Std.', f: ['schueler','ohnegeld'] },
