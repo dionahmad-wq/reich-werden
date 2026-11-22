@@ -21,6 +21,8 @@
   .grid > div { display: flex; flex-direction: column; justify-content: flex-end; }
   input:focus, select:focus, button:focus-visible { outline: 2px solid #facc15; outline-offset: 1px; }
   footer { text-align: center; color: #64748b; font-size: .85rem; padding: 10px 20px 40px; }
+  footer .webdesign-link { display: inline-block; margin-top: 10px; color: #94a3b8; text-decoration: none; }
+  footer .webdesign-link:hover, footer .webdesign-link:focus-visible { color: #facc15; text-decoration: underline; }
   @media (max-width: 500px) { h1 { font-size: 1.7rem; } .card { padding: 16px; } }
   body {
     margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -190,7 +192,8 @@
 </main>
 <footer>
   Mit Niyyah gebaut: Möge es dir und anderen nützen. 🤲<br>
-  Keine Anlageberatung und keine Fatwa. Alle Berechnungen laufen nur in deinem Browser, es werden keine Daten gesendet.
+  Keine Anlageberatung und keine Fatwa. Alle Berechnungen laufen nur in deinem Browser, es werden keine Daten gesendet.<br>
+  <a class="webdesign-link" href="webdesign/">Du brauchst auch eine Webseite? → webdesign/</a>
 </footer>
 
 <script>
