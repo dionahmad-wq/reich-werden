@@ -1,15 +1,15 @@
-# Reich werden – der ehrliche Weg 💰
+# Reich werden – halal & ehrlich 💰
 
-Eine kleine Webseite mit:
+Eine kleine Webseite für halal Vermögensaufbau:
 
-- **Zinseszins-Rechner** inklusive Diagramm: zeigt, was aus regelmäßigem Sparen über die Jahre wird
-- **7 Regeln**, die beim Vermögensaufbau wirklich funktionieren
-- **Warnsignale** für Abzocke und Schneeballsysteme
+- **Vermögens-Rechner** mit Diagramm: zeigt, was aus regelmäßigem Investieren in schariakonforme Unternehmen über die Jahre werden kann. Ohne Zinsen (Riba).
+- **8 Regeln** für halal Vermögensaufbau (halal verdienen, Zakat, zinsfreier Notgroschen, Islamic-ETFs, Reinigung der Erträge …)
+- **Warnsignale**: Riba, Maysir (Glücksspiel), Gharar, Abzocke und Schneeballsysteme
 
 ## Benutzen
 
 Einfach `index.html` im Browser öffnen. Es wird nichts installiert und es gibt keinen Server.
 
-Online stellen (kostenlos): Im GitHub-Repo unter **Settings → Pages** den Branch auswählen. Danach ist die Seite unter `https://<dein-name>.github.io/reich-werden/` erreichbar.
+Online stellen (kostenlos): Im GitHub-Repo unter **Settings → Pages** den Branch auswählen.
 
-> Keine Anlageberatung.
+> Weder Anlageberatung noch Fatwa. Frag im Zweifel einen Gelehrten deines Vertrauens.

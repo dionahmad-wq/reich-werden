@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reich werden – Der ehrliche Weg</title>
+<title>Reich werden – halal &amp; ehrlich</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -35,35 +35,37 @@
 </head>
 <body>
 <main>
-  <h1>Reich werden <span>– der ehrliche Weg</span></h1>
-  <p class="sub">Kein Trick und keine Abzocke, sondern Mathe: Regelmäßig sparen + Zeit + Zinseszins.</p>
+  <h1>Reich werden <span>– halal &amp; ehrlich</span></h1>
+  <p class="sub">Ohne Zinsen (Riba), ohne Glücksspiel (Maysir), ohne Abzocke. Stattdessen: halal verdienen, regelmäßig sparen, in echte Unternehmen investieren und Geduld haben (Sabr).</p>
 
   <section class="card">
-    <h2>💰 Zinseszins-Rechner</h2>
+    <h2>📈 Vermögens-Rechner (halal)</h2>
+    <p class="note" style="margin-top:0">Hier gibt es keine Zinsen. Das Wachstum entsteht durch Gewinne und Wertsteigerung von Unternehmen, an denen du beteiligt bist, zum Beispiel über einen schariakonformen Aktien-ETF. Das ist Handel und Beteiligung, kein Riba. Dafür trägst du auch das Risiko von Verlusten.</p>
     <div class="grid">
       <div><label for="start">Startkapital (€)</label><input id="start" type="number" min="0" value="100"></div>
       <div><label for="monthly">Monatlich sparen (€)</label><input id="monthly" type="number" min="0" value="50"></div>
-      <div><label for="rate">Rendite pro Jahr (%)</label><input id="rate" type="number" step="0.1" value="6"></div>
+      <div><label for="rate">Erwartete Wertsteigerung pro Jahr (%)</label><input id="rate" type="number" step="0.1" value="6"></div>
       <div><label for="years">Jahre</label><input id="years" type="number" min="1" max="70" value="30"></div>
     </div>
     <div class="result">
       <div class="stat"><div class="k">Endbetrag</div><div class="v gold" id="total">–</div></div>
       <div class="stat"><div class="k">Selbst eingezahlt</div><div class="v" id="paid">–</div></div>
-      <div class="stat"><div class="k">Geschenkt durch Zinsen</div><div class="v green" id="interest">–</div></div>
+      <div class="stat"><div class="k">Gewinn durch Unternehmenswachstum</div><div class="v green" id="interest">–</div></div>
     </div>
     <canvas id="chart"></canvas>
-    <p class="note">Gelb: Gesamtvermögen, grau: selbst eingezahlt. 6 % pro Jahr entsprechen ungefähr dem historischen Durchschnitt breiter Aktien-ETFs (z. B. MSCI World). Das ist aber keine Garantie, und es gibt auch Jahre mit Verlusten.</p>
+    <p class="note">Gelb: Gesamtvermögen, grau: selbst eingezahlt. 6 % pro Jahr entsprechen ungefähr dem historischen Durchschnitt breiter Aktienindizes. Islamische Indizes (z. B. MSCI World Islamic) lagen in der Vergangenheit in einem ähnlichen Bereich. Das ist aber keine Garantie, und es gibt auch Jahre mit Verlusten.</p>
   </section>
 
   <section class="card">
-    <h2>✅ 7 Regeln, die wirklich funktionieren</h2>
+    <h2>✅ 8 Regeln für halal Vermögensaufbau</h2>
     <ul>
+      <li><b>Halal verdienen.</b> Barakah beginnt beim Einkommen: ehrliche Arbeit, ehrlicher Handel, niemanden betrügen.</li>
       <li><b>Früh anfangen.</b> Zeit ist der größte Hebel. Probier im Rechner 40 statt 30 Jahre aus.</li>
-      <li><b>Mehr verdienen als ausgeben.</b> Klingt banal, ist aber die Grundlage von allem.</li>
+      <li><b>Mehr verdienen als ausgeben, aber nicht geizig sein.</b> Kein Israf (Verschwendung), und Zakat nicht vergessen, sobald dein Vermögen den Nisab erreicht.</li>
       <li><b>In dich selbst investieren.</b> Skills wie Programmieren, Sprachen oder Verkaufen erhöhen dein Einkommen ein Leben lang.</li>
-      <li><b>Notgroschen zuerst.</b> 3 Monatsausgaben auf dem Tagesgeldkonto, bevor du investierst.</li>
-      <li><b>Breit streuen.</b> Ein günstiger Welt-ETF statt einzelner „Geheimtipp“-Aktien.</li>
-      <li><b>Kosten niedrig halten.</b> 1 % Gebühren pro Jahr kosten über 30 Jahre ein Vermögen.</li>
+      <li><b>Notgroschen zuerst.</b> 3 Monatsausgaben als Rücklage, bevor du investierst. Leg sie auf ein zinsfreies Konto, nicht aufs Tagesgeld mit Zinsen. Islamische Banken bieten dafür eigene Konten an.</li>
+      <li><b>Breit und halal streuen.</b> Nimm einen schariakonformen Welt-ETF (Stichwort „Islamic“ im Namen) statt einzelner „Geheimtipp“-Aktien. Solche ETFs filtern Banken, Alkohol, Glücksspiel, Schweinefleisch, Waffen und hochverschuldete Firmen heraus.</li>
+      <li><b>Reinigen (Tathir).</b> Wenn ein kleiner Teil der Erträge aus unerlaubten Quellen stammt, spendest du diesen Anteil. Viele islamische Fonds geben die Quote an.</li>
       <li><b>Durchhalten.</b> Bei Crashs nicht panisch verkaufen, sondern einfach weiter sparen.</li>
     </ul>
   </section>
@@ -71,12 +73,14 @@
   <section class="card warn">
     <h2>🚩 Finger weg, wenn …</h2>
     <ul>
-      <li>dir jemand „garantierte“ hohe Renditen verspricht</li>
+      <li>dir jemand „garantierte“ Renditen verspricht. Feste Zinsen sind Riba, und echte Beteiligung ist nie garantiert.</li>
+      <li>es um Daytrading, Hebel-Produkte, Optionen, Krypto-Zocken oder Sportwetten geht. Das ist Maysir (Glücksspiel) bzw. Gharar (übermäßige Unsicherheit).</li>
+      <li>du einen Kredit mit Zinsen aufnehmen sollst, um zu „investieren“</li>
       <li>du andere anwerben sollst, um Geld zu verdienen (Schneeballsystem)</li>
       <li>dich ein „Finanz-Coach“ auf Instagram oder TikTok zu einem teuren Kurs drängt</li>
       <li>du dich schnell entscheiden sollst („nur heute!“)</li>
     </ul>
-    <p class="note">Diese Seite ist keine Anlageberatung. Wenn du unter 18 bist: Ein Depot geht nur zusammen mit deinen Eltern als Junior-Depot.</p>
+    <p class="note">Diese Seite ist weder Anlageberatung noch eine Fatwa. Gelehrte sehen manche Details unterschiedlich. Frag im Zweifel einen Imam oder Gelehrten deines Vertrauens. Wenn du unter 18 bist: Ein Depot geht nur zusammen mit deinen Eltern als Junior-Depot.</p>
   </section>
 </main>
 
