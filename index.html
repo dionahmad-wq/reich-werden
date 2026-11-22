@@ -159,6 +159,41 @@
   details .answer { padding: 0 18px 16px; color: var(--muted); }
   details .answer p:last-child { margin-bottom: 0; }
 
+  /* Vertrauensleiste */
+  .trust { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .trust .wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .trust-item { padding: 22px 12px; text-align: center; }
+  .trust-item:nth-child(odd) { border-right: 1px solid var(--line); }
+  .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .trust-item strong { display: block; font-size: 1.6rem; line-height: 1.1; color: var(--brand-dark); letter-spacing: -.02em; }
+  .trust-item span { font-size: .9rem; color: var(--muted); }
+
+  /* Leistungen */
+  .feature { display: flex; gap: 14px; align-items: flex-start; }
+  .feature .icon { flex: none; margin: 0; }
+  .feature h3 { margin-bottom: .2em; font-size: 1.08rem; }
+  .feature p { margin: 0; color: var(--muted); font-size: .98rem; }
+
+  /* Vergleich */
+  .compare { display: grid; gap: 16px; }
+  .compare .card h3 { margin-bottom: 4px; }
+  .compare .who { color: var(--muted); font-size: .92rem; margin-bottom: 14px; }
+  .compare ul { list-style: none; margin: 0; padding: 0; }
+  .compare li { padding: 9px 0 9px 28px; position: relative; border-top: 1px solid var(--line); font-size: .97rem; }
+  .compare li::before { position: absolute; left: 0; top: 9px; font-weight: 800; }
+  .compare li.yes::before { content: "✓"; color: var(--brand); }
+  .compare li.no::before { content: "–"; color: #94a3b8; }
+  .compare li.mid::before { content: "~"; color: var(--accent); }
+  .compare .card.featured { border: 2px solid var(--brand); position: relative; }
+  .compare-note { margin-top: 16px; font-size: .92rem; color: var(--muted); }
+
+  /* CTA-Band */
+  .cta-band { background: linear-gradient(135deg, #0f172a, #1e293b) !important; color: #fff; padding: 48px 0; }
+  .cta-band .wrap { display: grid; gap: 20px; align-items: center; }
+  .cta-band h2 { margin: 0 0 6px; }
+  .cta-band p { margin: 0; color: #cbd5e1; }
+  .cta-band .btn-wa { background: #fff; color: var(--brand-dark); justify-self: start; }
+
   /* Kontakt */
   .contact { background: linear-gradient(160deg, var(--brand-dark), var(--brand)) !important; color: #fff; }
   .contact .lead { color: #ccfbf1; }
@@ -191,10 +226,14 @@
   .form-status.err { background: #fef2f2; color: #7f1d1d; }
   .form-status a { color: inherit; }
 
-  footer { background: #0f172a; color: #94a3b8; padding: 32px 0 40px; font-size: .92rem; }
-  footer .wrap { display: grid; gap: 14px; }
-  footer a { color: #e2e8f0; }
-  footer .links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  footer { background: #0f172a; color: #94a3b8; padding: 48px 0 40px; font-size: .92rem; }
+  footer a { color: #e2e8f0; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .foot-grid { display: grid; gap: 28px; margin-bottom: 32px; }
+  .foot-grid h4 { color: #fff; font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; margin: 0 0 12px; }
+  .foot-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .foot-brand { color: #fff; font-weight: 800; font-size: 1.1rem; margin-bottom: 6px; }
+  .foot-bottom { border-top: 1px solid #1e293b; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; }
 
   /* Schwebender Kontakt-Button (nur Handy) */
   .fab { position: fixed; right: 16px; bottom: 16px; z-index: 20; width: 58px; height: 58px; border-radius: 50%; background: var(--wa-dark); color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(18,140,74,.4); opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
@@ -208,6 +247,10 @@
     .contact-actions { flex-direction: row; max-width: none; }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .trust .wrap { grid-template-columns: repeat(4, 1fr); }
+    .trust-item, .trust-item:nth-child(odd), .trust-item:nth-child(-n+2) { border: 0; border-right: 1px solid var(--line); }
+    .trust-item:last-child { border-right: 0; }
+    .foot-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (min-width: 900px) {
     section { padding: 88px 0; }
@@ -217,6 +260,9 @@
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-4 { grid-template-columns: repeat(4, 1fr); }
     .contact-grid { grid-template-columns: 1fr 1.1fr; gap: 48px; }
+    .compare { grid-template-columns: repeat(3, 1fr); }
+    .cta-band .wrap { grid-template-columns: 1fr auto; }
+    .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
     .steps { grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .steps li { padding-left: 0; padding-top: 62px; }
     .fab { display: none; }
@@ -246,10 +292,10 @@
       <span data-config="brand">Webdesign Salzgitter</span>
     </a>
     <nav aria-label="Hauptnavigation">
-      <a href="#warum">Warum</a>
+      <a href="#leistungen">Leistungen</a>
       <a href="#preise">Preise</a>
       <a href="#ablauf">Ablauf</a>
-      <a href="#projekte">Projekte</a>
+      <a href="#projekte">Beispiele</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-wa btn-sm btn-small" data-wa="general" href="#kontakt">
@@ -295,6 +341,16 @@
     </div>
   </section>
 
+  <!-- Vertrauensleiste: nur ehrliche Fakten, keine erfundenen Zahlen -->
+  <div class="trust" aria-label="Auf einen Blick">
+    <div class="wrap">
+      <div class="trust-item"><strong>ab 149 €</strong><span>Festpreis, einmalig</span></div>
+      <div class="trust-item"><strong>0 €</strong><span>für deine Vorschau</span></div>
+      <div class="trust-item"><strong>ca. 1 Woche</strong><span>bis deine Seite online ist</span></div>
+      <div class="trust-item"><strong>100 %</strong><span>fürs Handy gemacht</span></div>
+    </div>
+  </div>
+
   <!-- 2. Warum -->
   <section id="warum">
     <div class="wrap">
@@ -318,6 +374,43 @@
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>Wirkt professionell</h3>
           <p>Eine eigene Seite zeigt: Hier kümmert sich jemand. Das schafft Vertrauen, gerade bei Leuten, die deinen Laden noch nicht kennen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Leistungen</span>
+        <h2>In jeder Webseite enthalten</h2>
+        <p class="lead">Egal welches Paket: Diese Punkte sind bei jeder Seite dabei, ohne Aufpreis.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <div><h3>Fürs Handy gemacht</h3><p>Die meisten Kunden suchen auf dem Handy. Deine Seite sieht auf jedem Bildschirm gut aus.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <div><h3>Schnell geladen</h3><p>Kein schwerer Baukasten, sondern schlanker Code. Die Seite ist in Sekunden da, auch mit schlechtem Netz.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <div><h3>Bereit für Google</h3><p>Saubere Struktur, Titel und Beschreibung für Suchmaschinen und eine gute Vorschau beim Teilen in WhatsApp.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div><h3>Sicher verschlüsselt</h3><p>Deine Seite läuft über HTTPS mit Schloss-Symbol im Browser. Das erwarten Kunden heute.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
+          <div><h3>Ohne Cookie-Banner</h3><p>Keine Tracker, keine Werbe-Cookies. Deine Besucher werden nicht genervt, so wie auf dieser Seite.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div><h3>Persönlicher Ansprechpartner</h3><p>Du schreibst direkt mit mir, nicht mit einer Hotline. Wenn du magst, treffen wir uns auch vor Ort.</p></div>
         </div>
       </div>
     </div>
@@ -400,6 +493,52 @@
     </div>
   </section>
 
+  <!-- Vergleich -->
+  <section id="vergleich">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Vergleich</span>
+        <h2>Welche Lösung passt zu dir?</h2>
+        <p class="lead">Es gibt mehrere Wege zur eigenen Webseite. Hier ein ehrlicher Überblick, auch darüber, was ich <em>nicht</em> anbiete.</p>
+      </div>
+      <div class="compare">
+        <div class="card">
+          <h3>Baukasten</h3>
+          <p class="who">Du baust die Seite selbst</p>
+          <ul>
+            <li class="mid">Laufende Gebühren jeden Monat</li>
+            <li class="no">Du machst alles selbst</li>
+            <li class="mid">Viele Vorlagen, aber viel Zeitaufwand</li>
+            <li class="yes">Gut, wenn du gern selbst bastelst</li>
+          </ul>
+        </div>
+        <div class="card featured">
+          <span class="badge">Für kleine Läden</span>
+          <h3 data-config="brand">Webdesign Salzgitter</h3>
+          <p class="who">Ich baue die Seite für dich</p>
+          <ul>
+            <li class="yes">Festpreis ab 149 €, einmalig</li>
+            <li class="yes">Kostenlose Vorschau vor dem Kauf</li>
+            <li class="yes">Ich mache alles, du lieferst nur Infos</li>
+            <li class="yes">Persönlich und aus der Region</li>
+            <li class="no">Kein Onlineshop, kein Buchungssystem</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Große Agentur</h3>
+          <p class="who">Ein Team baut die Seite</p>
+          <ul>
+            <li class="mid">Oft deutlich teurer</li>
+            <li class="yes">Große Projekte wie Shops möglich</li>
+            <li class="yes">Viel Erfahrung und Spezialisten</li>
+            <li class="mid">Für einen kleinen Laden oft zu viel</li>
+          </ul>
+        </div>
+      </div>
+      <p class="compare-note">Du brauchst einen Onlineshop oder ein Buchungssystem? Dann sage ich dir ehrlich, dass eine Agentur oder ein spezieller Anbieter besser passt.</p>
+    </div>
+  </section>
+
   <!-- 5. Ablauf -->
   <section id="ablauf">
     <div class="wrap">
@@ -473,6 +612,17 @@
           <a class="more" data-wa="preview" href="#kontakt">Vorschau anfragen →</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA-Band -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Bereit für deine eigene Webseite?</h2>
+        <p>Die Vorschau ist kostenlos und unverbindlich. Du zahlst nur, wenn sie dir gefällt.</p>
+      </div>
+      <a class="btn btn-wa" data-wa="preview" href="#kontakt"><svg aria-hidden="true"><use href="#i-mail"/></svg>Kostenlose Vorschau anfragen</a>
     </div>
   </section>
 
@@ -579,14 +729,41 @@
 
 <footer>
   <div class="wrap">
-    <div>© <span id="year">2026</span> <span data-config="brand">Webdesign Salzgitter</span></div>
-    <div class="links">
-      <a href="impressum.html">Impressum &amp; Datenschutz</a>
-      <a id="ig-footer" href="#start" target="_blank" rel="noopener" hidden>Instagram</a>
-      <a href="zakat-rechner/">Vermögens- &amp; Zakat-Rechner</a>
-      <a href="#start">Nach oben ↑</a>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand" data-config="brand">Webdesign Salzgitter</div>
+        <p style="margin:0">Einfache, schnelle Webseiten für kleine Läden und Betriebe<span data-config-region> in <span data-config="region">Salzgitter &amp; Braunschweig</span></span>.</p>
+      </div>
+      <div>
+        <h4>Seite</h4>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#preise">Preise</a></li>
+          <li><a href="#projekte">Beispiele</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="#contact-form">Kontaktformular</a></li>
+          <li><a id="footer-email" href="#kontakt" hidden></a></li>
+          <li><a id="ig-footer" href="#start" target="_blank" rel="noopener" hidden>Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
+          <li><a href="zakat-rechner/">Vermögens- &amp; Zakat-Rechner</a></li>
+        </ul>
+      </div>
     </div>
-    <div>Diese Seite nutzt keine Cookies und kein Tracking.</div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> <span data-config="brand">Webdesign Salzgitter</span></span>
+      <span>Keine Cookies, kein Tracking.</span>
+    </div>
   </div>
 </footer>
 
@@ -680,6 +857,8 @@ const CONFIG = {
   if (email) {
     const link = document.getElementById("email-link");
     link.href = mailLink("general"); link.textContent = email;
+    const fe = document.getElementById("footer-email");
+    fe.href = "mailto:" + email; fe.textContent = email; fe.hidden = false;
     document.getElementById("email-text").hidden = false;
     if (phone) {
       const btn = document.getElementById("email-btn");
