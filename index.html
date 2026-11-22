@@ -169,7 +169,7 @@
   footer a { color: #e2e8f0; }
   footer .links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 
-  /* Floating WhatsApp (nur Handy) */
+  /* Schwebender Kontakt-Button (nur Handy) */
   .fab { position: fixed; right: 16px; bottom: 16px; z-index: 20; width: 58px; height: 58px; border-radius: 50%; background: var(--wa-dark); color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(18,140,74,.4); opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
   .fab.show { opacity: 1; transform: none; pointer-events: auto; }
   .fab svg { width: 30px; height: 30px; }
@@ -193,7 +193,7 @@
     .steps li { padding-left: 0; padding-top: 62px; }
     .fab { display: none; }
   }
-  @media (max-width: 379px) {
+  @media (max-width: 459px) {
     .btn-small { padding: 10px; }
     .btn-small .btn-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   }
@@ -205,9 +205,10 @@
 </head>
 <body>
 
-<!-- WhatsApp-Icon, einmal definiert und mehrfach benutzt -->
+<!-- Icons (E-Mail und WhatsApp), einmal definiert und mehrfach benutzt -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.23 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
 </svg>
 
 <header class="top">
@@ -224,7 +225,7 @@
       <a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-wa btn-sm btn-small" data-wa="general" href="#kontakt">
-      <svg aria-hidden="true"><use href="#i-wa"/></svg><span class="btn-label">Schreib mir</span>
+      <svg aria-hidden="true"><use href="#i-mail"/></svg><span class="btn-label">Schreib mir</span>
     </a>
   </div>
 </header>
@@ -239,7 +240,7 @@
         <p class="lead">Ich bin <strong data-config="firstname">Dion</strong> und baue einfache, schnelle Webseiten für kleine Läden und Betriebe <span data-config-region>in <span data-config="region">Salzgitter &amp; Braunschweig</span></span>. Damit dich neue Kunden finden und sofort sehen, wann du offen hast.</p>
         <div class="actions">
           <a class="btn btn-wa" data-wa="preview" href="#kontakt">
-            <svg aria-hidden="true"><use href="#i-wa"/></svg>Kostenlose Vorschau anfragen
+            <svg aria-hidden="true"><use href="#i-mail"/></svg>Kostenlose Vorschau anfragen
           </a>
           <a class="btn btn-outline" href="#preise">Preise ansehen</a>
         </div>
@@ -350,7 +351,7 @@
             <li>WhatsApp-Button für deine Kunden</li>
           </ul>
           <a class="btn btn-wa" data-wa="standard" href="#kontakt">
-            <svg aria-hidden="true"><use href="#i-wa"/></svg>Standard anfragen
+            <svg aria-hidden="true"><use href="#i-mail"/></svg>Standard anfragen
           </a>
         </div>
         <div class="card price-card">
@@ -362,7 +363,7 @@
             <li>Preise geändert? Mach ich.</li>
             <li>Neue Fotos oder Texte</li>
             <li>Ich halte alles aktuell</li>
-            <li>Du schreibst mir einfach per WhatsApp</li>
+            <li>Du schreibst mir einfach, was neu ist</li>
           </ul>
           <a class="btn btn-outline" data-wa="pflege" href="#kontakt">Pflege anfragen</a>
         </div>
@@ -381,7 +382,7 @@
       <ol class="steps">
         <li>
           <h3>Kurz schreiben</h3>
-          <p>Schick mir eine WhatsApp mit dem Namen deines Ladens und was du brauchst. Ein paar Sätze reichen.</p>
+          <p>Schreib mir eine kurze E-Mail mit dem Namen deines Ladens und was du brauchst. Ein paar Sätze reichen.</p>
         </li>
         <li>
           <h3>Kostenlose Vorschau</h3>
@@ -436,7 +437,7 @@
         <details>
           <summary>Was brauchst du von mir?</summary>
           <div class="answer">
-            <p>Nicht viel: dein Logo (falls vorhanden), ein paar Fotos von deinem Laden oder deinen Produkten, deine Öffnungszeiten, Adresse und Telefonnummer und ein paar Sätze über dich. Fotos kannst du einfach mit dem Handy machen und mir per WhatsApp schicken. Bei den Texten helfe ich dir gern.</p>
+            <p>Nicht viel: dein Logo (falls vorhanden), ein paar Fotos von deinem Laden oder deinen Produkten, deine Öffnungszeiten, Adresse und Telefonnummer und ein paar Sätze über dich. Fotos kannst du einfach mit dem Handy machen und mir per E-Mail schicken. Bei den Texten helfe ich dir gern.</p>
           </div>
         </details>
         <details>
@@ -466,17 +467,17 @@
     <div class="wrap">
       <span class="eyebrow">Kontakt</span>
       <h2>Lass uns über deinen Laden reden</h2>
-      <p class="lead">Schreib mir kurz per WhatsApp. Ich melde mich so schnell wie möglich und baue dir eine kostenlose Vorschau. Ich habe kein Büro, du erreichst mich per WhatsApp oder Telefon. Wenn du magst, können wir uns auch persönlich treffen.</p>
+      <p class="lead">Schreib mir kurz eine E-Mail. Ich melde mich so schnell wie möglich und baue dir eine kostenlose Vorschau. Ich habe kein Büro, du erreichst mich per E-Mail. Wenn du magst, können wir uns auch persönlich treffen.</p>
       <div class="contact-actions">
         <a class="btn btn-wa" data-wa="preview" href="#kontakt">
-          <svg aria-hidden="true"><use href="#i-wa"/></svg>Kostenlose Vorschau anfragen
+          <svg aria-hidden="true"><use href="#i-mail"/></svg>Kostenlose Vorschau anfragen
         </a>
         <a class="btn btn-outline" id="email-btn" href="#kontakt" hidden>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
           <span>E-Mail schreiben</span>
         </a>
       </div>
-      <p class="small" id="email-text" hidden>Oder per E-Mail: <a style="color:#fff" id="email-link" href="#kontakt"></a></p>
+      <p class="small" id="email-text" hidden>Meine E-Mail-Adresse: <a style="color:#fff" id="email-link" href="#kontakt"></a></p>
     </div>
   </section>
 </main>
@@ -493,8 +494,8 @@
   </div>
 </footer>
 
-<a class="fab" id="fab" data-wa="preview" href="#kontakt" aria-label="Per WhatsApp schreiben">
-  <svg aria-hidden="true"><use href="#i-wa"/></svg>
+<a class="fab" id="fab" data-wa="preview" href="#kontakt" aria-label="Nachricht schreiben">
+  <svg aria-hidden="true"><use href="#i-mail"/></svg>
 </a>
 
 <script>
@@ -506,14 +507,21 @@ const CONFIG = {
   name: "Dion Ahmad",
   brand: "Webdesign Salzgitter",         // Text oben links neben dem Logo, "" = nur Logo
   region: "Salzgitter & Braunschweig",
-  whatsapp: "491773714000",           // nur Ziffern, mit Ländervorwahl, ohne + und ohne 0 davor
-  email: "dionahmad2009@gmail.com",   // optional, "" = ausblenden
+  email: "dionahmad2009@gmail.com",   // Kontakt per E-Mail
+  whatsapp: "",                       // optional: Nummer mit Ländervorwahl, nur Ziffern (z. B. 49151...). "" = kein WhatsApp
   messages: {
     general:  "Hallo {name}, ich habe deine Webdesign-Seite gesehen und hätte eine Frage:",
     preview:  "Hallo {name}, ich hätte gern eine kostenlose Vorschau für meine Webseite.\n\nName meines Ladens: \nArt des Ladens: \nOrt: ",
     starter:  "Hallo {name}, ich interessiere mich für das Starter-Paket (149 €).\n\nName meines Ladens: \nOrt: ",
     standard: "Hallo {name}, ich interessiere mich für das Standard-Paket (299 €).\n\nName meines Ladens: \nOrt: ",
     pflege:   "Hallo {name}, ich interessiere mich für die Pflege (19 € / Monat).\n\nName meines Ladens / meiner Webseite: "
+  },
+  subjects: {
+    general:  "Frage zu Webseiten",
+    preview:  "Kostenlose Vorschau für meinen Laden",
+    starter:  "Anfrage Starter-Paket",
+    standard: "Anfrage Standard-Paket",
+    pflege:   "Anfrage Pflege"
   }
 };
 // ============================================================
@@ -536,45 +544,48 @@ const CONFIG = {
   document.querySelectorAll('[data-config="region"]').forEach(el => { if (region) el.textContent = region; });
   if (!region) document.querySelectorAll("[data-config-region]").forEach(el => el.hidden = true);
 
-  // WhatsApp-Links & Vorname
+  // Vorname
   const firstName = name ? name.split(/\s+/)[0] : "";
   document.querySelectorAll('[data-config="firstname"]').forEach(el => {
     if (firstName) el.textContent = firstName; else el.hidden = true;
   });
-  const waLink = key => {
-    const tpl = CONFIG.messages[key] || CONFIG.messages.general;
-    const text = tpl.replace("{name}", firstName).replace(/\s+,/, ",");
-    return "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
-  };
+  const msg = key => (CONFIG.messages[key] || CONFIG.messages.general).replace("{name}", firstName).replace(/\s+,/, ",");
+  const mailLink = key => "mailto:" + email
+    + "?subject=" + encodeURIComponent(CONFIG.subjects[key] || CONFIG.subjects.general)
+    + "&body=" + encodeURIComponent(msg(key));
+
+  // Kontakt-Buttons: WhatsApp, wenn eine Nummer eingetragen ist, sonst E-Mail
   document.querySelectorAll("[data-wa]").forEach(el => {
     if (phone) {
-      el.href = waLink(el.dataset.wa);
+      el.href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg(el.dataset.wa));
       el.target = "_blank";
       el.rel = "noopener";
+      el.querySelectorAll("use").forEach(u => u.setAttribute("href", "#i-wa"));
     } else if (email) {
-      el.href = "mailto:" + email + "?subject=" + encodeURIComponent("Anfrage Webseite");
+      el.href = mailLink(el.dataset.wa);
     } else {
       el.hidden = true;
     }
   });
 
-  // E-Mail
+  // E-Mail-Adresse anzeigen (zum Kopieren, falls keine Mail-App eingerichtet ist)
   if (email) {
-    const mail = "mailto:" + email + "?subject=" + encodeURIComponent("Anfrage Webseite");
-    const btn = document.getElementById("email-btn");
     const link = document.getElementById("email-link");
-    btn.href = mail; btn.hidden = false;
-    link.href = mail; link.textContent = email;
+    link.href = mailLink("general"); link.textContent = email;
     document.getElementById("email-text").hidden = false;
+    if (phone) {
+      const btn = document.getElementById("email-btn");
+      btn.href = mailLink("general"); btn.hidden = false;
+    }
   }
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Schwebender WhatsApp-Button (nur Handy) erscheint nach dem Hero
+  // Schwebender Kontakt-Button (nur Handy) erscheint nach dem Hero
   const fab = document.getElementById("fab");
   const hero = document.getElementById("start");
   const contact = document.getElementById("kontakt");
-  if (phone && "IntersectionObserver" in window) {
+  if ((phone || email) && "IntersectionObserver" in window) {
     let heroVisible = true, contactVisible = false;
     const update = () => fab.classList.toggle("show", !heroVisible && !contactVisible);
     new IntersectionObserver(e => { heroVisible = e[0].isIntersecting; update(); }).observe(hero);
