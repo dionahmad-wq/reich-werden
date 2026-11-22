@@ -236,7 +236,7 @@
       <div>
         <span class="eyebrow">Webdesign <span data-config-region>in <span data-config="region">Salzgitter &amp; Braunschweig</span></span></span>
         <h1>Dein Laden verdient eine Webseite.</h1>
-        <p class="lead">Ich bin <strong data-config="name">Dion Ahmad</strong> und baue einfache, schnelle Webseiten für kleine Läden und Betriebe <span data-config-region>in <span data-config="region">Salzgitter &amp; Braunschweig</span></span>. Damit dich neue Kunden finden und sofort sehen, wann du offen hast.</p>
+        <p class="lead">Ich bin <strong data-config="firstname">Dion</strong> und baue einfache, schnelle Webseiten für kleine Läden und Betriebe <span data-config-region>in <span data-config="region">Salzgitter &amp; Braunschweig</span></span>. Damit dich neue Kunden finden und sofort sehen, wann du offen hast.</p>
         <div class="actions">
           <a class="btn btn-wa" data-wa="preview" href="#kontakt">
             <svg aria-hidden="true"><use href="#i-wa"/></svg>Kostenlose Vorschau anfragen
@@ -536,8 +536,11 @@ const CONFIG = {
   document.querySelectorAll('[data-config="region"]').forEach(el => { if (region) el.textContent = region; });
   if (!region) document.querySelectorAll("[data-config-region]").forEach(el => el.hidden = true);
 
-  // WhatsApp-Links
+  // WhatsApp-Links & Vorname
   const firstName = name ? name.split(/\s+/)[0] : "";
+  document.querySelectorAll('[data-config="firstname"]').forEach(el => {
+    if (firstName) el.textContent = firstName; else el.hidden = true;
+  });
   const waLink = key => {
     const tpl = CONFIG.messages[key] || CONFIG.messages.general;
     const text = tpl.replace("{name}", firstName).replace(/\s+,/, ",");
