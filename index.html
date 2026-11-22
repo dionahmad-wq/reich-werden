@@ -491,7 +491,7 @@
       <div>
         <span class="eyebrow">Kontakt</span>
         <h2>Lass uns über deinen Laden reden</h2>
-        <p class="lead">Schreib mir über das Formular oder per E-Mail. Ich melde mich so schnell wie möglich und baue dir eine kostenlose Vorschau. Ich habe kein Büro, aber wenn du magst, können wir uns auch persönlich treffen.</p>
+        <p class="lead">Schreib mir über das Formular, per E-Mail<span data-ig-only hidden> oder per Instagram-DM</span>. Ich melde mich so schnell wie möglich und baue dir eine kostenlose Vorschau. Ich habe kein Büro, aber wenn du magst, können wir uns auch persönlich treffen.</p>
         <div class="contact-actions">
           <a class="btn btn-wa" id="contact-wa" data-wa="preview" href="#kontakt" hidden>
             <svg aria-hidden="true"><use href="#i-mail"/></svg>Kostenlose Vorschau anfragen
@@ -499,6 +499,10 @@
           <a class="btn btn-outline" id="email-btn" href="#kontakt" hidden>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
             <span>E-Mail schreiben</span>
+          </a>
+          <a class="btn btn-outline" id="ig-btn" href="#kontakt" target="_blank" rel="noopener" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+            <span>Instagram-DM schreiben</span>
           </a>
         </div>
         <p class="small" id="email-text" hidden>Lieber direkt per E-Mail? <a style="color:#fff" id="email-link" href="#kontakt"></a></p>
@@ -551,6 +555,7 @@
     <div>© <span id="year">2026</span> <span data-config="brand">Webdesign Salzgitter</span></div>
     <div class="links">
       <a href="impressum.html">Impressum &amp; Datenschutz</a>
+      <a id="ig-footer" href="#start" target="_blank" rel="noopener" hidden>Instagram</a>
       <a href="zakat-rechner/">Vermögens- &amp; Zakat-Rechner</a>
       <a href="#start">Nach oben ↑</a>
     </div>
@@ -576,6 +581,7 @@ const CONFIG = {
   // Kontaktformular über FormSubmit (formsubmit.co). Nach der Aktivierung kannst du die
   // E-Mail-Adresse hier durch den geheimen Code ersetzen, den dir FormSubmit schickt.
   formEndpoint: "https://formsubmit.co/ajax/kontakt@salzgitter-webdesign.de",
+  instagram: "",                      // dein Instagram-Name ohne @, z. B. "salzgitter.webdesign". "" = ausblenden
   messages: {
     general:  "Hallo {name}, ich habe deine Webdesign-Seite gesehen und hätte eine Frage:",
     preview:  "Hallo {name}, ich hätte gern eine kostenlose Vorschau für meine Webseite.\n\nName meines Ladens: \nArt des Ladens: \nOrt: ",
@@ -697,6 +703,16 @@ const CONFIG = {
       btn.disabled = false; btn.textContent = "Nachricht senden";
     }
   });
+
+  // Instagram
+  const ig = clean(CONFIG.instagram).replace(/^@/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/.*$/, "");
+  if (ig) {
+    const igBtn = document.getElementById("ig-btn");
+    igBtn.href = "https://ig.me/m/" + encodeURIComponent(ig); igBtn.hidden = false;
+    const igFoot = document.getElementById("ig-footer");
+    igFoot.href = "https://www.instagram.com/" + encodeURIComponent(ig) + "/"; igFoot.textContent = "Instagram @" + ig; igFoot.hidden = false;
+    document.querySelectorAll("[data-ig-only]").forEach(el => el.hidden = false);
+  }
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
