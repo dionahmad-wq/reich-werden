@@ -187,6 +187,19 @@
   .compare .card.featured { border: 2px solid var(--brand); position: relative; }
   .compare-note { margin-top: 16px; font-size: .92rem; color: var(--muted); }
 
+  /* Google-Bewertungen */
+  .rating-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 24px; }
+  .rating-big { font-size: 2.6rem; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
+  .stars { color: #f59e0b; letter-spacing: 2px; font-size: 1.15rem; white-space: nowrap; }
+  .stars .off { color: #cbd5e1; }
+  .rating-meta { color: var(--muted); font-size: .95rem; }
+  .g-logo { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--text); }
+  .g-logo svg { width: 20px; height: 20px; }
+  .review { display: flex; flex-direction: column; gap: 10px; }
+  .review blockquote { margin: 0; color: var(--text); }
+  .review footer { background: none; padding: 0; color: var(--muted); font-size: .9rem; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .review-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
   /* CTA-Band */
   .cta-band { background: linear-gradient(135deg, #0f172a, #1e293b) !important; color: #fff; padding: 48px 0; }
   .cta-band .wrap { display: grid; gap: 20px; align-items: center; }
@@ -615,6 +628,27 @@
     </div>
   </section>
 
+  <!-- Google-Bewertungen: erscheint nur, wenn im CONFIG echte Bewertungen eingetragen sind -->
+  <section id="bewertungen" hidden>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Bewertungen</span>
+        <h2>Das sagen meine Kunden</h2>
+      </div>
+      <div class="rating-head">
+        <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.7v5.5h7.1c4.2-3.8 6.6-9.5 6.6-16.2z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.5-3.8-12.2-9H4.5v5.7C8.1 41.1 15.5 46 24 46z"/><path fill="#FBBC05" d="M11.8 28.3c-.4-1.3-.7-2.8-.7-4.3s.3-3 .7-4.3V14H4.5C3 17 2.1 20.4 2.1 24s.9 7 2.4 10l7.3-5.7z"/><path fill="#EA4335" d="M24 10.7c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.5 2 8.1 6.9 4.5 14l7.3 5.7c1.7-5.2 6.5-9 12.2-9z"/></svg>Google</span>
+        <span class="rating-big" id="rating-avg"></span>
+        <span class="stars" id="rating-stars" aria-hidden="true"></span>
+        <span class="rating-meta" id="rating-meta"></span>
+      </div>
+      <div class="grid grid-3" id="review-list"></div>
+      <div class="review-actions">
+        <a class="btn btn-outline" id="g-profile" href="#bewertungen" target="_blank" rel="noopener" hidden>Alle Bewertungen auf Google</a>
+        <a class="btn btn-outline" id="g-review" href="#bewertungen" target="_blank" rel="noopener" hidden>Kunde? Bewerte mich auf Google</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA-Band -->
   <section class="cta-band">
     <div class="wrap">
@@ -785,6 +819,17 @@ const CONFIG = {
   // Kontaktformular über FormSubmit (formsubmit.co). Nach der Aktivierung kannst du die
   // E-Mail-Adresse hier durch den geheimen Code ersetzen, den dir FormSubmit schickt.
   formEndpoint: "https://formsubmit.co/ajax/kontakt@salzgitter-webdesign.de",
+  // Google-Bewertungen: NUR echte Bewertungen von deinem Google-Unternehmensprofil eintragen.
+  // Solange "reviews" leer ist, wird der Bereich nicht angezeigt.
+  google: {
+    profileUrl: "",   // Link zu deinem Google-Profil (z. B. https://g.page/...)
+    reviewUrl: "",    // Link "Rezension schreiben" aus deinem Google-Profil
+    total: 0,         // Anzahl aller Bewertungen auf Google (0 = Anzahl der Einträge unten)
+    average: 0,       // Durchschnitt auf Google, z. B. 4.9 (0 = aus den Einträgen unten berechnen)
+    reviews: [
+      // { name: "Ahmet K.", stars: 5, text: "Text der Bewertung", date: "November 2026" },
+    ]
+  },
   instagram: "webdesign.salzgitter",  // dein Instagram-Name ohne @, z. B. "salzgitter.webdesign". "" = ausblenden
   messages: {
     general:  "Hallo {name}, ich habe deine Webdesign-Seite gesehen und hätte eine Frage:",
@@ -909,6 +954,27 @@ const CONFIG = {
       btn.disabled = false; btn.textContent = "Nachricht senden";
     }
   });
+
+  // Google-Bewertungen
+  const g = CONFIG.google || {};
+  const reviews = (g.reviews || []).filter(x => x && clean(x.text) && x.stars >= 1 && x.stars <= 5);
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const starHtml = n => { const f = Math.min(5, Math.floor(n + 0.25)); return "★".repeat(f) + '<span class="off">' + "★".repeat(5 - f) + "</span>"; };
+  const isUrl = u => /^https:\/\//.test(clean(u));
+  if (reviews.length) {
+    const avg = g.average > 0 ? g.average : reviews.reduce((a, x) => a + x.stars, 0) / reviews.length;
+    const total = g.total > 0 ? g.total : reviews.length;
+    document.getElementById("rating-avg").textContent = avg.toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    document.getElementById("rating-stars").innerHTML = starHtml(avg);
+    document.getElementById("rating-meta").textContent = total + (total === 1 ? " Bewertung" : " Bewertungen") + " auf Google";
+    document.getElementById("review-list").innerHTML = reviews.map(x =>
+      '<figure class="card review" style="margin:0"><span class="stars" aria-label="' + x.stars + ' von 5 Sternen">' + starHtml(x.stars) + '</span>' +
+      '<blockquote>„' + esc(clean(x.text)) + '“</blockquote>' +
+      '<footer><strong>' + esc(clean(x.name) || "Google-Nutzer") + '</strong><span>' + esc(clean(x.date)) + '</span></footer></figure>').join("");
+    if (isUrl(g.profileUrl)) { const a = document.getElementById("g-profile"); a.href = clean(g.profileUrl); a.hidden = false; }
+    document.getElementById("bewertungen").hidden = false;
+  }
+  if (isUrl(g.reviewUrl)) { const a = document.getElementById("g-review"); a.href = clean(g.reviewUrl); a.hidden = false; }
 
   // Instagram
   const ig = clean(CONFIG.instagram).replace(/^@/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/.*$/, "");
