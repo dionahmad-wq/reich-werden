@@ -37,6 +37,17 @@
   .check { display: flex; gap: 10px; align-items: center; margin-top: 14px; color: #e2e8f0; font-size: .95rem; }
   .check input { width: 18px; height: 18px; }
   .zmsg { margin: 16px 0 0; padding: 12px 14px; border-radius: 10px; background: #0f172a; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .filters button { background: #0f172a; color: #cbd5e1; border: 1px solid #334155; border-radius: 999px;
+                    padding: 7px 14px; font-size: .9rem; cursor: pointer; }
+  .filters button.on { background: #facc15; color: #0f172a; border-color: #facc15; font-weight: 600; }
+  .ideas { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+  .idea { background: #0f172a; border-radius: 10px; padding: 14px; }
+  .idea h4 { margin: 0 0 6px; font-size: 1rem; }
+  .idea p { margin: 0 0 10px; font-size: .9rem; color: #cbd5e1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: .75rem; padding: 2px 8px; border-radius: 999px; background: #1e293b; color: #94a3b8; }
+  .tag.money { color: #4ade80; }
 </style>
 </head>
 <body>
@@ -103,6 +114,28 @@
     </div>
     <p class="zmsg" id="zMsg"></p>
     <p class="note">Nicht zakatpflichtig sind zum Beispiel deine selbst genutzte Wohnung, dein Auto, Möbel, Kleidung und Arbeitsgeräte. Beim Schmuck sind sich die Rechtsschulen uneinig. Bei Aktien und ETFs rechnen manche Gelehrte nur einen Teil an (den zakatpflichtigen Anteil der Firmen). Hier wird zur Sicherheit der volle Marktwert genommen. Im Zweifel frag einen Gelehrten.</p>
+  </section>
+
+  <section class="card" id="ideen">
+    <h2>💡 Halal Ideen zum Geld verdienen</h2>
+    <p class="note" style="margin-top:0">Alle Ideen sind halal: echte Arbeit, echter Mehrwert, ehrlicher Handel. Die Verdienste sind grobe Richtwerte und hängen stark von dir, deiner Stadt und deinem Fleiß ab.</p>
+    <div class="filters" id="filters">
+      <button data-f="alle" class="on">Alle</button>
+      <button data-f="schueler">Für Schüler</button>
+      <button data-f="ohnegeld">Ohne Startkapital</button>
+      <button data-f="online">Online</button>
+    </div>
+    <div class="ideas" id="ideas"></div>
+
+    <h3 class="h3">🧭 Halal-Check für jede Geschäftsidee</h3>
+    <ul>
+      <li><b>Ist das Produkt oder der Service selbst halal?</b> Also kein Alkohol, kein Schweinefleisch, kein Glücksspiel und nichts, was anderen schadet.</li>
+      <li><b>Bist du ehrlich?</b> Keine versteckten Mängel, keine Fake-Bewertungen, keine übertriebene Werbung. Der Prophet ﷺ hat gesagt: „Wer betrügt, gehört nicht zu uns.“ (Muslim)</li>
+      <li><b>Keine Zinsen.</b> Starte lieber klein und ohne Kredit, oder such dir einen Partner, der Geld gegen Gewinnbeteiligung gibt (Mudaraba/Musharaka).</li>
+      <li><b>Verkauf nur, was du besitzt oder sicher liefern kannst.</b> Klassisches Dropshipping ist unter Gelehrten umstritten. Vorbestellungen mit klaren Bedingungen oder ein Kommissionsmodell sind sicherer.</li>
+      <li><b>Pünktlich bezahlen.</b> Wenn du andere einstellst: „Gebt dem Arbeiter seinen Lohn, bevor sein Schweiß trocknet.“ (Ibn Majah)</li>
+    </ul>
+    <p class="note">Gut zu wissen: In Deutschland dürfen Jugendliche ab 13 mit Erlaubnis der Eltern leichte Arbeiten machen (max. 2 Stunden pro Tag, nicht während der Schulzeit). Wenn du regelmäßig etwas verkaufst oder anbietest, brauchst du je nach Umfang eine Gewerbeanmeldung. Das geht ab 18, oder vorher mit Zustimmung der Eltern und des Familiengerichts.</p>
   </section>
 
   <section class="card">
@@ -218,6 +251,41 @@ function zakat() {
 
 document.querySelectorAll('.z').forEach(i => i.addEventListener('input', zakat));
 zakat();
+const IDEAS = [
+  { e: '📚', t: 'Nachhilfe geben', d: 'Erklär jüngeren Schülern Mathe, Deutsch, Englisch oder Arabisch. Fang bei Nachbarn, in der Moschee oder mit einem Aushang im Supermarkt an.', m: 'ca. 10–25 € / Std.', f: ['schueler','ohnegeld'] },
+  { e: '🐕', t: 'Haustier- & Pflanzensitting', d: 'Füttern, Gassi gehen, Blumen gießen, während andere im Urlaub sind. Dabei geht es vor allem um Vertrauen und Zuverlässigkeit.', m: 'ca. 5–15 € / Einsatz', f: ['schueler','ohnegeld'] },
+  { e: '🌿', t: 'Garten- & Hausarbeiten', d: 'Rasen mähen, Laub fegen, Schnee schippen, Einkaufen für ältere Nachbarn. Für ältere Menschen zu sorgen bringt außerdem viel Ajr.', m: 'ca. 10–15 € / Std.', f: ['schueler','ohnegeld'] },
+  { e: '📱', t: 'Technik-Hilfe für Ältere', d: 'Handy einrichten, WhatsApp erklären, WLAN reparieren. Viele Ältere zahlen gern für jemanden, der geduldig ist.', m: 'ca. 15–25 € / Std.', f: ['schueler','ohnegeld'] },
+  { e: '🚲', t: 'Fahrräder reparieren', d: 'Platten flicken, Bremsen und Ketten einstellen. Das Werkzeug ist günstig, und auf YouTube lernst du alles. Später kannst du gebrauchte Räder aufbereiten und verkaufen.', m: 'ca. 10–40 € / Reparatur', f: ['schueler'] },
+  { e: '♻️', t: 'Gebraucht kaufen & aufbereiten', d: 'Möbel, Elektronik oder Kleidung günstig kaufen, reinigen oder reparieren und ehrlich mit allen Mängeln weiterverkaufen. Das ist klassischer halal Handel.', m: 'je nach Ware 20–100 % Gewinn', f: ['schueler','online'] },
+  { e: '💻', t: 'Webseiten bauen', d: 'Lern HTML, CSS und JavaScript (wie diese Seite!) und bau Webseiten für Restaurants, Friseure oder Vereine in deiner Nähe.', m: 'ca. 150–1.500 € / Projekt', f: ['online','ohnegeld'] },
+  { e: '🎨', t: 'Grafikdesign & Social Media', d: 'Logos, Flyer, Instagram-Posts für lokale Geschäfte, z. B. mit Canva. Bitte keine Werbung für haram Produkte.', m: 'ca. 20–300 € / Auftrag', f: ['online','ohnegeld'] },
+  { e: '🎬', t: 'Videos schneiden', d: 'YouTuber, Moscheegemeinden und kleine Firmen brauchen Leute, die Videos schneiden. Zum Starten reichen kostenlose Programme wie DaVinci Resolve.', m: 'ca. 20–200 € / Video', f: ['online','ohnegeld'] },
+  { e: '🌍', t: 'Übersetzen & Dolmetschen', d: 'Wenn du mehrere Sprachen sprichst (Türkisch, Arabisch, Bosnisch, Persisch …), kannst du bei Briefen, Formularen und Behördengängen helfen.', m: 'ca. 15–40 € / Std.', f: ['online','ohnegeld'] },
+  { e: '🍯', t: 'Halal Essen & Backwaren', d: 'Kuchen, Baklava, Catering für Feiern. In Deutschland gibt es eine große Nachfrage nach echtem halal Essen. Ab einer gewissen Größe brauchst du eine Hygieneschulung und eine Gewerbeanmeldung.', m: 'ca. 30–60 % Marge', f: [] },
+  { e: '📖', t: 'Quran- & Arabischunterricht', d: 'Wenn du gut rezitierst oder Arabisch kannst, kannst du online oder vor Ort unterrichten. Viele Gelehrte erlauben, dafür einen Lohn zu nehmen.', m: 'ca. 10–30 € / Std.', f: ['online','ohnegeld'] },
+  { e: '🧕', t: 'Modest Fashion & Islamische Produkte', d: 'Hijabs, Gebetsteppiche, Misbaha, Kalligrafie-Drucke, selbst genäht oder fair eingekauft. Verkaufen kannst du z. B. über Etsy, Instagram oder Basare.', m: 'ca. 30–60 % Marge', f: ['online'] },
+  { e: '🛠️', t: 'Handwerk lernen (Ausbildung)', d: 'Elektriker, Anlagenmechaniker, Kfz-Mechatroniker: Handwerker werden dringend gesucht. Mit dem Meister kannst du einen eigenen Betrieb gründen, und das ist oft lukrativer als ein Studium.', m: 'Meister: oft 4.000 €+ / Monat', f: ['schueler'] },
+];
+
+function renderIdeas(filter) {
+  $('ideas').innerHTML = IDEAS.filter(i => filter === 'alle' || i.f.includes(filter)).map(i => `
+    <div class="idea">
+      <h4>${i.e} ${i.t}</h4>
+      <p>${i.d}</p>
+      <div class="tags">
+        <span class="tag money">💶 ${i.m}</span>
+        ${i.f.includes('schueler') ? '<span class="tag">Für Schüler</span>' : ''}
+        ${i.f.includes('ohnegeld') ? '<span class="tag">Ohne Startkapital</span>' : ''}
+        ${i.f.includes('online') ? '<span class="tag">Online</span>' : ''}
+      </div>
+    </div>`).join('');
+}
+document.querySelectorAll('#filters button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#filters button').forEach(x => x.classList.toggle('on', x === b));
+  renderIdeas(b.dataset.f);
+}));
+renderIdeas('alle');
 </script>
 </body>
 </html>
