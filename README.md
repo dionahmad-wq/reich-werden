@@ -10,7 +10,7 @@ Eine kleine Webseite für halal Vermögensaufbau:
 
 ## Benutzen
 
-Einfach `index.html` im Browser öffnen. Es wird nichts installiert und es gibt keinen Server.
+Die Startseite (`index.html`) ist das Webdesign-Angebot, der Rechner liegt unter `zakat-rechner/index.html`. Einfach im Browser öffnen. Es wird nichts installiert und es gibt keinen Server.
 
 Online stellen (kostenlos): Im GitHub-Repo unter **Settings → Pages** den Branch auswählen.
 
