@@ -31,6 +31,12 @@
   li { margin-bottom: 8px; }
   .warn { border-left: 4px solid #f87171; }
   .note { font-size: .8rem; color: #64748b; margin-top: 10px; }
+  .h3 { font-size: 1rem; margin: 20px 0 10px; color: #cbd5e1; }
+  select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #334155;
+           background: #0f172a; color: #e2e8f0; font-size: 1rem; }
+  .check { display: flex; gap: 10px; align-items: center; margin-top: 14px; color: #e2e8f0; font-size: .95rem; }
+  .check input { width: 18px; height: 18px; }
+  .zmsg { margin: 16px 0 0; padding: 12px 14px; border-radius: 10px; background: #0f172a; }
 </style>
 </head>
 <body>
@@ -54,6 +60,49 @@
     </div>
     <canvas id="chart"></canvas>
     <p class="note">Gelb: Gesamtvermögen, grau: selbst eingezahlt. 6 % pro Jahr entsprechen ungefähr dem historischen Durchschnitt breiter Aktienindizes. Islamische Indizes (z. B. MSCI World Islamic) lagen in der Vergangenheit in einem ähnlichen Bereich. Das ist aber keine Garantie, und es gibt auch Jahre mit Verlusten.</p>
+  </section>
+
+  <section class="card" id="zakat">
+    <h2>🕌 Zakat-Rechner</h2>
+    <p class="note" style="margin-top:0">Zakat ist 2,5 % deines zakatpflichtigen Vermögens. Sie wird fällig, wenn dein Vermögen den <b>Nisab</b> erreicht und ein volles Mondjahr (<b>Hawl</b>) lang in deinem Besitz war. Trag die Werte von deinem Zakat-Stichtag ein.</p>
+
+    <h3 class="h3">1. Aktuelle Preise (bitte prüfen!)</h3>
+    <div class="grid">
+      <div><label for="zGoldPrice">Goldpreis pro Gramm (€)</label><input class="z" id="zGoldPrice" type="number" min="0" step="0.01" value="110"></div>
+      <div><label for="zSilverPrice">Silberpreis pro Gramm (€)</label><input class="z" id="zSilverPrice" type="number" min="0" step="0.01" value="1.30"></div>
+      <div>
+        <label for="zBasis">Nisab berechnen nach</label>
+        <select class="z" id="zBasis">
+          <option value="gold">Gold (85 g)</option>
+          <option value="silver">Silber (595 g)</option>
+        </select>
+      </div>
+    </div>
+    <p class="note">Gold- und Silberpreise ändern sich täglich. Die Vorgaben sind nur Beispielwerte, schau den aktuellen Preis z. B. bei deiner Bank oder einem Edelmetallhändler nach. Der Silber-Nisab ist viel niedriger, deshalb empfehlen ihn viele Gelehrte, weil dann mehr Menschen Zakat geben und es den Armen mehr nützt.</p>
+
+    <h3 class="h3">2. Dein Vermögen</h3>
+    <div class="grid">
+      <div><label for="zCash">Bargeld &amp; Kontoguthaben (€)</label><input class="z" id="zCash" type="number" min="0" value="0"></div>
+      <div><label for="zGold">Gold (Gramm)</label><input class="z" id="zGold" type="number" min="0" value="0"></div>
+      <div><label for="zSilver">Silber (Gramm)</label><input class="z" id="zSilver" type="number" min="0" value="0"></div>
+      <div><label for="zInvest">Aktien / ETFs / Krypto, Marktwert (€)</label><input class="z" id="zInvest" type="number" min="0" value="0"></div>
+      <div><label for="zGoods">Handelswaren (zum Verkauf) (€)</label><input class="z" id="zGoods" type="number" min="0" value="0"></div>
+      <div><label for="zLoans">Verliehenes Geld, das du sicher zurückbekommst (€)</label><input class="z" id="zLoans" type="number" min="0" value="0"></div>
+    </div>
+
+    <h3 class="h3">3. Abzüge</h3>
+    <div class="grid">
+      <div><label for="zDebts">Fällige Schulden &amp; Rechnungen (€)</label><input class="z" id="zDebts" type="number" min="0" value="0"></div>
+    </div>
+    <label class="check"><input class="z" id="zHawl" type="checkbox" checked> Mein Vermögen lag ein ganzes Mondjahr (ca. 354 Tage) über dem Nisab</label>
+
+    <div class="result">
+      <div class="stat"><div class="k">Zakatpflichtiges Vermögen</div><div class="v" id="zNet">–</div></div>
+      <div class="stat"><div class="k">Nisab</div><div class="v" id="zNisab">–</div></div>
+      <div class="stat"><div class="k">Deine Zakat (2,5 %)</div><div class="v green" id="zDue">–</div></div>
+    </div>
+    <p class="zmsg" id="zMsg"></p>
+    <p class="note">Nicht zakatpflichtig sind zum Beispiel deine selbst genutzte Wohnung, dein Auto, Möbel, Kleidung und Arbeitsgeräte. Beim Schmuck sind sich die Rechtsschulen uneinig. Bei Aktien und ETFs rechnen manche Gelehrte nur einen Teil an (den zakatpflichtigen Anteil der Firmen). Hier wird zur Sicherheit der volle Marktwert genommen. Im Zweifel frag einen Gelehrten.</p>
   </section>
 
   <section class="card">
@@ -136,9 +185,39 @@ function draw(series) {
   ctx.fillText(fmt(max), w - pad, 14);
 }
 
-document.querySelectorAll('input').forEach(i => i.addEventListener('input', calc));
+['start','monthly','rate','years'].forEach(id => $(id).addEventListener('input', calc));
 window.addEventListener('resize', calc);
 calc();
+function zakat() {
+  const v = id => Math.max(0, +$(id).value || 0);
+  const goldP = v('zGoldPrice'), silverP = v('zSilverPrice');
+  const nisab = $('zBasis').value === 'gold' ? 85 * goldP : 595 * silverP;
+  const assets = v('zCash') + v('zGold') * goldP + v('zSilver') * silverP
+               + v('zInvest') + v('zGoods') + v('zLoans');
+  const net = Math.max(0, assets - v('zDebts'));
+  const fmt2 = n => n.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+  $('zNet').textContent = fmt2(net);
+  $('zNisab').textContent = fmt2(nisab);
+
+  let due = 0, msg;
+  if (net === 0) {
+    msg = 'Trag oben dein Vermögen ein.';
+  } else if (nisab === 0) {
+    msg = 'Bitte gib den aktuellen Gold- bzw. Silberpreis ein.';
+  } else if (net < nisab) {
+    msg = 'Dein Vermögen liegt unter dem Nisab, deshalb musst du keine Zakat zahlen. Freiwillige Spenden (Sadaqa) sind natürlich trotzdem immer gut. 🤲';
+  } else if (!$('zHawl').checked) {
+    msg = 'Du hast den Nisab erreicht, aber noch kein volles Mondjahr. Merk dir das heutige Datum: Wenn dein Vermögen in einem Mondjahr immer noch über dem Nisab liegt, wird die Zakat fällig.';
+  } else {
+    due = net * 0.025;
+    msg = 'Deine Zakat ist fällig: ' + fmt2(due) + '. Sie steht den 8 Gruppen aus Sure At-Tauba 9:60 zu, z. B. Armen und Bedürftigen. Möge Allah es annehmen. 🤲';
+  }
+  $('zDue').textContent = fmt2(due);
+  $('zMsg').textContent = msg;
+}
+
+document.querySelectorAll('.z').forEach(i => i.addEventListener('input', zakat));
+zakat();
 </script>
 </body>
 </html>
