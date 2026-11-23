@@ -26,6 +26,7 @@ Beispielseiten für Kundenprojekte und meinen Vermögens- & Zakat-Rechner.
 
 - **Starter – 149 € einmalig:** einseitige Webseite mit Infos, Öffnungszeiten, Kontakt & Anruf-Button, Karte/Anfahrt
 - **Standard – 299 € einmalig:** alles aus Starter, bis zu 4 Bereiche, Bildergalerie, Speisekarte oder Preisliste, WhatsApp-Button für die Kunden des Ladens
+- **Upgrade Starter → Standard: 179 €** (steht so auf der Seite; Standard direkt ist günstiger, das sagen wir ehrlich dazu)
 - **Pflege – 19 € / Monat (optional):** Änderungen wie Öffnungszeiten, Preise, Fotos, Texte
 - Domain kostet extra (ca. 1–15 € pro Jahr) und läuft auf den Namen des Kunden
 - Ablauf: Kunde schreibt → kostenlose Vorschau → gefällt sie, wird bezahlt und die Seite geht online; gefällt sie nicht, zahlt er nichts
