@@ -14,7 +14,7 @@ Instagram zeigt die neuesten Posts oben links. Wenn du alle 8 auf einmal postest
 
 Dein Laden. Online. 📲
 
-Ich baue Webseiten für kleine Läden aus Salzgitter und Braunschweig: Barbershops, Imbisse, Bäckereien, Friseure und alle, die gefunden werden wollen.
+Ich baue Webseiten für kleine Läden in ganz Deutschland: Barbershops, Imbisse, Bäckereien, Friseure und alle, die gefunden werden wollen. Alles läuft online, egal wo du bist.
 
 ✓ Feste Preise ab 149 €
 ✓ Vorschau kostenlos
@@ -22,7 +22,7 @@ Ich baue Webseiten für kleine Läden aus Salzgitter und Braunschweig: Barbersho
 
 Schreib mir „Vorschau“ per DM 👇
 
-#salzgitter #braunschweig #webdesign #webseite #kleinunternehmen #lokal #salzgitterlebenstedt #salzgitterbad #wolfenbüttel #barbershop #imbiss
+#webdesign #webseite #kleinunternehmen #deutschland #selbstständig #ladenbesitzer #barbershop #imbiss #salzgitter #braunschweig
 
 ---
 
@@ -34,7 +34,7 @@ Wenn da nichts kommt, geht er oft woanders hin. Mit einer eigenen Webseite finde
 
 Hast du schon eine Webseite? Schreib's in die Kommentare 👇
 
-#salzgitter #braunschweig #webdesign #googlemaps #lokaleläden #selbstständig #ladenbesitzer #onlinesichtbarkeit
+#webdesign #googlemaps #lokaleläden #selbstständig #ladenbesitzer #onlinesichtbarkeit #deutschland
 
 ---
 
@@ -118,6 +118,6 @@ Schreib mir „Vorschau“ per DM 📩
 
 Ich bau dir eine kostenlose Vorschau für deinen Laden. Unverbindlich. Gefällt sie dir nicht, zahlst du nichts.
 
-Für Läden aus Salzgitter, Braunschweig und Umgebung.
+Für kleine Läden in ganz Deutschland. Alles läuft online.
 
-#salzgitter #braunschweig #webdesign #kostenlos #webseite #kleinunternehmen #lokal
+#webdesign #webseite #kostenlos #kleinunternehmen #deutschland #selbstständig #salzgitter

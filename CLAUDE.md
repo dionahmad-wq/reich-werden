@@ -14,8 +14,10 @@ Beispielseiten für Kundenprojekte und meinen Vermögens- & Zakat-Rechner.
 
 ## Zielgruppe
 
-- Kleine Läden und Betriebe in **Salzgitter und Braunschweig**: Barbershops, Dönerläden/Imbisse,
-  Bäckereien, Friseure, Moscheegemeinden, Nachhilfe, Handwerker
+- Kleine Läden und Betriebe in **ganz Deutschland** (Schwerpunkt und persönliche Treffen: Salzgitter/Braunschweig):
+  Barbershops, Dönerläden/Imbisse, Bäckereien, Friseure, Moscheegemeinden, Nachhilfe, Handwerker
+- Auftritt: „Aus Salzgitter. Für ganz Deutschland.“ Name und Domain bleiben „Webdesign Salzgitter“
+- Zusammenarbeit läuft online (E-Mail, Instagram, Videocall). Telefonnummer wird nicht veröffentlicht
 - Die meisten öffnen die Seite auf dem Handy
 - Stil: cool, modern, street-mäßig – NICHT technisch oder steif
 - Kurze Texte, klare Sprache, Du-Ansprache, keine Werbefloskeln
