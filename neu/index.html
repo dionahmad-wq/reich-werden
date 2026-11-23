@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webseiten für kleine Läden in Salzgitter &amp; Braunschweig | Dion</title>
+<meta name="description" content="Dein Laden verdient eine Webseite. Ich baue einfache, schnelle Webseiten für Barbershops, Imbisse, Bäckereien &amp; Co. in Salzgitter und Braunschweig. Erst kostenlose Vorschau, dann entscheidest du.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Dein Laden verdient eine Webseite | Dion">
+<meta property="og:description" content="Einfache Webseiten für kleine Läden in Salzgitter &amp; Braunschweig. Ab 149 €. Erst kostenlose Vorschau, du zahlst nur, wenn sie dir gefällt.">
+<meta property="og:url" content="https://salzgitter-webdesign.de/">
+<meta name="theme-color" content="#0b0b0c">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b0b0c'/><path d='M22 38h56v36a6 6 0 0 1-6 6H28a6 6 0 0 1-6-6z' fill='%23d4ff3a'/><path d='M18 38l8-16h48l8 16z' fill='white'/></svg>">
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --surface: #151517;
+    --surface-2: #1d1d20;
+    --text: #f5f5f2;
+    --muted: #a9a9a3;
+    --line: #2c2c31;
+    --lime: #d4ff3a;
+    --lime-dim: rgba(212,255,58,.14);
+    --ink: #0b0b0c;
+    --paper: #f3f3ec;
+    --paper-line: #d9d9cf;
+    --paper-muted: #55554f;
+    --radius: 14px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.0625rem; line-height: 1.6; overflow-wrap: break-word;
+  }
+  img, svg { max-width: 100%; }
+  a { color: var(--lime); }
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 64px 0; }
+  section, #contact-form { scroll-margin-top: 72px; }
+  section.alt { background: var(--surface); }
+  h1, h2, h3 { line-height: 1.05; margin: 0 0 .5em; letter-spacing: -.02em; font-weight: 900; }
+  h1, h2 { text-transform: uppercase; }
+  h1 { font-size: clamp(2.7rem, 13vw, 5.6rem); line-height: .95; }
+  h2 { font-size: clamp(1.9rem, 7.5vw, 3.2rem); }
+  h3 { font-size: 1.2rem; line-height: 1.25; letter-spacing: -.01em; }
+  p { margin: 0 0 1em; }
+  .hl { color: var(--lime); }
+  .lead { font-size: 1.15rem; color: var(--muted); max-width: 38rem; }
+  .eyebrow { display: inline-block; font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; color: var(--lime); margin-bottom: .8em; }
+  .eyebrow::before { content: "// "; opacity: .6; }
+  .section-head { max-width: 44rem; margin-bottom: 36px; }
+
+  /* Hell-Abschnitte */
+  section.light { background: var(--paper); color: var(--ink); }
+  section.light .lead, section.light .card p, section.light .price-desc, section.light .price small, section.light .who, section.light .compare-note, section.light details .answer { color: var(--paper-muted); }
+  section.light .eyebrow { color: var(--ink); }
+  section.light .card, section.light details { background: #fff; border-color: var(--ink); }
+  section.light a { color: var(--ink); }
+
+  /* Vorschau-Hinweis (nur /neu/) */
+  .preview-bar { background: var(--lime); color: var(--ink); text-align: center; font-weight: 700; font-size: .9rem; padding: 8px 16px; }
+  .preview-bar a { color: var(--ink); }
+
+  /* Header */
+  header.top { position: sticky; top: 0; z-index: 10; background: rgba(11,11,12,.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 62px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: .02em; color: var(--text); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .logo svg { flex: none; }
+  .top nav { display: none; gap: 2px; }
+  .top nav a { color: var(--muted); text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: .92rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+  .top nav a:hover { color: var(--lime); }
+  .btn-small { flex: none; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 16px 24px; border-radius: 10px; font-weight: 800; font-size: 1.02rem; text-transform: uppercase; letter-spacing: .03em;
+    text-decoration: none; border: 2px solid transparent; cursor: pointer; text-align: center; font-family: inherit;
+    transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+  }
+  .btn-wa { background: var(--lime); color: var(--ink); border-color: var(--lime); box-shadow: 4px 4px 0 rgba(212,255,58,.35); }
+  .btn-wa:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(212,255,58,.35); }
+  .btn-wa:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 rgba(212,255,58,.35); }
+  .btn-outline { background: transparent; color: var(--text); border-color: var(--text); }
+  .btn-outline:hover { background: var(--text); color: var(--ink); }
+  section.light .btn-outline { color: var(--ink); border-color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+  section.light .btn-outline:hover { background: var(--ink); color: var(--paper); }
+  section.light .btn-wa { background: var(--ink); color: var(--lime); border-color: var(--ink); box-shadow: 4px 4px 0 rgba(11,11,12,.25); }
+  .btn-sm { padding: 9px 14px; font-size: .85rem; }
+  .btn svg { width: 22px; height: 22px; flex: none; }
+  .btn-sm svg { width: 18px; height: 18px; }
+
+  /* Hero */
+  .hero { padding: 44px 0 56px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(500px 320px at 85% 30%, rgba(212,255,58,.12), transparent 70%),
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 32px 32px,
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 32px 32px,
+      var(--bg); }
+  .hero-grid { display: grid; gap: 40px; align-items: center; }
+  .hero h1 { margin-bottom: .35em; }
+  .hero .actions { display: flex; flex-direction: column; gap: 14px; margin: 26px 0 8px; }
+  .phone-wrap { position: relative; max-width: 300px; margin: 0 auto; width: 100%; }
+  .phone { background: #050505; border: 10px solid #26262a; border-radius: 38px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.5), 0 0 0 1px #3a3a40; }
+  .phone-notch { height: 22px; display: flex; justify-content: center; align-items: center; background: #fff; }
+  .phone-notch span { width: 70px; height: 16px; background: #050505; border-radius: 0 0 12px 12px; margin-top: -6px; }
+  .mock { background: #fff; color: #111; }
+  .mock-body { padding: 14px 16px 18px; }
+  .mock-title { font-weight: 900; font-size: 1.15rem; text-transform: uppercase; letter-spacing: -.01em; }
+  .mock-sub { color: #666; font-size: .82rem; margin-bottom: 12px; }
+  .mock-hours { font-size: .8rem; border: 2px solid #111; border-radius: 10px; padding: 8px 10px; margin-bottom: 12px; }
+  .mock-hours div { display: flex; justify-content: space-between; }
+  .mock-hours .open { color: #15803d; font-weight: 800; }
+  .mock-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+  .mock-row div { aspect-ratio: 1; border-radius: 8px; background: linear-gradient(135deg, #111, #333); }
+  .mock-row div:nth-child(2) { background: linear-gradient(135deg, #d4ff3a, #9acd32); }
+  .mock-row div:nth-child(3) { background: linear-gradient(135deg, #444, #111); }
+  .mock-cta { background: #128c4a; color: #fff; text-align: center; border-radius: 8px; padding: 8px; font-weight: 800; font-size: .82rem; }
+  .sticker { position: absolute; z-index: 2; display: grid; place-items: center; text-align: center; font-weight: 900; text-transform: uppercase; line-height: 1.05; color: var(--ink); background: var(--lime); border-radius: 50%; width: 104px; height: 104px; font-size: .82rem; transform: rotate(10deg); box-shadow: 3px 3px 0 #000; border: 2px solid var(--ink); }
+  .sticker b { display: block; font-size: 1.35rem; }
+  .sticker-1 { top: -18px; right: -14px; }
+  .sticker-2 { bottom: 40px; left: -26px; transform: rotate(-9deg); width: auto; height: auto; border-radius: 8px; padding: 8px 12px; background: #fff; }
+
+  /* Laufband */
+  .marquee { background: var(--lime); color: var(--ink); overflow: hidden; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+  .marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
+  .marquee-track span { flex: none; padding: 12px 0; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+  .marquee-track span::after { content: "✦"; margin: 0 18px; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  /* Karten */
+  .grid { display: grid; gap: 16px; }
+  .card { background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  section.alt .card { background: var(--surface-2); }
+  .icon { width: 48px; height: 48px; border-radius: 10px; background: var(--lime); color: var(--ink); display: grid; place-items: center; margin-bottom: 14px; }
+  .icon svg { width: 26px; height: 26px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card p { color: var(--muted); }
+
+  /* Für wen */
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+  .chips li { background: transparent; border: 2px solid var(--line); border-radius: 999px; padding: 10px 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .chips li span { font-size: 1.2rem; line-height: 1; }
+  .after-chips { margin-top: 20px; color: var(--muted); }
+
+  /* Preise */
+  .price-card { display: flex; flex-direction: column; position: relative; }
+  section.light .price-card { box-shadow: 6px 6px 0 var(--ink); }
+  #preise .grid { gap: 30px 22px; }
+  section.light .price-card.featured { background: var(--ink); color: var(--paper); border-color: var(--ink); box-shadow: 6px 6px 0 var(--lime); }
+  section.light .price-card.featured .price, section.light .price-card.featured h3 { color: var(--lime); }
+  section.light .price-card.featured .price-desc, section.light .price-card.featured .price small { color: #bdbdb5; }
+  section.light .price-card.featured .btn-wa { background: var(--lime); color: var(--ink); border-color: var(--lime); box-shadow: none; }
+  .badge { position: absolute; top: -16px; right: 16px; background: var(--lime); color: var(--ink); font-size: .78rem; font-weight: 900; text-transform: uppercase; padding: 5px 12px; border-radius: 6px; border: 2px solid var(--ink); transform: rotate(3deg); }
+  .price { font-size: 3rem; font-weight: 900; line-height: 1; margin: 6px 0 4px; letter-spacing: -.03em; }
+  .price small { font-size: 1rem; font-weight: 700; }
+  .price-desc { margin-bottom: 14px; }
+  .checks { list-style: none; padding: 0; margin: 0 0 22px; flex: 1; }
+  .checks li { padding: 6px 0 6px 28px; position: relative; }
+  .checks li::before { content: "✓"; position: absolute; left: 0; top: 6px; font-weight: 900; color: #3f6212; }
+  section.light .price-card.featured .checks li::before { color: var(--lime); }
+  .price-card .btn { width: 100%; }
+  .hint { margin-top: 28px; border: 2px dashed var(--ink); border-radius: 12px; padding: 14px 16px; font-size: .95rem; }
+
+  /* Ablauf */
+  .steps { list-style: none; padding: 0; margin: 0; counter-reset: step; display: grid; gap: 16px; }
+  .steps li { counter-increment: step; position: relative; padding: 22px 22px 22px 84px; border: 2px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .steps li::before { content: "0" counter(step); position: absolute; left: 20px; top: 16px; font-size: 2.4rem; font-weight: 900; color: var(--lime); letter-spacing: -.04em; line-height: 1; }
+  .steps h3 { margin-bottom: .25em; }
+  .steps p { color: var(--muted); margin: 0; }
+
+  /* Beispiele */
+  .project { display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform .12s ease, border-color .12s ease; }
+  a.project:hover { transform: translate(-3px, -3px); border-color: var(--lime); box-shadow: 4px 4px 0 var(--lime); }
+  .project-thumb { height: 150px; border-radius: 10px; margin-bottom: 16px; display: grid; place-items: center; background: #000; color: var(--lime); }
+  .project-thumb svg { width: 56px; height: 56px; }
+  .project .more { margin-top: auto; padding-top: 10px; font-weight: 900; text-transform: uppercase; font-size: .9rem; color: var(--lime); }
+  .project .tag { align-self: flex-start; font-size: .72rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: 6px; margin-bottom: 10px; background: #fff; color: var(--ink); }
+  .project .tag.real { background: var(--lime); }
+  .thumb-barber { background: radial-gradient(120px 80px at 80% 20%, rgba(212,166,70,.35), transparent 70%), #111 !important; color: #d4a646 !important; font-family: Georgia, serif; font-size: 1.6rem; letter-spacing: .18em; text-transform: uppercase; }
+  .thumb-imbiss { background: linear-gradient(160deg, #b91c1c, #7f1d1d) !important; color: #fff7ed !important; font-weight: 900; font-size: 1.4rem; }
+  .thumb-baecker { background: radial-gradient(120px 80px at 85% 15%, rgba(251,191,36,.6), transparent 70%), #fffaf0 !important; color: #78350f !important; font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; }
+  .project.placeholder { border-style: dashed; background: transparent; }
+  .project.placeholder .project-thumb { background: repeating-linear-gradient(45deg, #151517, #151517 10px, #1f1f23 10px, #1f1f23 20px); color: #55555c; }
+
+  /* FAQ */
+  .faq { display: grid; gap: 12px; max-width: 800px; }
+  details { background: var(--surface); border: 2px solid var(--line); border-radius: 12px; }
+  summary { cursor: pointer; list-style: none; padding: 18px 52px 18px 20px; font-weight: 800; position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; font-weight: 900; }
+  details[open] summary::after { content: "–"; }
+  details .answer { padding: 0 20px 18px; color: var(--muted); }
+  details .answer p:last-child { margin-bottom: 0; }
+
+  /* Vertrauensleiste */
+  .trust { background: var(--bg); border-bottom: 1px solid var(--line); }
+  .trust .wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .trust-item { padding: 24px 12px; text-align: center; }
+  .trust-item:nth-child(odd) { border-right: 1px solid var(--line); }
+  .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .trust-item strong { display: block; font-size: 1.75rem; line-height: 1.1; font-weight: 900; text-transform: uppercase; color: var(--lime); letter-spacing: -.02em; }
+  .trust-item span { font-size: .88rem; color: var(--muted); }
+
+  /* Leistungen */
+  .feature { display: flex; gap: 14px; align-items: flex-start; }
+  .feature .icon { flex: none; margin: 0; }
+  .feature h3 { margin-bottom: .2em; font-size: 1.05rem; }
+  .feature p { margin: 0; font-size: .97rem; }
+
+  /* Vergleich */
+  .compare { display: grid; gap: 18px; }
+  .compare .card h3 { margin-bottom: 4px; }
+  .compare .who { color: var(--muted); font-size: .92rem; margin-bottom: 14px; }
+  .compare ul { list-style: none; margin: 0; padding: 0; }
+  .compare li { padding: 9px 0 9px 28px; position: relative; border-top: 1px solid var(--line); font-size: .97rem; }
+  .compare li::before { position: absolute; left: 0; top: 9px; font-weight: 900; }
+  .compare li.yes::before { content: "✓"; color: var(--lime); }
+  .compare li.no::before { content: "✕"; color: #77777e; }
+  .compare li.mid::before { content: "~"; color: #f5c542; }
+  .compare .card.featured { border-color: var(--lime); position: relative; box-shadow: 6px 6px 0 var(--lime-dim); }
+  .compare-note { margin-top: 18px; font-size: .92rem; color: var(--muted); }
+
+  /* Google-Bewertungen */
+  .rating-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 24px; }
+  .rating-big { font-size: 2.8rem; font-weight: 900; line-height: 1; letter-spacing: -.03em; }
+  .stars { color: #fbbf24; letter-spacing: 2px; font-size: 1.15rem; white-space: nowrap; }
+  .stars .off { color: #4b4b52; }
+  .rating-meta { color: var(--muted); font-size: .95rem; }
+  .g-logo { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: var(--text); }
+  .g-logo svg { width: 20px; height: 20px; }
+  .review { display: flex; flex-direction: column; gap: 10px; }
+  .review blockquote { margin: 0; color: var(--text); }
+  .review footer { background: none; padding: 0; color: var(--muted); font-size: .9rem; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .review-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+  /* CTA-Band */
+  .cta-band { background: var(--lime) !important; color: var(--ink); padding: 52px 0; }
+  .cta-band .wrap { display: grid; gap: 22px; align-items: center; }
+  .cta-band h2 { margin: 0 0 8px; }
+  .cta-band p { margin: 0; font-weight: 600; }
+  .cta-band .btn-wa { background: var(--ink); color: var(--lime); border-color: var(--ink); justify-self: start; box-shadow: 4px 4px 0 rgba(0,0,0,.3); }
+
+  /* Kontakt */
+  .contact { background: var(--surface) !important; }
+  .contact-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; max-width: 420px; }
+  .contact .small { font-size: .95rem; color: var(--muted); margin-top: 18px; }
+  .contact .small a { color: var(--lime) !important; }
+  .contact-grid { display: grid; gap: 32px; align-items: start; }
+  .form-card { background: var(--paper); color: var(--ink); border-radius: var(--radius); padding: 24px; border: 2px solid var(--ink); box-shadow: 8px 8px 0 var(--lime); }
+  .form-card h3 { margin-bottom: 16px; text-transform: uppercase; font-size: 1.3rem; }
+  .form-card a { color: var(--ink); }
+  .field { display: grid; gap: 6px; margin-bottom: 14px; }
+  .field label { font-weight: 700; font-size: .95rem; }
+  .field label .opt { font-weight: 400; color: var(--paper-muted); }
+  .field input, .field select, .field textarea {
+    width: 100%; font: inherit; font-size: 16px; color: var(--ink); background: #fff;
+    border: 2px solid var(--ink); border-radius: 8px; padding: 12px 14px;
+  }
+  .field textarea { min-height: 130px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; box-shadow: 0 0 0 3px var(--lime); }
+  .hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+  .form-note { font-size: .85rem; color: var(--paper-muted); margin: 4px 0 14px; }
+  .btn-submit { width: 100%; background: var(--ink); color: var(--lime); border-color: var(--ink); }
+  .btn-submit:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(11,11,12,.3); }
+  .btn-submit[disabled] { opacity: .7; cursor: wait; }
+  .form-status { margin: 14px 0 0; padding: 12px 14px; border-radius: 8px; font-weight: 700; font-size: .95rem; }
+  .form-status.ok { background: #dcfce7; color: #14532d; }
+  .form-status.err { background: #fee2e2; color: #7f1d1d; }
+  .form-status a { color: inherit; }
+
+  footer { background: #000; color: #8a8a85; padding: 52px 0 40px; font-size: .92rem; border-top: 2px solid var(--lime); }
+  footer a { color: #e7e7e2; text-decoration: none; }
+  footer a:hover { color: var(--lime); }
+  .foot-grid { display: grid; gap: 28px; margin-bottom: 32px; }
+  .foot-grid h4 { color: var(--lime); font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; margin: 0 0 12px; }
+  .foot-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .foot-brand { color: #fff; font-weight: 900; text-transform: uppercase; font-size: 1.2rem; margin-bottom: 6px; }
+  .foot-bottom { border-top: 1px solid #222; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; }
+
+  /* Schwebender Kontakt-Button (nur Handy) */
+  .fab { position: fixed; right: 16px; bottom: 16px; z-index: 20; width: 58px; height: 58px; border-radius: 14px; background: var(--lime); color: var(--ink); border: 2px solid var(--ink); display: grid; place-items: center; box-shadow: 3px 3px 0 #000; opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+  .fab.show { opacity: 1; transform: none; pointer-events: auto; }
+  .fab svg { width: 28px; height: 28px; }
+
+  [hidden] { display: none !important; }
+
+  @media (min-width: 640px) {
+    .hero .actions { flex-direction: row; flex-wrap: wrap; }
+    .contact-actions { flex-direction: row; max-width: none; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .trust .wrap { grid-template-columns: repeat(4, 1fr); }
+    .trust-item, .trust-item:nth-child(odd), .trust-item:nth-child(-n+2) { border: 0; border-right: 1px solid var(--line); }
+    .trust-item:last-child { border-right: 0; }
+    .foot-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 900px) {
+    section { padding: 96px 0; }
+    .hero { padding: 80px 0 96px; }
+    .hero-grid { grid-template-columns: 1.35fr 1fr; }
+    .top nav { display: flex; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .contact-grid { grid-template-columns: 1fr 1.1fr; gap: 56px; }
+    .compare { grid-template-columns: repeat(3, 1fr); }
+    .cta-band .wrap { grid-template-columns: 1fr auto; }
+    .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    .steps { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .fab { display: none; }
+  }
+  @media (max-width: 459px) {
+    .btn-small { padding: 10px; }
+    .btn-small .btn-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .sticker-2 { left: -8px; }
+    .sticker-1 { right: -6px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+    .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; padding: 0 12px; }
+    .marquee-track [aria-hidden="true"] { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Icons (E-Mail und WhatsApp), einmal definiert und mehrfach benutzt -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.23 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+</svg>
+
+<div class="preview-bar">Design-Vorschau – noch nicht live. <a href="../">Zur aktuellen Seite</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#start" aria-label="Zum Seitenanfang">
+      <svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#d4ff3a"/><path d="M22 38h56v36a6 6 0 0 1-6 6H28a6 6 0 0 1-6-6z" fill="#0b0b0c"/><path d="M18 38l8-16h48l8 16z" fill="#0b0b0c"/><rect x="42" y="56" width="16" height="24" rx="2" fill="#d4ff3a"/></svg>
+      <span data-config="brand">Webdesign Salzgitter</span>
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#preise">Preise</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#projekte">Beispiele</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-wa btn-sm btn-small" data-wa="general" href="#kontakt">
+      <svg aria-hidden="true"><use href="#i-mail"/></svg><span class="btn-label">Schreib mir</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- 1. Hero -->
+  <section class="hero" id="start">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Webdesign <span data-config-region>in <span data-config="region">Salzgitter &amp; Braunschweig</span></span></span>
+        <h1>Dein Laden.<br><span class="hl">Online.</span></h1>
+        <p class="lead">Ich baue schnelle Webseiten für Läden <span data-config-region>aus <span data-config="region">Salzgitter &amp; Braunschweig</span></span>. Damit neue Kunden dich finden und sehen, wann du offen hast.</p>
+        <div class="actions">
+          <a class="btn btn-wa" data-wa="preview" href="#kontakt">
+            <svg aria-hidden="true"><use href="#i-mail"/></svg>Kostenlose Vorschau anfragen
+          </a>
+          <a class="btn btn-outline" href="#preise">Preise ansehen</a>
+        </div>
+      </div>
+      <div class="phone-wrap" aria-hidden="true">
+        <div class="sticker sticker-1"><span><b>0 €</b>Vorschau</span></div>
+        <div class="sticker sticker-2">ab 149 €</div>
+        <div class="phone">
+          <div class="phone-notch"><span></span></div>
+          <div class="mock">
+            <div class="mock-body">
+              <div class="mock-title">Dein Laden</div>
+              <div class="mock-sub">Hauptstraße 1 · Deine Stadt</div>
+              <div class="mock-hours">
+                <div><span>Heute</span><span class="open">Geöffnet</span></div>
+                <div><span>Mo – Fr</span><span>09:00 – 19:00</span></div>
+                <div><span>Sa</span><span>10:00 – 16:00</span></div>
+              </div>
+              <div class="mock-row"><div></div><div></div><div></div></div>
+              <div class="mock-cta">WhatsApp schreiben</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Laufband -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Barbershops</span><span>Imbisse</span><span>Bäckereien</span><span>Friseure</span><span>Moscheegemeinden</span><span>Nachhilfe</span><span>Handwerker</span>
+      <span aria-hidden="true">Barbershops</span><span aria-hidden="true">Imbisse</span><span aria-hidden="true">Bäckereien</span><span aria-hidden="true">Friseure</span><span aria-hidden="true">Moscheegemeinden</span><span aria-hidden="true">Nachhilfe</span><span aria-hidden="true">Handwerker</span>
+    </div>
+  </div>
+
+  <!-- Vertrauensleiste: nur ehrliche Fakten, keine erfundenen Zahlen -->
+  <div class="trust" aria-label="Auf einen Blick">
+    <div class="wrap">
+      <div class="trust-item"><strong>ab 149 €</strong><span>Festpreis, einmalig</span></div>
+      <div class="trust-item"><strong>0 €</strong><span>für deine Vorschau</span></div>
+      <div class="trust-item"><strong>ca. 1 Woche</strong><span>bis deine Seite online ist</span></div>
+      <div class="trust-item"><strong>vor Ort</strong><span>Treffen in SZ &amp; BS möglich</span></div>
+    </div>
+  </div>
+
+  <!-- 2. Warum -->
+  <section id="warum">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Warum?</span>
+        <h2>Wer dich googelt, soll dich <span class="hl">finden.</span></h2>
+        <p class="lead">Bevor jemand einen neuen Laden ausprobiert, checkt er ihn kurz auf dem Handy. Dann sollte er dort was finden.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <h3>Bei Google auftauchen</h3>
+          <p>Wer „Döner Salzgitter“ oder „Barber in der Nähe“ sucht, kann direkt bei dir landen.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Immer aktuell</h3>
+          <p>Öffnungszeiten, Speisekarte, Preise: alles an einem Ort. Spart dir Anrufe wie „Habt ihr offen?“.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Erster Eindruck zählt</h3>
+          <p>Wer dich noch nicht kennt, entscheidet nach dem, was er online sieht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section class="alt" id="leistungen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Leistungen</span>
+        <h2>Immer <span class="hl">dabei</span></h2>
+        <p class="lead">Egal welches Paket.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <div><h3>Fürs Handy gemacht</h3><p>Sieht auf jedem Handy gut aus. Da sind deine Kunden.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <div><h3>Schnell geladen</h3><p>Kein schwerer Baukasten. Lädt auch bei schlechtem Netz schnell.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <div><h3>Bereit für Google</h3><p>Saubere Struktur für Suchmaschinen und eine schöne Vorschau beim Teilen in WhatsApp.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div><h3>Sicher verschlüsselt</h3><p>HTTPS mit Schloss-Symbol im Browser.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
+          <div><h3>Ohne Cookie-Banner</h3><p>Keine Tracker, kein Cookie-Banner. Diese Seite hier hat auch keins.</p></div>
+        </div>
+        <div class="card feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div><h3>Persönlicher Ansprechpartner</h3><p>Du schreibst direkt mit mir. Treffen vor Ort geht auch.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Für wen -->
+  <section id="fuer-wen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Für wen</span>
+        <h2>Für Läden aus der <span class="hl">Nachbarschaft</span></h2>
+      </div>
+      <ul class="chips">
+        <li><span aria-hidden="true">💈</span>Barbershops</li>
+        <li><span aria-hidden="true">🥙</span>Dönerläden &amp; Imbisse</li>
+        <li><span aria-hidden="true">🥖</span>Bäckereien</li>
+        <li><span aria-hidden="true">✂️</span>Friseure</li>
+        <li><span aria-hidden="true">🕌</span>Moscheegemeinden</li>
+        <li><span aria-hidden="true">📚</span>Nachhilfe</li>
+        <li><span aria-hidden="true">🔧</span>Handwerker</li>
+      </ul>
+      <p class="after-chips">Nicht dabei? Schreib mir trotzdem.</p>
+    </div>
+  </section>
+
+  <!-- 4. Preise -->
+  <section class="light" id="preise">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Preise</span>
+        <h2>Feste Preise</h2>
+        <p class="lead">Du weißt vorher, was es kostet. Extra kommt nur die Domain.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card price-card">
+          <h3>Starter</h3>
+          <div class="price">149 €</div>
+          <p class="price-desc">einmalig</p>
+          <ul class="checks">
+            <li>Einseitige Webseite</li>
+            <li>Infos über deinen Laden</li>
+            <li>Öffnungszeiten</li>
+            <li>Kontakt &amp; Anruf-Button</li>
+            <li>Karte mit Anfahrt</li>
+            <li>Sieht auf dem Handy top aus</li>
+          </ul>
+          <a class="btn btn-outline" data-wa="starter" href="#kontakt">Starter anfragen</a>
+        </div>
+        <div class="card price-card featured">
+          <span class="badge">Mein Tipp</span>
+          <h3>Standard</h3>
+          <div class="price">299 €</div>
+          <p class="price-desc">einmalig</p>
+          <ul class="checks">
+            <li>Alles aus Starter</li>
+            <li>Bis zu 4 Bereiche</li>
+            <li>Bildergalerie</li>
+            <li>Speisekarte oder Preisliste</li>
+            <li>WhatsApp-Button für deine Kunden</li>
+          </ul>
+          <a class="btn btn-wa" data-wa="standard" href="#kontakt">
+            <svg aria-hidden="true"><use href="#i-mail"/></svg>Standard anfragen
+          </a>
+        </div>
+        <div class="card price-card">
+          <h3>Pflege</h3>
+          <div class="price">19 € <small>/ Monat</small></div>
+          <p class="price-desc">optional, zu jeder Webseite</p>
+          <ul class="checks">
+            <li>Neue Öffnungszeiten? Mach ich.</li>
+            <li>Preise geändert? Mach ich.</li>
+            <li>Neue Fotos oder Texte</li>
+            <li>Ich halte alles aktuell</li>
+            <li>Du schreibst mir einfach, was neu ist</li>
+          </ul>
+          <a class="btn btn-outline" data-wa="pflege" href="#kontakt">Pflege anfragen</a>
+        </div>
+      </div>
+      <p class="hint"><strong>Hinweis zur Domain:</strong> Eine eigene Adresse (z.&nbsp;B. dein-laden.de) kostet extra, ca. 1–15 € pro Jahr. Die Domain läuft auf <strong>deinen Namen</strong>, damit sie dir gehört, nicht mir.</p>
+    </div>
+  </section>
+
+  <!-- Vergleich -->
+  <section id="vergleich">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Vergleich</span>
+        <h2>Was passt zu <span class="hl">dir?</span></h2>
+        <p class="lead">Drei Wege zur eigenen Seite. Auch was ich <em>nicht</em> mache, steht hier.</p>
+      </div>
+      <div class="compare">
+        <div class="card">
+          <h3>Baukasten</h3>
+          <p class="who">Du baust die Seite selbst</p>
+          <ul>
+            <li class="mid">Laufende Gebühren jeden Monat</li>
+            <li class="no">Du machst alles selbst</li>
+            <li class="mid">Viele Vorlagen, aber viel Zeitaufwand</li>
+            <li class="yes">Gut, wenn du gern selbst bastelst</li>
+          </ul>
+        </div>
+        <div class="card featured">
+          <span class="badge">Für kleine Läden</span>
+          <h3 data-config="brand">Webdesign Salzgitter</h3>
+          <p class="who">Ich baue die Seite für dich</p>
+          <ul>
+            <li class="yes">Festpreis ab 149 €, einmalig</li>
+            <li class="yes">Kostenlose Vorschau vor dem Kauf</li>
+            <li class="yes">Ich mache alles, du lieferst nur Infos</li>
+            <li class="yes">Persönlich und aus der Region</li>
+            <li class="no">Kein Onlineshop, kein Buchungssystem</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Große Agentur</h3>
+          <p class="who">Ein Team baut die Seite</p>
+          <ul>
+            <li class="mid">Oft deutlich teurer</li>
+            <li class="yes">Große Projekte wie Shops möglich</li>
+            <li class="yes">Viel Erfahrung und Spezialisten</li>
+            <li class="mid">Für einen kleinen Laden oft zu viel</li>
+          </ul>
+        </div>
+      </div>
+      <p class="compare-note">Für einen Onlineshop oder ein Buchungssystem bist du bei einer Agentur oder einem spezialisierten Anbieter besser aufgehoben.</p>
+    </div>
+  </section>
+
+  <!-- 5. Ablauf -->
+  <section class="alt" id="ablauf">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">So läuft's</span>
+        <h2>In 3 Schritten <span class="hl">online</span></h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Kurz schreiben</h3>
+          <p>Name vom Laden und was du brauchst. Ein paar Sätze reichen.</p>
+        </li>
+        <li>
+          <h3>Kostenlose Vorschau</h3>
+          <p>Ich bau dir eine Vorschau und schick dir den Link. Schau sie dir in Ruhe an.</p>
+        </li>
+        <li>
+          <h3>Du entscheidest</h3>
+          <p>Gefällt sie dir, zahlst du und sie geht online. Gefällt sie dir nicht, zahlst du nichts.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 6. Portfolio -->
+  <section id="projekte">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Beispiele</span>
+        <h2>Schau, was <span class="hl">geht</span></h2>
+        <p class="lead">Ich fang gerade erst an. Damit du siehst, was möglich ist, hab ich Seiten für <strong>erfundene Läden</strong> gebaut. Tipp drauf.</p>
+      </div>
+      <div class="grid grid-3" id="project-list">
+        <a class="card project" href="../beispiele/barbershop/">
+          <div class="project-thumb thumb-barber">Klinge ✂</div>
+          <span class="tag">Beispiel</span>
+          <h3>Barbershop</h3>
+          <p>Dunkles, edles Design mit Preisliste, Galerie, Öffnungszeiten mit „Jetzt geöffnet“-Anzeige und WhatsApp-Button.</p>
+          <span class="more">Beispiel ansehen →</span>
+        </a>
+        <a class="card project" href="../beispiele/imbiss/">
+          <div class="project-thumb thumb-imbiss">🥙 Grillhaus</div>
+          <span class="tag">Beispiel</span>
+          <h3>Imbiss &amp; Grill</h3>
+          <p>Speisekarte zum Durchtippen nach Kategorien, Halal-Hinweis, Öffnungszeiten und Bestell-Buttons.</p>
+          <span class="more">Beispiel ansehen →</span>
+        </a>
+        <a class="card project" href="../beispiele/baeckerei/">
+          <div class="project-thumb thumb-baecker">☀ Sonnenkorn</div>
+          <span class="tag">Beispiel</span>
+          <h3>Bäckerei</h3>
+          <p>Helles, freundliches Design mit Sortiment, Frühstücksangebot und Öffnungszeiten.</p>
+          <span class="more">Beispiel ansehen →</span>
+        </a>
+        <a class="card project" href="../zakat-rechner/">
+          <div class="project-thumb">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h4"/></svg>
+          </div>
+          <span class="tag real">Eigenes Projekt</span>
+          <h3>Vermögens- &amp; Zakat-Rechner</h3>
+          <p>Meine erste eigene Webseite: ein halal Spar- und Zakat-Rechner, der komplett im Browser läuft, auf Handy und PC.</p>
+          <span class="more">Seite ansehen →</span>
+        </a>
+        <div class="card project placeholder">
+          <div class="project-thumb">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <h3>Dein Laden?</h3>
+          <p>Hier kommt das erste echte Kundenprojekt hin.</p>
+          <a class="more" data-wa="preview" href="#kontakt">Vorschau anfragen →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google-Bewertungen: erscheint nur, wenn im CONFIG echte Bewertungen eingetragen sind -->
+  <section class="alt" id="bewertungen" hidden>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Bewertungen</span>
+        <h2>Das sagen meine Kunden</h2>
+      </div>
+      <div class="rating-head">
+        <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.7v5.5h7.1c4.2-3.8 6.6-9.5 6.6-16.2z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.5-3.8-12.2-9H4.5v5.7C8.1 41.1 15.5 46 24 46z"/><path fill="#FBBC05" d="M11.8 28.3c-.4-1.3-.7-2.8-.7-4.3s.3-3 .7-4.3V14H4.5C3 17 2.1 20.4 2.1 24s.9 7 2.4 10l7.3-5.7z"/><path fill="#EA4335" d="M24 10.7c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.5 2 8.1 6.9 4.5 14l7.3 5.7c1.7-5.2 6.5-9 12.2-9z"/></svg>Google</span>
+        <span class="rating-big" id="rating-avg"></span>
+        <span class="stars" id="rating-stars" aria-hidden="true"></span>
+        <span class="rating-meta" id="rating-meta"></span>
+      </div>
+      <div class="grid grid-3" id="review-list"></div>
+      <div class="review-actions">
+        <a class="btn btn-outline" id="g-profile" href="#bewertungen" target="_blank" rel="noopener" hidden>Alle Bewertungen auf Google</a>
+        <a class="btn btn-outline" id="g-review" href="#bewertungen" target="_blank" rel="noopener" hidden>Kunde? Bewerte mich auf Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA-Band -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Wie würde deine Seite aussehen?</h2>
+        <p>Schreib mir, was für einen Laden du hast. Die Vorschau kostet nichts.</p>
+      </div>
+      <a class="btn btn-wa" data-wa="preview" href="#kontakt"><svg aria-hidden="true"><use href="#i-mail"/></svg>Kostenlose Vorschau anfragen</a>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="light" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Fragen?</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Was brauchst du von mir?</summary>
+          <div class="answer">
+            <p>Dein Logo (falls vorhanden), ein paar Fotos von deinem Laden oder deinen Produkten, deine Öffnungszeiten, Adresse und Telefonnummer und ein paar Sätze über dich. Fotos kannst du einfach mit dem Handy machen und mir per E-Mail schicken. Bei den Texten helfe ich dir gern.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Wie lange dauert es?</summary>
+          <div class="answer">
+            <p>Wenn ich alles von dir habe, rechne mit ungefähr einer Woche bis zur fertigen Seite. Die Vorschau bekommst du schon vorher.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Was ist mit der Domain?</summary>
+          <div class="answer">
+            <p>Die Domain (deine Internetadresse, z.&nbsp;B. dein-laden.de) kostet je nach Endung ca. 1–15 € pro Jahr und ist nicht im Preis enthalten. Sie läuft auf deinen Namen, damit sie immer dir gehört. Ich helfe dir beim Einrichten.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Kann ich später etwas ändern?</summary>
+          <div class="answer">
+            <p>Klar. Mit der Pflege für 19 € im Monat ändere ich Öffnungszeiten, Preise, Fotos und Texte für dich. Du schreibst mir einfach, was neu ist. Ohne Pflege kannst du Änderungen auch einzeln bei mir anfragen.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Kontakt -->
+  <section class="contact" id="kontakt">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Kontakt</span>
+        <h2>Schreib <span class="hl">mir</span></h2>
+        <p class="lead">Über das Formular, per E-Mail<span data-ig-only hidden> oder per Instagram-DM</span>. Ich melde mich so schnell wie möglich. Ein Büro habe ich nicht, aber wir können uns gern persönlich treffen.</p>
+        <div class="contact-actions">
+          <a class="btn btn-wa" id="contact-wa" data-wa="preview" href="#kontakt" hidden>
+            <svg aria-hidden="true"><use href="#i-mail"/></svg>Kostenlose Vorschau anfragen
+          </a>
+          <a class="btn btn-outline" id="email-btn" href="#kontakt" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <span>E-Mail schreiben</span>
+          </a>
+          <a class="btn btn-outline" id="ig-btn" href="#kontakt" target="_blank" rel="noopener" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+            <span>Instagram-DM schreiben</span>
+          </a>
+        </div>
+        <p class="small" id="email-text" hidden>Lieber direkt per E-Mail? <a style="color:#fff" id="email-link" href="#kontakt"></a></p>
+      </div>
+
+      <form class="form-card" id="contact-form" action="https://formsubmit.co/kontakt@salzgitter-webdesign.de" method="POST" novalidate>
+        <h3>Nachricht schreiben</h3>
+        <div class="field">
+          <label for="f-name">Dein Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100">
+        </div>
+        <div class="field">
+          <label for="f-email">Deine E-Mail-Adresse</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="150">
+        </div>
+        <div class="field">
+          <label for="f-laden">Dein Laden <span class="opt">(Name und Ort, optional)</span></label>
+          <input id="f-laden" name="laden" type="text" maxlength="150" placeholder="z. B. Barbershop, Lebenstedt">
+        </div>
+        <div class="field">
+          <label for="f-topic">Worum geht's?</label>
+          <select id="f-topic" name="anliegen">
+            <option value="preview">Kostenlose Vorschau</option>
+            <option value="starter">Starter-Paket (149 €)</option>
+            <option value="standard">Standard-Paket (299 €)</option>
+            <option value="pflege">Pflege (19 € / Monat)</option>
+            <option value="general">Allgemeine Frage</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Deine Nachricht</label>
+          <textarea id="f-msg" name="nachricht" required maxlength="3000" placeholder="Was für ein Laden ist es und was soll auf die Webseite?"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="f-hp">Bitte leer lassen</label>
+          <input id="f-hp" name="_honey" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="_subject" value="Neue Anfrage über salzgitter-webdesign.de">
+        <input type="hidden" name="_template" value="table">
+        <p class="form-note">Deine Angaben nutze ich nur, um deine Anfrage zu beantworten. Mehr dazu in der <a href="../impressum.html#datenschutz">Datenschutzerklärung</a>.</p>
+        <button class="btn btn-submit" type="submit">Nachricht senden</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand" data-config="brand">Webdesign Salzgitter</div>
+        <p style="margin:0">Einfache, schnelle Webseiten für kleine Läden und Betriebe<span data-config-region> in <span data-config="region">Salzgitter &amp; Braunschweig</span></span>.</p>
+      </div>
+      <div>
+        <h4>Seite</h4>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#preise">Preise</a></li>
+          <li><a href="#projekte">Beispiele</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="#contact-form">Kontaktformular</a></li>
+          <li><a id="footer-email" href="#kontakt" hidden></a></li>
+          <li><a id="ig-footer" href="#start" target="_blank" rel="noopener" hidden>Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="../impressum.html">Impressum</a></li>
+          <li><a href="../impressum.html#datenschutz">Datenschutz</a></li>
+          <li><a href="../zakat-rechner/">Vermögens- &amp; Zakat-Rechner</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> <span data-config="brand">Webdesign Salzgitter</span></span>
+      <span>Keine Cookies, kein Tracking.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" id="fab" data-wa="preview" href="#kontakt" aria-label="Nachricht schreiben">
+  <svg aria-hidden="true"><use href="#i-mail"/></svg>
+</a>
+
+<script>
+// ============================================================
+// CONFIG: Hier kannst du deine Daten ändern.
+// Leere Felder ("") werden auf der Seite einfach weggelassen.
+// ============================================================
+const CONFIG = {
+  name: "Dion Ahmad",
+  brand: "Webdesign Salzgitter",         // Text oben links neben dem Logo, "" = nur Logo
+  region: "Salzgitter & Braunschweig",
+  email: "kontakt@salzgitter-webdesign.de", // Kontakt per E-Mail
+  whatsapp: "",                       // optional: Nummer mit Ländervorwahl, nur Ziffern (z. B. 49151...). "" = kein WhatsApp
+  // Kontaktformular über FormSubmit (formsubmit.co). Nach der Aktivierung kannst du die
+  // E-Mail-Adresse hier durch den geheimen Code ersetzen, den dir FormSubmit schickt.
+  formEndpoint: "https://formsubmit.co/ajax/kontakt@salzgitter-webdesign.de",
+  // Google-Bewertungen: NUR echte Bewertungen von deinem Google-Unternehmensprofil eintragen.
+  // Solange "reviews" leer ist, wird der Bereich nicht angezeigt.
+  google: {
+    profileUrl: "",   // Link zu deinem Google-Profil (z. B. https://g.page/...)
+    reviewUrl: "",    // Link "Rezension schreiben" aus deinem Google-Profil
+    total: 0,         // Anzahl aller Bewertungen auf Google (0 = Anzahl der Einträge unten)
+    average: 0,       // Durchschnitt auf Google, z. B. 4.9 (0 = aus den Einträgen unten berechnen)
+    reviews: [
+      // { name: "Ahmet K.", stars: 5, text: "Text der Bewertung", date: "November 2026" },
+    ]
+  },
+  instagram: "webdesign.salzgitter",  // dein Instagram-Name ohne @, z. B. "salzgitter.webdesign". "" = ausblenden
+  messages: {
+    general:  "Hallo {name}, ich habe deine Webdesign-Seite gesehen und hätte eine Frage:",
+    preview:  "Hallo {name}, ich hätte gern eine kostenlose Vorschau für meine Webseite.\n\nName meines Ladens: \nArt des Ladens: \nOrt: ",
+    starter:  "Hallo {name}, ich interessiere mich für das Starter-Paket (149 €).\n\nName meines Ladens: \nOrt: ",
+    standard: "Hallo {name}, ich interessiere mich für das Standard-Paket (299 €).\n\nName meines Ladens: \nOrt: ",
+    pflege:   "Hallo {name}, ich interessiere mich für die Pflege (19 € / Monat).\n\nName meines Ladens / meiner Webseite: "
+  },
+  subjects: {
+    general:  "Frage zu Webseiten",
+    preview:  "Kostenlose Vorschau für meinen Laden",
+    starter:  "Anfrage Starter-Paket",
+    standard: "Anfrage Standard-Paket",
+    pflege:   "Anfrage Pflege"
+  }
+};
+// ============================================================
+
+(function () {
+  const clean = v => (typeof v === "string" ? v.trim() : "");
+  const name = clean(CONFIG.name);
+  const region = clean(CONFIG.region);
+  const phone = clean(CONFIG.whatsapp).replace(/\D/g, "");
+  const email = clean(CONFIG.email);
+
+  // Name & Region einsetzen oder ausblenden
+  const brand = clean(CONFIG.brand);
+  document.querySelectorAll('[data-config="brand"]').forEach(el => {
+    if (brand) el.textContent = brand; else el.hidden = true;
+  });
+  document.querySelectorAll('[data-config="name"]').forEach(el => {
+    if (name) el.textContent = name; else el.hidden = true;
+  });
+  document.querySelectorAll('[data-config="region"]').forEach(el => { if (region) el.textContent = region; });
+  if (!region) document.querySelectorAll("[data-config-region]").forEach(el => el.hidden = true);
+
+  // Vorname
+  const firstName = name ? name.split(/\s+/)[0] : "";
+  document.querySelectorAll('[data-config="firstname"]').forEach(el => {
+    if (firstName) el.textContent = firstName; else el.hidden = true;
+  });
+  const msg = key => (CONFIG.messages[key] || CONFIG.messages.general).replace("{name}", firstName).replace(/\s+,/, ",");
+  const mailLink = key => "mailto:" + email
+    + "?subject=" + encodeURIComponent(CONFIG.subjects[key] || CONFIG.subjects.general)
+    + "&body=" + encodeURIComponent(msg(key));
+
+  // Kontakt-Buttons: WhatsApp, wenn eine Nummer eingetragen ist, sonst Kontaktformular (oder E-Mail)
+  const hasForm = !!clean(CONFIG.formEndpoint);
+  document.querySelectorAll("[data-wa]").forEach(el => {
+    if (phone) {
+      el.href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg(el.dataset.wa));
+      el.target = "_blank";
+      el.rel = "noopener";
+      el.querySelectorAll("use").forEach(u => u.setAttribute("href", "#i-wa"));
+      if (el.id === "contact-wa") el.hidden = false;
+    } else if (!hasForm) {
+      if (email && el.id !== "contact-wa") el.href = mailLink(el.dataset.wa); else el.hidden = true;
+    } else if (el.id !== "contact-wa") {
+      // Ohne WhatsApp: Button springt zum Formular und wählt das passende Anliegen
+      el.href = "#contact-form";
+      el.addEventListener("click", () => {
+        const topic = document.getElementById("f-topic");
+        if (topic.querySelector('option[value="' + el.dataset.wa + '"]')) topic.value = el.dataset.wa;
+        setTimeout(() => document.getElementById("f-name").focus({ preventScroll: true }), 400);
+      });
+    }
+  });
+
+  // E-Mail-Adresse anzeigen (zum Kopieren, falls keine Mail-App eingerichtet ist)
+  if (email) {
+    const link = document.getElementById("email-link");
+    link.href = mailLink("general"); link.textContent = email;
+    const fe = document.getElementById("footer-email");
+    fe.href = "mailto:" + email; fe.textContent = email; fe.hidden = false;
+    document.getElementById("email-text").hidden = false;
+    if (phone) {
+      const btn = document.getElementById("email-btn");
+      btn.href = mailLink("general"); btn.hidden = false;
+    }
+  }
+
+  // Kontaktformular
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const endpoint = clean(CONFIG.formEndpoint);
+  if (!endpoint) form.hidden = true;
+  const showStatus = (ok, html) => {
+    status.className = "form-status " + (ok ? "ok" : "err");
+    status.innerHTML = html; status.hidden = false;
+  };
+  const mailHint = email ? ' Schreib mir gern direkt an <a href="mailto:' + email + '">' + email + '</a>.' : "";
+  form.addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const fields = ["f-name", "f-email", "f-msg"].map(id => document.getElementById(id));
+    const invalid = fields.find(f => !f.checkValidity());
+    if (invalid) {
+      showStatus(false, invalid.id === "f-email" ? "Bitte gib eine gültige E-Mail-Adresse ein." : "Bitte fülle Name, E-Mail und Nachricht aus.");
+      invalid.focus();
+      return;
+    }
+    const data = Object.fromEntries(new FormData(form).entries());
+    const topic = document.getElementById("f-topic");
+    data.anliegen = topic.options[topic.selectedIndex].text;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = "Wird gesendet …";
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && String(json.success) === "true") {
+        form.reset();
+        showStatus(true, "Danke! Deine Nachricht ist angekommen. Ich melde mich so schnell wie möglich bei dir.");
+      } else {
+        showStatus(false, "Das hat leider nicht geklappt." + mailHint);
+      }
+    } catch (e) {
+      showStatus(false, "Keine Verbindung. Bitte versuch es gleich noch einmal." + mailHint);
+    } finally {
+      btn.disabled = false; btn.textContent = "Nachricht senden";
+    }
+  });
+
+  // Google-Bewertungen
+  const g = CONFIG.google || {};
+  const reviews = (g.reviews || []).filter(x => x && clean(x.text) && x.stars >= 1 && x.stars <= 5);
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const starHtml = n => { const f = Math.min(5, Math.floor(n + 0.25)); return "★".repeat(f) + '<span class="off">' + "★".repeat(5 - f) + "</span>"; };
+  const isUrl = u => /^https:\/\//.test(clean(u));
+  if (reviews.length) {
+    const avg = g.average > 0 ? g.average : reviews.reduce((a, x) => a + x.stars, 0) / reviews.length;
+    const total = g.total > 0 ? g.total : reviews.length;
+    document.getElementById("rating-avg").textContent = avg.toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    document.getElementById("rating-stars").innerHTML = starHtml(avg);
+    document.getElementById("rating-meta").textContent = total + (total === 1 ? " Bewertung" : " Bewertungen") + " auf Google";
+    document.getElementById("review-list").innerHTML = reviews.map(x =>
+      '<figure class="card review" style="margin:0"><span class="stars" aria-label="' + x.stars + ' von 5 Sternen">' + starHtml(x.stars) + '</span>' +
+      '<blockquote>„' + esc(clean(x.text)) + '“</blockquote>' +
+      '<footer><strong>' + esc(clean(x.name) || "Google-Nutzer") + '</strong><span>' + esc(clean(x.date)) + '</span></footer></figure>').join("");
+    if (isUrl(g.profileUrl)) { const a = document.getElementById("g-profile"); a.href = clean(g.profileUrl); a.hidden = false; }
+    document.getElementById("bewertungen").hidden = false;
+  }
+  if (isUrl(g.reviewUrl)) { const a = document.getElementById("g-review"); a.href = clean(g.reviewUrl); a.hidden = false; }
+
+  // Instagram
+  const ig = clean(CONFIG.instagram).replace(/^@/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/.*$/, "");
+  if (ig) {
+    const igBtn = document.getElementById("ig-btn");
+    igBtn.href = "https://ig.me/m/" + encodeURIComponent(ig); igBtn.hidden = false;
+    const igFoot = document.getElementById("ig-footer");
+    igFoot.href = "https://www.instagram.com/" + encodeURIComponent(ig) + "/"; igFoot.textContent = "Instagram @" + ig; igFoot.hidden = false;
+    document.querySelectorAll("[data-ig-only]").forEach(el => el.hidden = false);
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Schwebender Kontakt-Button (nur Handy) erscheint nach dem Hero
+  const fab = document.getElementById("fab");
+  const hero = document.getElementById("start");
+  const contact = document.getElementById("kontakt");
+  if ((phone || email) && "IntersectionObserver" in window) {
+    let heroVisible = true, contactVisible = false;
+    const update = () => fab.classList.toggle("show", !heroVisible && !contactVisible);
+    new IntersectionObserver(e => { heroVisible = e[0].isIntersecting; update(); }).observe(hero);
+    new IntersectionObserver(e => { contactVisible = e[0].isIntersecting; update(); }).observe(contact);
+  } else {
+    fab.hidden = true;
+  }
+})();
+</script>
+</body>
+</html>
