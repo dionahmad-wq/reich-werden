@@ -52,6 +52,9 @@ Beispielseiten für Kundenprojekte und meinen Vermögens- & Zakat-Rechner.
 | `zakat-rechner/index.html` | Vermögens- & Zakat-Rechner (mein erstes Projekt, nicht kaputt machen) |
 | `webdesign/` | nur Weiterleitungen von alten Links, nicht löschen |
 | `CNAME` | Domain für GitHub Pages, nicht anfassen |
+| `sitemap.xml`, `robots.txt` | für Google/Bing. Neue öffentliche Seiten in die Sitemap eintragen |
+| `og-image.png`, `apple-touch-icon.png` | Vorschaubild für geteilte Links und Handy-Icon. Vorlage: `bilder/vorlagen.html` |
+| `instagram/` | Instagram-Posts (`posts.html` = Vorlage, PNGs, `captions.md`) |
 
 - Kontaktdaten, Name, Instagram, Formular-Adresse und Google-Bewertungen stehen im **`CONFIG`-Objekt** ganz oben im Script von `index.html`. Änderungen daran nur dort machen
 - Leere Felder im `CONFIG` werden auf der Seite automatisch ausgeblendet

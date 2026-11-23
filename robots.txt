@@ -1,0 +1,5 @@
+# Suchmaschinen dürfen alles lesen. Beispielseiten und Vorlagen sind per "noindex" ausgeschlossen.
+User-agent: *
+Allow: /
+
+Sitemap: https://salzgitter-webdesign.de/sitemap.xml
