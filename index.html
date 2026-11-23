@@ -81,8 +81,6 @@
   .hero { padding: 48px 0 56px; background: radial-gradient(1200px 400px at 80% -10%, #ccfbf1 0%, rgba(204,251,241,0) 60%), var(--bg); }
   .hero-grid { display: grid; gap: 36px; align-items: center; }
   .hero .actions { display: flex; flex-direction: column; gap: 12px; margin: 24px 0 16px; }
-  .hero .note { font-size: .95rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0; margin: 0; list-style: none; }
-  .hero .note li::before { content: "✓ "; color: var(--brand); font-weight: 800; }
   .mock { background: var(--surface); border-radius: 20px; box-shadow: var(--shadow); border: 1px solid var(--line); overflow: hidden; max-width: 360px; margin: 0 auto; width: 100%; }
   .mock-bar { display: flex; gap: 6px; padding: 10px 14px; background: #f1f5f9; border-bottom: 1px solid var(--line); }
   .mock-bar span { width: 10px; height: 10px; border-radius: 50%; background: #cbd5e1; }
@@ -132,7 +130,6 @@
   .steps li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 46px; height: 46px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 800; font-size: 1.2rem; display: grid; place-items: center; }
   .steps h3 { margin-bottom: .25em; }
   .steps p { color: var(--muted); margin: 0; }
-  .promise { margin-top: 28px; background: var(--brand-soft); color: var(--brand-dark); border-radius: var(--radius); padding: 18px 20px; font-weight: 600; }
 
   /* Portfolio */
   .project { display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform .15s ease, box-shadow .15s ease; }
@@ -331,11 +328,6 @@
           </a>
           <a class="btn btn-outline" href="#preise">Preise ansehen</a>
         </div>
-        <ul class="note">
-          <li>Vorschau gratis</li>
-          <li>Du zahlst nur, wenn sie dir gefällt</li>
-          <li>Ab 149 €</li>
-        </ul>
       </div>
       <div class="mock" aria-hidden="true">
         <div class="mock-bar"><span></span><span></span><span></span></div>
@@ -360,7 +352,7 @@
       <div class="trust-item"><strong>ab 149 €</strong><span>Festpreis, einmalig</span></div>
       <div class="trust-item"><strong>0 €</strong><span>für deine Vorschau</span></div>
       <div class="trust-item"><strong>ca. 1 Woche</strong><span>bis deine Seite online ist</span></div>
-      <div class="trust-item"><strong>100 %</strong><span>fürs Handy gemacht</span></div>
+      <div class="trust-item"><strong>vor Ort</strong><span>Treffen in SZ &amp; BS möglich</span></div>
     </div>
   </div>
 
@@ -369,8 +361,8 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Warum eine Webseite?</span>
-        <h2>Wer dich nicht findet, kauft woanders.</h2>
-        <p class="lead">Die meisten Leute suchen zuerst auf dem Handy, bevor sie losgehen. Mit einer eigenen Webseite bist du da, wo deine Kunden suchen.</p>
+        <h2>Viele schauen erst im Internet nach</h2>
+        <p class="lead">Bevor jemand einen neuen Laden ausprobiert, sucht er ihn meistens kurz auf dem Handy. Mit einer eigenen Webseite findet er dort deine Infos statt gar nichts.</p>
       </div>
       <div class="grid grid-3">
         <div class="card">
@@ -381,12 +373,12 @@
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
           <h3>Immer aktuell</h3>
-          <p>Öffnungszeiten, Speisekarte oder Preisliste: alles an einem Ort und immer auf dem neuesten Stand. Keine Anrufe mehr mit „Habt ihr heute offen?“.</p>
+          <p>Öffnungszeiten, Speisekarte oder Preisliste: alles an einem Ort und immer auf dem neuesten Stand. Das spart dir Anrufe wie „Habt ihr heute offen?“.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Wirkt professionell</h3>
-          <p>Eine eigene Seite zeigt: Hier kümmert sich jemand. Das schafft Vertrauen, gerade bei Leuten, die deinen Laden noch nicht kennen.</p>
+          <h3>Guter erster Eindruck</h3>
+          <p>Wer deinen Laden noch nicht kennt, entscheidet oft nach dem, was er online sieht. Eine ordentliche Seite hilft da.</p>
         </div>
       </div>
     </div>
@@ -398,7 +390,7 @@
       <div class="section-head">
         <span class="eyebrow">Leistungen</span>
         <h2>In jeder Webseite enthalten</h2>
-        <p class="lead">Egal welches Paket: Diese Punkte sind bei jeder Seite dabei, ohne Aufpreis.</p>
+        <p class="lead">Das ist bei jedem Paket dabei.</p>
       </div>
       <div class="grid grid-3">
         <div class="card feature">
@@ -407,7 +399,7 @@
         </div>
         <div class="card feature">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
-          <div><h3>Schnell geladen</h3><p>Kein schwerer Baukasten, sondern schlanker Code. Die Seite ist in Sekunden da, auch mit schlechtem Netz.</p></div>
+          <div><h3>Schnell geladen</h3><p>Ich programmiere die Seite schlicht, ohne schweren Baukasten. Sie lädt auch bei schlechtem Netz schnell.</p></div>
         </div>
         <div class="card feature">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
@@ -415,11 +407,11 @@
         </div>
         <div class="card feature">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
-          <div><h3>Sicher verschlüsselt</h3><p>Deine Seite läuft über HTTPS mit Schloss-Symbol im Browser. Das erwarten Kunden heute.</p></div>
+          <div><h3>Sicher verschlüsselt</h3><p>Deine Seite läuft über HTTPS, im Browser erscheint das Schloss-Symbol.</p></div>
         </div>
         <div class="card feature">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
-          <div><h3>Ohne Cookie-Banner</h3><p>Keine Tracker, keine Werbe-Cookies. Deine Besucher werden nicht genervt, so wie auf dieser Seite.</p></div>
+          <div><h3>Ohne Cookie-Banner</h3><p>Ich baue keine Tracker und keine Werbe-Cookies ein, deshalb braucht deine Seite kein Cookie-Banner. Diese Seite hier hat auch keins.</p></div>
         </div>
         <div class="card feature">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
@@ -454,8 +446,8 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Preise</span>
-        <h2>Faire Festpreise, keine versteckten Kosten</h2>
-        <p class="lead">Du weißt vorher genau, was du zahlst. Und zuerst bekommst du eine kostenlose Vorschau.</p>
+        <h2>Feste Preise</h2>
+        <p class="lead">Du weißt vorher, was es kostet. Dazu kommt nur die Domain, siehe unten.</p>
       </div>
       <div class="grid grid-3">
         <div class="card price-card">
@@ -512,7 +504,7 @@
       <div class="section-head">
         <span class="eyebrow">Vergleich</span>
         <h2>Welche Lösung passt zu dir?</h2>
-        <p class="lead">Es gibt mehrere Wege zur eigenen Webseite. Hier ein ehrlicher Überblick, auch darüber, was ich <em>nicht</em> anbiete.</p>
+        <p class="lead">Es gibt mehrere Wege zur eigenen Webseite. Hier ein kurzer Überblick, auch darüber, was ich <em>nicht</em> anbiete.</p>
       </div>
       <div class="compare">
         <div class="card">
@@ -548,7 +540,7 @@
           </ul>
         </div>
       </div>
-      <p class="compare-note">Du brauchst einen Onlineshop oder ein Buchungssystem? Dann sage ich dir ehrlich, dass eine Agentur oder ein spezieller Anbieter besser passt.</p>
+      <p class="compare-note">Für einen Onlineshop oder ein Buchungssystem bist du bei einer Agentur oder einem spezialisierten Anbieter besser aufgehoben.</p>
     </div>
   </section>
 
@@ -570,10 +562,9 @@
         </li>
         <li>
           <h3>Du entscheidest</h3>
-          <p>Gefällt sie dir, zahlst du, und die Seite geht online. Wünsche ändere ich vorher gern.</p>
+          <p>Änderungswünsche baue ich ein. Gefällt dir die Seite, zahlst du und sie geht online. Gefällt sie dir nicht, zahlst du nichts.</p>
         </li>
       </ol>
-      <p class="promise">Gefällt dir die Vorschau nicht, zahlst du nichts. Kein Risiko, keine Verpflichtung.</p>
     </div>
   </section>
 
@@ -621,7 +612,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
           </div>
           <h3>Dein Laden?</h3>
-          <p>Hier ist noch Platz für das nächste Projekt. Vielleicht ist es deins.</p>
+          <p>Hier kommt das erste echte Kundenprojekt hin.</p>
           <a class="more" data-wa="preview" href="#kontakt">Vorschau anfragen →</a>
         </div>
       </div>
@@ -653,8 +644,8 @@
   <section class="cta-band">
     <div class="wrap">
       <div>
-        <h2>Bereit für deine eigene Webseite?</h2>
-        <p>Die Vorschau ist kostenlos und unverbindlich. Du zahlst nur, wenn sie dir gefällt.</p>
+        <h2>Willst du sehen, wie deine Seite aussehen könnte?</h2>
+        <p>Schreib mir kurz, was für einen Laden du hast. Die Vorschau kostet nichts.</p>
       </div>
       <a class="btn btn-wa" data-wa="preview" href="#kontakt"><svg aria-hidden="true"><use href="#i-mail"/></svg>Kostenlose Vorschau anfragen</a>
     </div>
@@ -671,13 +662,13 @@
         <details>
           <summary>Was brauchst du von mir?</summary>
           <div class="answer">
-            <p>Nicht viel: dein Logo (falls vorhanden), ein paar Fotos von deinem Laden oder deinen Produkten, deine Öffnungszeiten, Adresse und Telefonnummer und ein paar Sätze über dich. Fotos kannst du einfach mit dem Handy machen und mir per E-Mail schicken. Bei den Texten helfe ich dir gern.</p>
+            <p>Dein Logo (falls vorhanden), ein paar Fotos von deinem Laden oder deinen Produkten, deine Öffnungszeiten, Adresse und Telefonnummer und ein paar Sätze über dich. Fotos kannst du einfach mit dem Handy machen und mir per E-Mail schicken. Bei den Texten helfe ich dir gern.</p>
           </div>
         </details>
         <details>
           <summary>Wie lange dauert es?</summary>
           <div class="answer">
-            <p>Wenn ich alles von dir habe, dauert es meistens ca. 1 Woche bis zur fertigen Seite. Die Vorschau bekommst du in der Regel schon früher.</p>
+            <p>Wenn ich alles von dir habe, rechne mit ungefähr einer Woche bis zur fertigen Seite. Die Vorschau bekommst du schon vorher.</p>
           </div>
         </details>
         <details>
@@ -701,8 +692,8 @@
     <div class="wrap contact-grid">
       <div>
         <span class="eyebrow">Kontakt</span>
-        <h2>Lass uns über deinen Laden reden</h2>
-        <p class="lead">Schreib mir über das Formular, per E-Mail<span data-ig-only hidden> oder per Instagram-DM</span>. Ich melde mich so schnell wie möglich und baue dir eine kostenlose Vorschau. Ich habe kein Büro, aber wenn du magst, können wir uns auch persönlich treffen.</p>
+        <h2>Schreib mir</h2>
+        <p class="lead">Über das Formular, per E-Mail<span data-ig-only hidden> oder per Instagram-DM</span>. Ich melde mich so schnell wie möglich. Ein Büro habe ich nicht, aber wir können uns gern persönlich treffen.</p>
         <div class="contact-actions">
           <a class="btn btn-wa" id="contact-wa" data-wa="preview" href="#kontakt" hidden>
             <svg aria-hidden="true"><use href="#i-mail"/></svg>Kostenlose Vorschau anfragen
