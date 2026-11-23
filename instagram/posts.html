@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Instagram-Posts | Webdesign Salzgitter</title>
+<!--
+  Vorlage für Instagram-Posts (1080 × 1350 px, Hochformat 4:5).
+  Jeder <section class="post"> ist ein Post. Text hier ändern und dann die Bilder neu erzeugen
+  (Claude fragen: "Instagram-Posts neu rendern").
+-->
+<style>
+  :root { --bg: #0b0b0c; --lime: #d4ff3a; --ink: #0b0b0c; --paper: #f3f3ec; --muted: #a9a9a3; --line: #2c2c31; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #333; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .post { width: 1080px; height: 1350px; position: relative; overflow: hidden; background: var(--bg); color: #f5f5f2; padding: 90px 84px; display: flex; flex-direction: column; margin: 0 auto 40px; }
+  .grid-bg { background:
+      radial-gradient(700px 500px at 85% 20%, rgba(212,255,58,.14), transparent 70%),
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 54px 54px,
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 54px 54px, var(--bg); }
+  .lime-bg { background: var(--lime); color: var(--ink); }
+  .paper-bg { background: var(--paper); color: var(--ink); }
+  .eyebrow { font-size: 30px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); margin-bottom: 34px; }
+  .eyebrow::before { content: "// "; opacity: .6; }
+  .lime-bg .eyebrow, .paper-bg .eyebrow { color: var(--ink); }
+  h1, h2 { margin: 0; font-weight: 900; text-transform: uppercase; letter-spacing: -.03em; line-height: .92; }
+  h1 { font-size: 168px; }
+  h2 { font-size: 112px; }
+  .hl { color: var(--lime); }
+  .lime-bg .hl, .paper-bg .hl { padding: 0 14px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .lime-bg .hl { color: var(--ink); background: #fff; }
+  .paper-bg .hl { background: var(--ink); color: var(--lime); }
+  .lime-bg h1, .lime-bg h2, .paper-bg h1, .paper-bg h2 { line-height: 1.08; }
+  .sub { font-size: 40px; line-height: 1.35; color: var(--muted); margin-top: 40px; max-width: 880px; }
+  .lime-bg .sub, .paper-bg .sub { color: #2a2a26; }
+  .spacer { flex: 1; }
+  .foot { display: flex; flex-wrap: wrap; gap: 12px 30px; justify-content: space-between; align-items: center; font-size: 30px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; border-top: 3px solid var(--line); padding-top: 34px; }
+  .lime-bg .foot, .paper-bg .foot { border-color: var(--ink); }
+  .logo { display: flex; align-items: center; gap: 18px; }
+  .logo svg { width: 56px; height: 56px; }
+  .url { color: var(--lime); }
+  .lime-bg .url, .paper-bg .url { color: var(--ink); }
+  .sticker { position: absolute; display: grid; place-items: center; text-align: center; font-weight: 900; text-transform: uppercase; line-height: 1; color: var(--ink); background: var(--lime); border: 4px solid var(--ink); border-radius: 50%; width: 260px; height: 260px; font-size: 34px; transform: rotate(10deg); box-shadow: 8px 8px 0 #000; }
+  .sticker b { display: block; font-size: 84px; letter-spacing: -.04em; }
+  .tag { display: inline-block; font-size: 26px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; padding: 8px 18px; border-radius: 10px; background: #fff; color: var(--ink); }
+  .swipe { font-size: 30px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+
+  /* Liste */
+  .list { margin-top: 60px; display: grid; gap: 28px; }
+  .item { display: flex; gap: 30px; align-items: flex-start; border: 3px solid var(--line); border-radius: 24px; padding: 34px 36px; background: #151517; }
+  .item .n { font-size: 76px; font-weight: 900; color: var(--lime); line-height: .9; letter-spacing: -.04em; min-width: 110px; }
+  .item h3 { margin: 0 0 8px; font-size: 44px; font-weight: 900; text-transform: uppercase; letter-spacing: -.01em; }
+  .item p { margin: 0; font-size: 32px; line-height: 1.35; color: var(--muted); }
+
+  /* Preise */
+  .prices { margin-top: 56px; display: grid; gap: 26px; }
+  .price { display: flex; justify-content: space-between; align-items: center; background: #fff; border: 4px solid var(--ink); border-radius: 24px; padding: 34px 40px; box-shadow: 10px 10px 0 var(--ink); }
+  .price.top { background: var(--ink); color: var(--paper); box-shadow: 10px 10px 0 var(--lime); }
+  .price h3 { margin: 0 0 6px; font-size: 48px; font-weight: 900; text-transform: uppercase; }
+  .price p { margin: 0; font-size: 28px; color: #55554f; }
+  .price.top p { color: #bdbdb5; }
+  .price .val { font-size: 92px; font-weight: 900; letter-spacing: -.04em; white-space: nowrap; }
+  .price.top .val, .price.top h3 { color: var(--lime); }
+  .price .val small { font-size: 34px; }
+  .note { margin-top: 44px; font-size: 30px; border: 3px dashed var(--ink); border-radius: 18px; padding: 22px 28px; }
+
+  /* Handy-Mockup */
+  .phone { position: absolute; width: 470px; background: #050505; border: 16px solid #26262a; border-radius: 64px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,.55); }
+  .phone .notch { height: 40px; background: #fff; display: flex; justify-content: center; }
+  .phone .notch span { width: 140px; height: 30px; background: #050505; border-radius: 0 0 20px 20px; }
+  .screen { padding: 26px 30px 34px; }
+  .barber .screen { background: #0e0e0e; color: #f2efe9; }
+  .imbiss .screen { background: #fff7ed; color: #1c1917; }
+  .s-kicker { font-size: 18px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; }
+  .s-title { font-size: 46px; line-height: 1.05; margin: 10px 0 18px; }
+  .s-row { display: flex; justify-content: space-between; font-size: 22px; padding: 12px 0; border-bottom: 2px dashed rgba(127,127,127,.35); }
+  .s-btn { margin-top: 22px; text-align: center; font-weight: 800; font-size: 22px; padding: 16px; border-radius: 12px; }
+</style>
+</head>
+<body>
+
+<!-- 1: Vorstellung -->
+<section class="post grid-bg" id="post-1">
+  <div class="eyebrow">Webdesign · Salzgitter &amp; Braunschweig</div>
+  <h1>Dein<br>Laden.<br><span class="hl">Online.</span></h1>
+  <p class="sub" style="max-width:640px">Ich baue schnelle Webseiten für Läden aus der Region. Damit neue Kunden dich finden.</p>
+  <div class="sticker" style="right:90px; top:860px"><span><b>0 €</b>Vorschau</span></div>
+  <div class="spacer"></div>
+  <div class="foot">
+    <span class="logo"><svg viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="#d4ff3a"/><path d="M22 38h56v36a6 6 0 0 1-6 6H28a6 6 0 0 1-6-6z" fill="#0b0b0c"/><path d="M18 38l8-16h48l8 16z" fill="#0b0b0c"/><rect x="42" y="56" width="16" height="24" rx="2" fill="#d4ff3a"/></svg>Webdesign Salzgitter</span>
+    <span class="url">ab 149 €</span>
+  </div>
+</section>
+
+<!-- 2: Warum -->
+<section class="post" id="post-2">
+  <div class="eyebrow">Warum eine Webseite?</div>
+  <h2>Wer dich googelt, soll dich <span class="hl">finden.</span></h2>
+  <div class="list">
+    <div class="item"><div class="n">01</div><div><h3>Bei Google auftauchen</h3><p>Wer „Döner Salzgitter“ sucht, kann direkt bei dir landen.</p></div></div>
+    <div class="item"><div class="n">02</div><div><h3>Immer aktuell</h3><p>Öffnungszeiten, Karte, Preise. Weniger Anrufe wie „Habt ihr offen?“.</p></div></div>
+    <div class="item"><div class="n">03</div><div><h3>Erster Eindruck</h3><p>Wer dich nicht kennt, entscheidet nach dem, was er online sieht.</p></div></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="foot"><span>Webdesign Salzgitter</span><span class="url">salzgitter-webdesign.de</span></div>
+</section>
+
+<!-- 3: Preise -->
+<section class="post paper-bg" id="post-3">
+  <div class="eyebrow">Preise</div>
+  <h2>Feste <span class="hl">Preise.</span></h2>
+  <div class="prices">
+    <div class="price"><div><h3>Starter</h3><p>Eine Seite: Infos, Öffnungszeiten, Kontakt, Karte</p></div><div class="val">149 €</div></div>
+    <div class="price top"><div><h3>Standard</h3><p>Bis 4 Bereiche, Galerie, Speisekarte, WhatsApp-Button</p></div><div class="val">299 €</div></div>
+    <div class="price"><div><h3>Pflege</h3><p>Ich halte alles aktuell</p></div><div class="val">19 €<small>/Monat</small></div></div>
+  </div>
+  <div class="note">Einmalig. Extra kommt nur die Domain (ca. 1–15 € im Jahr), und die gehört dir.</div>
+  <div class="spacer"></div>
+  <div class="foot"><span>Webdesign Salzgitter</span><span class="url">salzgitter-webdesign.de</span></div>
+</section>
+
+<!-- 4: Ablauf -->
+<section class="post grid-bg" id="post-4">
+  <div class="eyebrow">So läuft's</div>
+  <h2>In 3 Schritten <span class="hl">online.</span></h2>
+  <div class="list">
+    <div class="item"><div class="n">01</div><div><h3>Schreib mir</h3><p>Name vom Laden und was du brauchst. Per DM oder Formular.</p></div></div>
+    <div class="item"><div class="n">02</div><div><h3>Gratis Vorschau</h3><p>Ich bau dir eine Vorschau und schick dir den Link.</p></div></div>
+    <div class="item"><div class="n">03</div><div><h3>Du entscheidest</h3><p>Gefällt sie dir, geht sie online. Gefällt sie dir nicht, zahlst du nichts.</p></div></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="foot"><span>Webdesign Salzgitter</span><span class="url">salzgitter-webdesign.de</span></div>
+</section>
+
+<!-- 5: Beispiel Barbershop -->
+<section class="post grid-bg barber" id="post-5">
+  <div><span class="tag">Beispiel · erfundener Laden</span></div>
+  <h2 style="margin-top:34px">So könnte dein <span class="hl">Barbershop</span> aussehen.</h2>
+  <div class="phone" style="right:84px; bottom:205px">
+    <div class="notch"><span></span></div>
+    <div class="screen">
+      <div class="s-kicker" style="color:#d4a646">Barbershop · Salzgitter</div>
+      <div class="s-title" style="font-family:Georgia,serif">Sauberer Schnitt.<br>Ehrliche Preise.</div>
+      <div class="s-row"><span>Herrenschnitt</span><span style="color:#d4a646">18 €</span></div>
+      <div class="s-row"><span>Skin Fade</span><span style="color:#d4a646">22 €</span></div>
+      <div class="s-row"><span>Haare + Bart</span><span style="color:#d4a646">28 €</span></div>
+      <div class="s-btn" style="background:#d4a646;color:#111">Termin per WhatsApp</div>
+    </div>
+  </div>
+  <ul style="margin:60px 0 0; padding:0; list-style:none; font-size:34px; line-height:1.9; max-width:460px; font-weight:700">
+    <li>✓ Preisliste</li><li>✓ Öffnungszeiten live</li><li>✓ WhatsApp-Button</li><li>✓ Galerie</li>
+  </ul>
+  <div class="spacer"></div>
+  <div class="foot"><span>Ganzes Beispiel ansehen</span><span class="url">Link in Bio</span></div>
+</section>
+
+<!-- 6: Beispiel Imbiss -->
+<section class="post grid-bg imbiss" id="post-6">
+  <div><span class="tag">Beispiel · erfundener Laden</span></div>
+  <h2 style="margin-top:34px">Deine Speise&shy;karte. <span class="hl">Online.</span></h2>
+  <div class="phone" style="right:84px; bottom:205px">
+    <div class="notch"><span></span></div>
+    <div class="screen">
+      <div style="display:inline-block;background:#16a34a;color:#fff;font-weight:800;font-size:18px;padding:6px 14px;border-radius:999px">✓ 100 % Halal</div>
+      <div class="s-title" style="font-weight:900;color:#b91c1c">Frisch vom Grill.</div>
+      <div class="s-row"><span>Döner im Brot</span><b style="color:#b91c1c">6,50 €</b></div>
+      <div class="s-row"><span>Dürüm</span><b style="color:#b91c1c">7,50 €</b></div>
+      <div class="s-row"><span>Lahmacun</span><b style="color:#b91c1c">4,50 €</b></div>
+      <div class="s-btn" style="background:#b91c1c;color:#fff">Jetzt anrufen</div>
+    </div>
+  </div>
+  <ul style="margin:60px 0 0; padding:0; list-style:none; font-size:34px; line-height:1.9; max-width:460px; font-weight:700">
+    <li>✓ Karte nach Kategorien</li><li>✓ Preise änderbar</li><li>✓ Bestell-Buttons</li><li>✓ Halal-Hinweis</li>
+  </ul>
+  <div class="spacer"></div>
+  <div class="foot"><span>Ganzes Beispiel ansehen</span><span class="url">Link in Bio</span></div>
+</section>
+
+<!-- 7: Ehrlich / Anfang -->
+<section class="post paper-bg" id="post-7">
+  <div class="eyebrow">Ehrlich gesagt</div>
+  <h2 style="font-size:100px">Ich fang gerade <span class="hl">erst an.</span></h2>
+  <p class="sub" style="font-size:38px;margin-top:30px">Keine erfundenen Bewertungen, keine großen Versprechen.</p>
+  <div class="list" style="margin-top:36px;gap:20px">
+    <div class="item" style="background:#fff;border-color:#0b0b0c;padding:26px 32px"><div class="n" style="color:#0b0b0c">✓</div><div><h3>Einführungspreise</h3><p style="color:#55554f">Ab 149 €, fest und vorher klar.</p></div></div>
+    <div class="item" style="background:#fff;border-color:#0b0b0c;padding:26px 32px"><div class="n" style="color:#0b0b0c">✓</div><div><h3>Volle Aufmerksamkeit</h3><p style="color:#55554f">Du schreibst direkt mit mir.</p></div></div>
+    <div class="item" style="background:#fff;border-color:#0b0b0c;padding:26px 32px"><div class="n" style="color:#0b0b0c">✓</div><div><h3>Kein Risiko</h3><p style="color:#55554f">Erst die Vorschau, dann entscheidest du.</p></div></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="foot"><span>Webdesign Salzgitter</span><span class="url">salzgitter-webdesign.de</span></div>
+</section>
+
+<!-- 8: Call to Action -->
+<section class="post lime-bg" id="post-8">
+  <div class="eyebrow">Gratis Vorschau</div>
+  <h1 style="font-size:124px">Schreib mir <span class="hl">„Vorschau“</span></h1>
+  <p class="sub" style="font-size:46px">per DM. Ich bau dir eine Vorschau für deinen Laden. Kostet nichts.</p>
+  <div style="margin-top:70px; display:flex; flex-wrap:wrap; gap:18px">
+    <span style="font-size:34px;font-weight:900;text-transform:uppercase;border:4px solid #0b0b0c;border-radius:14px;padding:14px 24px;background:#fff;box-shadow:6px 6px 0 #0b0b0c">✓ Kostenlos</span>
+    <span style="font-size:34px;font-weight:900;text-transform:uppercase;border:4px solid #0b0b0c;border-radius:14px;padding:14px 24px;background:#fff;box-shadow:6px 6px 0 #0b0b0c">✓ Unverbindlich</span>
+    <span style="font-size:34px;font-weight:900;text-transform:uppercase;border:4px solid #0b0b0c;border-radius:14px;padding:14px 24px;background:#fff;box-shadow:6px 6px 0 #0b0b0c">✓ Für Läden aus SZ &amp; BS</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="foot"><span>@webdesign.salzgitter</span><span class="url">salzgitter-webdesign.de</span></div>
+</section>
+
+</body>
+</html>
