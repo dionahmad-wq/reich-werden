@@ -218,6 +218,27 @@
   .checks li::before { content: "✓"; position: absolute; left: 0; top: 6px; font-weight: 900; color: #3f6212; }
   section.light .price-card.featured .checks li::before { color: var(--lime); }
   .price-card .btn { width: 100%; }
+  .diff { margin-top: 48px; max-width: 820px; }
+  .diff h3 { font-size: 1.4rem; text-transform: uppercase; margin-bottom: 14px; }
+  .diff-table { width: 100%; border-collapse: separate; border-spacing: 0; background: #fff; border: 2px solid var(--ink); border-radius: var(--radius); overflow: hidden; box-shadow: 6px 6px 0 var(--ink); font-size: .97rem; }
+  .diff-table th, .diff-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--paper-line); vertical-align: middle; }
+  .diff-table tr:last-child td { border-bottom: 0; }
+  .diff-table thead th { background: var(--ink); color: var(--paper); font-weight: 900; text-transform: uppercase; font-size: .85rem; letter-spacing: .03em; border-bottom: 0; }
+  .diff-table thead th span { display: block; color: var(--lime); font-size: 1.05rem; letter-spacing: -.01em; }
+  .diff-table th:not(:first-child), .diff-table td:not(:first-child) { text-align: center; width: 26%; }
+  .diff-table td:nth-child(3) { background: rgba(212,255,58,.22); }
+  .diff-table .y { font-weight: 900; color: #3f6212; font-size: 1.15rem; }
+  .diff-table .n { color: #9a9a92; font-weight: 700; }
+  .diff-note { margin: 16px 0 0; color: var(--paper-muted); }
+  .diff-table { table-layout: fixed; }
+  .diff-table td:first-child { hyphens: auto; -webkit-hyphens: auto; }
+  @media (max-width: 459px) {
+    .diff-table { font-size: .86rem; }
+    .diff-table th, .diff-table td { padding: 10px 8px; }
+    .diff-table th:not(:first-child), .diff-table td:not(:first-child) { width: 29%; padding-left: 4px; padding-right: 4px; }
+    .diff-table thead th { font-size: .7rem; letter-spacing: 0; }
+    .diff-table thead th span { font-size: .95rem; }
+  }
   .hint { margin-top: 28px; border: 2px dashed var(--ink); border-radius: 12px; padding: 14px 16px; font-size: .95rem; }
 
   /* Ablauf */
@@ -601,6 +622,23 @@
           </ul>
           <a class="btn btn-outline" data-wa="pflege" href="#kontakt">Pflege anfragen</a>
         </div>
+      </div>
+      <div class="diff">
+        <h3>Der Unterschied auf einen Blick</h3>
+        <table class="diff-table">
+          <thead>
+            <tr><th scope="col">Was ist drin?</th><th scope="col">Starter<span>149 €</span></th><th scope="col">Standard<span>299 €</span></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Umfang</td><td>1 Seite</td><td>bis zu 4 Bereiche</td></tr>
+            <tr><td>Infos, Öffnungszeiten, Kontakt, Karte</td><td><span class="y" aria-label="ja">✓</span></td><td><span class="y" aria-label="ja">✓</span></td></tr>
+            <tr><td>Anruf-Button</td><td><span class="y" aria-label="ja">✓</span></td><td><span class="y" aria-label="ja">✓</span></td></tr>
+            <tr><td>Bildergalerie</td><td><span class="n" aria-label="nein">–</span></td><td><span class="y" aria-label="ja">✓</span></td></tr>
+            <tr><td>Speisekarte oder Preisliste</td><td><span class="n" aria-label="nein">–</span></td><td><span class="y" aria-label="ja">✓</span></td></tr>
+            <tr><td>WhatsApp-Button für deine Kunden</td><td><span class="n" aria-label="nein">–</span></td><td><span class="y" aria-label="ja">✓</span></td></tr>
+          </tbody>
+        </table>
+        <p class="diff-note"><strong>Faustregel:</strong> Wollen deine Kunden vorher sehen, was es bei dir gibt und was es kostet? Dann Standard. Müssen sie nur wissen, wo und wann? Dann reicht Starter.</p>
       </div>
       <p class="hint"><strong>Hinweis zur Domain:</strong> Eine eigene Adresse (z.&nbsp;B. dein-laden.de) kostet extra, ca. 1–15 € pro Jahr. Die Domain läuft auf <strong>deinen Namen</strong>, damit sie dir gehört, nicht mir.</p>
     </div>
