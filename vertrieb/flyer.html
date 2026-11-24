@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Flyer & Visitenkarte | Webdesign Salzgitter</title>
+<!--
+  Druckvorlagen. Ansicht wählen über die Adresse:
+    flyer.html#a6        = 1 Flyer A6 (für Druckerei)
+    flyer.html#a4-flyer  = 4 Flyer A6 auf A4 (zum Selberdrucken, an den Linien schneiden)
+    flyer.html#karte     = Visitenkarte 85 × 55 mm, Seite 1 vorne, Seite 2 hinten (für Druckerei)
+    flyer.html#a4-karten = 10 Visitenkarten auf A4 (vorne), Seite 2 = Rückseiten
+  Texte ändern und Claude bitten: "Flyer neu erzeugen".
+-->
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background: #666; }
+  .tpl { display: none; }
+  .sheet { background: #fff; position: relative; overflow: hidden; break-after: page; margin: 0 auto 10mm; }
+  .sheet:last-child { break-after: auto; }
+  .lime { color: #d4ff3a; }
+
+  /* ---------- Flyer A6 ---------- */
+  .flyer { width: 105mm; height: 148mm; background:
+      radial-gradient(60mm 45mm at 90% 18%, rgba(212,255,58,.16), transparent 70%),
+      linear-gradient(rgba(255,255,255,.045) .2mm, transparent .2mm) 0 0 / 6mm 6mm,
+      linear-gradient(90deg, rgba(255,255,255,.045) .2mm, transparent .2mm) 0 0 / 6mm 6mm, #0b0b0c;
+    color: #f5f5f2; padding: 8mm 8mm 7mm; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  .flyer .eyebrow { font-size: 2.5mm; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #d4ff3a; }
+  .flyer h1 { font-size: 15.5mm; line-height: .92; font-weight: 900; text-transform: uppercase; letter-spacing: -.03em; margin-top: 4mm; }
+  .flyer .sub { font-size: 3.6mm; color: #b5b5ae; margin-top: 3mm; line-height: 1.35; }
+  .flyer ul { list-style: none; padding: 0; margin-top: 5mm; display: grid; gap: 1.8mm; }
+  .flyer li { font-size: 3.6mm; font-weight: 700; padding-left: 5.5mm; position: relative; }
+  .flyer li::before { content: "✓"; position: absolute; left: 0; color: #d4ff3a; font-weight: 900; }
+  .flyer .sticker { position: absolute; right: 6mm; top: 30mm; width: 21mm; height: 21mm; border-radius: 50%; background: #d4ff3a; color: #0b0b0c; border: .6mm solid #0b0b0c; box-shadow: .9mm .9mm 0 #000; transform: rotate(10deg); display: grid; place-items: center; text-align: center; font-weight: 900; text-transform: uppercase; font-size: 2.6mm; line-height: 1; }
+  .flyer .sticker b { display: block; font-size: 6.5mm; letter-spacing: -.04em; }
+  .flyer .spacer { flex: 1; }
+  .flyer .qrrow { display: flex; gap: 4mm; align-items: center; }
+  .qrbox { background: #fff; padding: 3mm; border-radius: 1.5mm; flex: none; line-height: 0; }
+  .flyer .qrbox { width: 27mm; height: 27mm; }
+  .qrbox svg { width: 100%; height: 100%; display: block; }
+  .qrbox svg path { fill: #000; }
+  .flyer .qrtext b { display: block; font-size: 4mm; text-transform: uppercase; font-weight: 900; letter-spacing: -.01em; line-height: 1.1; }
+  .flyer .qrtext span { font-size: 3mm; color: #b5b5ae; }
+  .flyer .foot { border-top: .3mm solid #2c2c31; margin-top: 5mm; padding-top: 3mm; font-size: 2.7mm; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; display: flex; justify-content: space-between; gap: 2mm; flex-wrap: wrap; }
+
+  /* ---------- Visitenkarte 85 × 55 ---------- */
+  .card { width: 85mm; height: 55mm; overflow: hidden; position: relative; }
+  .card-front { background: #0b0b0c; color: #f5f5f2; padding: 6mm; display: flex; flex-direction: column; }
+  .card-front .brand { display: flex; align-items: center; gap: 2.5mm; font-weight: 900; text-transform: uppercase; font-size: 3.4mm; letter-spacing: .02em; }
+  .card-front .brand svg { width: 7mm; height: 7mm; }
+  .card-front h2 { margin-top: auto; font-size: 9.5mm; line-height: .92; font-weight: 900; text-transform: uppercase; letter-spacing: -.03em; }
+  .card-front p { margin-top: 2mm; font-size: 2.7mm; color: #b5b5ae; font-weight: 600; }
+  .card-back { background: #d4ff3a; color: #0b0b0c; padding: 5.5mm 6mm; display: flex; gap: 4.5mm; align-items: center; }
+  .card-back .qrbox { width: 25mm; height: 25mm; border: .4mm solid #0b0b0c; }
+  .card-back .info { display: grid; gap: 1.2mm; font-size: 2.3mm; font-weight: 700; min-width: 0; white-space: nowrap; letter-spacing: -.01em; }
+  .card-back .info .t { font-size: 3.6mm; font-weight: 900; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.05; margin-bottom: 1mm; }
+  .card-back .info .tag { display: inline-block; background: #0b0b0c; color: #d4ff3a; font-weight: 900; text-transform: uppercase; font-size: 2.3mm; padding: .8mm 1.6mm; border-radius: .8mm; margin-top: 1mm; justify-self: start; }
+
+  /* ---------- A4-Bögen mit Schnittlinien ---------- */
+  .a4 { width: 210mm; height: 297mm; display: grid; place-content: center; }
+  .grid-flyer { display: grid; grid-template-columns: 105mm 105mm; grid-template-rows: 148mm 148mm; }
+  .grid-karten { display: grid; grid-template-columns: 85mm 85mm; grid-auto-rows: 55mm; gap: 0; }
+  .cut > * { outline: .15mm dashed #9a9a9a; outline-offset: -.075mm; }
+</style>
+</head>
+<body>
+
+<template id="t-flyer">
+  <div class="flyer">
+    <div class="eyebrow">// Aus Salzgitter · für ganz Deutschland</div>
+    <h1>Dein<br>Laden.<br><span class="lime">Online.</span></h1>
+    <p class="sub">Webseiten für kleine Läden:<br>Barber, Imbiss, Bäckerei &amp; Co.</p>
+    <div class="sticker"><span><b>0 €</b>Vorschau</span></div>
+    <ul>
+      <li>Feste Preise ab 149 € einmalig</li>
+      <li>Kostenlose Vorschau für deinen Laden</li>
+      <li>Du zahlst nur, wenn sie dir gefällt</li>
+      <li>Sieht auf jedem Handy gut aus</li>
+    </ul>
+    <div class="spacer"></div>
+    <div class="qrrow">
+      <div class="qrbox">QR</div>
+      <div class="qrtext"><b>Scan mich</b><span>Beispiele, Preise und<br>dein Paket in 30 Sekunden</span></div>
+    </div>
+    <div class="foot"><span class="lime">salzgitter-webdesign.de</span><span>@webdesign.salzgitter</span></div>
+  </div>
+</template>
+
+<template id="t-front">
+  <div class="card card-front">
+    <div class="brand"><svg viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="#d4ff3a"/><path d="M22 38h56v36a6 6 0 0 1-6 6H28a6 6 0 0 1-6-6z" fill="#0b0b0c"/><path d="M18 38l8-16h48l8 16z" fill="#0b0b0c"/><rect x="42" y="56" width="16" height="24" rx="2" fill="#d4ff3a"/></svg>Webdesign Salzgitter</div>
+    <h2>Dein Laden.<br><span class="lime">Online.</span></h2>
+    <p>Webseiten für kleine Läden · ab 149 €</p>
+  </div>
+</template>
+
+<template id="t-back">
+  <div class="card card-back">
+    <div class="qrbox">QR</div>
+    <div class="info">
+      <div class="t">Beispiele &amp; Preise:<br>Scan mich</div>
+      <div>salzgitter-webdesign.de</div>
+      <div>kontakt@salzgitter-webdesign.de</div>
+      <div>IG: @webdesign.salzgitter</div>
+      <span class="tag">Vorschau kostenlos</span>
+    </div>
+  </div>
+</template>
+
+<div id="out"></div>
+
+<template id="qr-holder"><svg class="qr" width="29mm" height="29mm" version="1.1" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg"><path d="M0,0H1V1H0zM1,0H2V1H1zM2,0H3V1H2zM3,0H4V1H3zM4,0H5V1H4zM5,0H6V1H5zM6,0H7V1H6zM9,0H10V1H9zM13,0H14V1H13zM14,0H15V1H14zM15,0H16V1H15zM17,0H18V1H17zM18,0H19V1H18zM22,0H23V1H22zM23,0H24V1H23zM24,0H25V1H24zM25,0H26V1H25zM26,0H27V1H26zM27,0H28V1H27zM28,0H29V1H28zM0,1H1V2H0zM6,1H7V2H6zM8,1H9V2H8zM10,1H11V2H10zM11,1H12V2H11zM12,1H13V2H12zM15,1H16V2H15zM22,1H23V2H22zM28,1H29V2H28zM0,2H1V3H0zM2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM6,2H7V3H6zM8,2H9V3H8zM12,2H13V3H12zM14,2H15V3H14zM16,2H17V3H16zM18,2H19V3H18zM19,2H20V3H19zM22,2H23V3H22zM24,2H25V3H24zM25,2H26V3H25zM26,2H27V3H26zM28,2H29V3H28zM0,3H1V4H0zM2,3H3V4H2zM3,3H4V4H3zM4,3H5V4H4zM6,3H7V4H6zM8,3H9V4H8zM10,3H11V4H10zM14,3H15V4H14zM15,3H16V4H15zM17,3H18V4H17zM20,3H21V4H20zM22,3H23V4H22zM24,3H25V4H24zM25,3H26V4H25zM26,3H27V4H26zM28,3H29V4H28zM0,4H1V5H0zM2,4H3V5H2zM3,4H4V5H3zM4,4H5V5H4zM6,4H7V5H6zM9,4H10V5H9zM10,4H11V5H10zM11,4H12V5H11zM13,4H14V5H13zM14,4H15V5H14zM15,4H16V5H15zM18,4H19V5H18zM19,4H20V5H19zM20,4H21V5H20zM22,4H23V5H22zM24,4H25V5H24zM25,4H26V5H25zM26,4H27V5H26zM28,4H29V5H28zM0,5H1V6H0zM6,5H7V6H6zM10,5H11V6H10zM13,5H14V6H13zM14,5H15V6H14zM16,5H17V6H16zM20,5H21V6H20zM22,5H23V6H22zM28,5H29V6H28zM0,6H1V7H0zM1,6H2V7H1zM2,6H3V7H2zM3,6H4V7H3zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM10,6H11V7H10zM12,6H13V7H12zM14,6H15V7H14zM16,6H17V7H16zM18,6H19V7H18zM20,6H21V7H20zM22,6H23V7H22zM23,6H24V7H23zM24,6H25V7H24zM25,6H26V7H25zM26,6H27V7H26zM27,6H28V7H27zM28,6H29V7H28zM8,7H9V8H8zM9,7H10V8H9zM11,7H12V8H11zM12,7H13V8H12zM13,7H14V8H13zM20,7H21V8H20zM0,8H1V9H0zM6,8H7V9H6zM8,8H9V9H8zM10,8H11V9H10zM12,8H13V9H12zM14,8H15V9H14zM15,8H16V9H15zM17,8H18V9H17zM21,8H22V9H21zM22,8H23V9H22zM25,8H26V9H25zM26,8H27V9H26zM27,8H28V9H27zM0,9H1V10H0zM2,9H3V10H2zM3,9H4V10H3zM4,9H5V10H4zM5,9H6V10H5zM9,9H10V10H9zM11,9H12V10H11zM12,9H13V10H12zM14,9H15V10H14zM19,9H20V10H19zM23,9H24V10H23zM24,9H25V10H24zM26,9H27V10H26zM27,9H28V10H27zM4,10H5V11H4zM6,10H7V11H6zM7,10H8V11H7zM9,10H10V11H9zM12,10H13V11H12zM17,10H18V11H17zM18,10H19V11H18zM20,10H21V11H20zM0,11H1V12H0zM3,11H4V12H3zM5,11H6V12H5zM9,11H10V12H9zM12,11H13V12H12zM14,11H15V12H14zM15,11H16V12H15zM16,11H17V12H16zM19,11H20V12H19zM20,11H21V12H20zM21,11H22V12H21zM22,11H23V12H22zM25,11H26V12H25zM4,12H5V13H4zM5,12H6V13H5zM6,12H7V13H6zM9,12H10V13H9zM12,12H13V13H12zM13,12H14V13H13zM14,12H15V13H14zM19,12H20V13H19zM22,12H23V13H22zM28,12H29V13H28zM0,13H1V14H0zM1,13H2V14H1zM2,13H3V14H2zM3,13H4V14H3zM4,13H5V14H4zM5,13H6V14H5zM12,13H13V14H12zM13,13H14V14H13zM14,13H15V14H14zM17,13H18V14H17zM18,13H19V14H18zM19,13H20V14H19zM20,13H21V14H20zM22,13H23V14H22zM23,13H24V14H23zM24,13H25V14H24zM27,13H28V14H27zM28,13H29V14H28zM0,14H1V15H0zM1,14H2V15H1zM2,14H3V15H2zM6,14H7V15H6zM7,14H8V15H7zM8,14H9V15H8zM10,14H11V15H10zM11,14H12V15H11zM13,14H14V15H13zM14,14H15V15H14zM15,14H16V15H15zM16,14H17V15H16zM18,14H19V15H18zM20,14H21V15H20zM21,14H22V15H21zM22,14H23V15H22zM24,14H25V15H24zM25,14H26V15H25zM26,14H27V15H26zM0,15H1V16H0zM3,15H4V16H3zM5,15H6V16H5zM7,15H8V16H7zM9,15H10V16H9zM11,15H12V16H11zM13,15H14V16H13zM14,15H15V16H14zM16,15H17V16H16zM21,15H22V16H21zM22,15H23V16H22zM23,15H24V16H23zM26,15H27V16H26zM28,15H29V16H28zM1,16H2V17H1zM3,16H4V17H3zM5,16H6V17H5zM6,16H7V17H6zM7,16H8V17H7zM11,16H12V17H11zM12,16H13V17H12zM14,16H15V17H14zM15,16H16V17H15zM17,16H18V17H17zM19,16H20V17H19zM25,16H26V17H25zM26,16H27V17H26zM0,17H1V18H0zM1,17H2V18H1zM2,17H3V18H2zM3,17H4V18H3zM7,17H8V18H7zM9,17H10V18H9zM11,17H12V18H11zM16,17H17V18H16zM18,17H19V18H18zM19,17H20V18H19zM21,17H22V18H21zM22,17H23V18H22zM23,17H24V18H23zM24,17H25V18H24zM26,17H27V18H26zM27,17H28V18H27zM28,17H29V18H28zM0,18H1V19H0zM1,18H2V19H1zM2,18H3V19H2zM6,18H7V19H6zM7,18H8V19H7zM9,18H10V19H9zM10,18H11V19H10zM13,18H14V19H13zM14,18H15V19H14zM16,18H17V19H16zM19,18H20V19H19zM20,18H21V19H20zM22,18H23V19H22zM24,18H25V19H24zM25,18H26V19H25zM28,18H29V19H28zM0,19H1V20H0zM2,19H3V20H2zM5,19H6V20H5zM8,19H9V20H8zM9,19H10V20H9zM10,19H11V20H10zM11,19H12V20H11zM12,19H13V20H12zM14,19H15V20H14zM15,19H16V20H15zM16,19H17V20H16zM19,19H20V20H19zM24,19H25V20H24zM0,20H1V21H0zM3,20H4V21H3zM4,20H5V21H4zM5,20H6V21H5zM6,20H7V21H6zM9,20H10V21H9zM10,20H11V21H10zM17,20H18V21H17zM20,20H21V21H20zM21,20H22V21H21zM22,20H23V21H22zM23,20H24V21H23zM24,20H25V21H24zM26,20H27V21H26zM27,20H28V21H27zM28,20H29V21H28zM8,21H9V22H8zM9,21H10V22H9zM11,21H12V22H11zM12,21H13V22H12zM13,21H14V22H13zM16,21H17V22H16zM17,21H18V22H17zM18,21H19V22H18zM19,21H20V22H19zM20,21H21V22H20zM24,21H25V22H24zM25,21H26V22H25zM0,22H1V23H0zM1,22H2V23H1zM2,22H3V23H2zM3,22H4V23H3zM4,22H5V23H4zM5,22H6V23H5zM6,22H7V23H6zM9,22H10V23H9zM10,22H11V23H10zM11,22H12V23H11zM13,22H14V23H13zM14,22H15V23H14zM15,22H16V23H15zM16,22H17V23H16zM17,22H18V23H17zM19,22H20V23H19zM20,22H21V23H20zM22,22H23V23H22zM24,22H25V23H24zM25,22H26V23H25zM26,22H27V23H26zM0,23H1V24H0zM6,23H7V24H6zM11,23H12V24H11zM12,23H13V24H12zM13,23H14V24H13zM16,23H17V24H16zM18,23H19V24H18zM19,23H20V24H19zM20,23H21V24H20zM24,23H25V24H24zM27,23H28V24H27zM28,23H29V24H28zM0,24H1V25H0zM2,24H3V25H2zM3,24H4V25H3zM4,24H5V25H4zM6,24H7V25H6zM10,24H11V25H10zM11,24H12V25H11zM13,24H14V25H13zM15,24H16V25H15zM16,24H17V25H16zM18,24H19V25H18zM19,24H20V25H19zM20,24H21V25H20zM21,24H22V25H21zM22,24H23V25H22zM23,24H24V25H23zM24,24H25V25H24zM25,24H26V25H25zM0,25H1V26H0zM2,25H3V26H2zM3,25H4V26H3zM4,25H5V26H4zM6,25H7V26H6zM9,25H10V26H9zM10,25H11V26H10zM11,25H12V26H11zM12,25H13V26H12zM15,25H16V26H15zM16,25H17V26H16zM17,25H18V26H17zM18,25H19V26H18zM19,25H20V26H19zM21,25H22V26H21zM25,25H26V26H25zM26,25H27V26H26zM27,25H28V26H27zM0,26H1V27H0zM2,26H3V27H2zM3,26H4V27H3zM4,26H5V27H4zM6,26H7V27H6zM10,26H11V27H10zM11,26H12V27H11zM12,26H13V27H12zM13,26H14V27H13zM15,26H16V27H15zM17,26H18V27H17zM19,26H20V27H19zM22,26H23V27H22zM23,26H24V27H23zM24,26H25V27H24zM25,26H26V27H25zM26,26H27V27H26zM27,26H28V27H27zM0,27H1V28H0zM6,27H7V28H6zM10,27H11V28H10zM14,27H15V28H14zM18,27H19V28H18zM21,27H22V28H21zM22,27H23V28H22zM23,27H24V28H23zM25,27H26V28H25zM26,27H27V28H26zM28,27H29V28H28zM0,28H1V29H0zM1,28H2V29H1zM2,28H3V29H2zM3,28H4V29H3zM4,28H5V29H4zM5,28H6V29H5zM6,28H7V29H6zM8,28H9V29H8zM9,28H10V29H9zM12,28H13V29H12zM15,28H16V29H15zM17,28H18V29H17zM19,28H20V29H19zM21,28H22V29H21zM24,28H25V29H24zM25,28H26V29H25zM26,28H27V29H26z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none"/></svg></template>
+<script>
+  const QR = document.getElementById("qr-holder").innerHTML;
+  const tpl = id => { const n = document.getElementById(id).content.cloneNode(true); n.querySelectorAll(".qrbox").forEach(q => q.innerHTML = QR); return n; };
+  const out = document.getElementById("out");
+  const sheet = (cls, w, h) => { const s = document.createElement("div"); s.className = "sheet " + cls; s.style.width = w; s.style.height = h; out.appendChild(s); return s; };
+  const page = (w, h) => { const st = document.createElement("style"); st.textContent = "@page { size: " + w + " " + h + "; margin: 0 } @media print { body { background: none } .sheet { margin: 0 } }"; document.head.appendChild(st); };
+  const mode = location.hash.slice(1) || "a6";
+  if (mode === "a6") { page("105mm", "148mm"); sheet("", "105mm", "148mm").appendChild(tpl("t-flyer")); }
+  if (mode === "karte") { page("85mm", "55mm"); sheet("", "85mm", "55mm").appendChild(tpl("t-front")); sheet("", "85mm", "55mm").appendChild(tpl("t-back")); }
+  if (mode === "a4-flyer") { page("210mm", "297mm"); const g = document.createElement("div"); g.className = "grid-flyer cut"; for (let i = 0; i < 4; i++) g.appendChild(tpl("t-flyer")); sheet("a4", "210mm", "297mm").appendChild(g); }
+  if (mode === "a4-karten") {
+    page("210mm", "297mm");
+    for (const id of ["t-front", "t-back"]) { const g = document.createElement("div"); g.className = "grid-karten cut"; for (let i = 0; i < 10; i++) g.appendChild(tpl(id)); sheet("a4", "210mm", "297mm").appendChild(g); }
+  }
+</script>
+</body>
+</html>

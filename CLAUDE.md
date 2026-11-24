@@ -56,6 +56,7 @@ Beispielseiten für Kundenprojekte und meinen Vermögens- & Zakat-Rechner.
 | `sitemap.xml`, `robots.txt` | für Google/Bing. Neue öffentliche Seiten in die Sitemap eintragen |
 | `og-image.png`, `apple-touch-icon.png` | Vorschaubild für geteilte Links und Handy-Icon. Vorlage: `bilder/vorlagen.html` |
 | `instagram/` | Instagram-Posts (`posts.html` = Vorlage, PNGs, `captions.md`) |
+| `vertrieb/` | Akquise: `nachrichten.md` (DM-Vorlagen), `flyer.html` (Vorlage) + Flyer/Visitenkarten-PDFs. Die Kunden-Liste (xlsx) gehört NICHT ins Repo (.gitignore) |
 
 - Kontaktdaten, Name, Instagram, Formular-Adresse und Google-Bewertungen stehen im **`CONFIG`-Objekt** ganz oben im Script von `index.html`. Änderungen daran nur dort machen
 - Leere Felder im `CONFIG` werden auf der Seite automatisch ausgeblendet
