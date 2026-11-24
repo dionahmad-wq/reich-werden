@@ -65,6 +65,36 @@ Ruhige Zeit wählen (nicht mittags beim Imbiss, nicht samstags beim Barber). Han
 > Mir ist aufgefallen, dass eure Gemeinde noch keine eigene Webseite hat. Eine einfache Seite mit Adresse, Hinweis zu den Gebetszeiten, Veranstaltungen und Kontakt hilft Besuchern und neuen Leuten in der Stadt.
 > Ich bau euch gern kostenlos eine Vorschau, und ihr entscheidet im Vorstand in Ruhe. Infos: https://salzgitter-webdesign.de
 
+### Brief an Handwerksbetriebe (per Post, mit Flyer)
+Briefwerbung an Firmen ist erlaubt (außer bei „Keine Werbung“ am Briefkasten). Persönlich adressieren, kurz halten, Flyer beilegen.
+
+> Webdesign Salzgitter · kontakt@salzgitter-webdesign.de
+>
+> [Name des Betriebs]
+> z. Hd. [Inhaber, falls bekannt]
+> [Straße]
+> [PLZ Ort]
+>
+> [Ort], [Datum]
+>
+> **Eine eigene Webseite für [Name des Betriebs]**
+>
+> Guten Tag [Herr/Frau Name],
+>
+> ich bin Webdesigner aus Salzgitter und baue einfache, schnelle Webseiten für Handwerksbetriebe aus der Region. Mir ist aufgefallen, dass [Name des Betriebs] bei Google noch keine eigene Webseite hat.
+>
+> Viele Kunden suchen heute zuerst im Internet nach einem [Maler/Fliesenleger/Tischler/…] in der Nähe. Mit einer eigenen Seite zeigen Sie dort Ihre Leistungen, Fotos von fertigen Arbeiten und wie man Sie erreicht. Und wenn Sie Azubis oder Fachkräfte suchen, finden Bewerber Sie dort ebenfalls.
+>
+> Mein Angebot: Ich baue Ihnen kostenlos eine Vorschau. Gefällt sie Ihnen, kostet die fertige Seite ab 149 € einmalig. Gefällt sie Ihnen nicht, zahlen Sie nichts.
+>
+> Beispiele und Preise finden Sie unter **salzgitter-webdesign.de** oder über den QR-Code auf dem beiliegenden Flyer. Schreiben Sie mir einfach eine kurze E-Mail an kontakt@salzgitter-webdesign.de.
+>
+> Mit freundlichen Grüßen
+> [Unterschrift]
+> Webdesign Salzgitter
+
+*Hinweis: Bei Handwerksbetrieben passt das „Sie“ meistens besser als das „du“. Ein Absender mit Postanschrift gehört auf den Umschlag – bis du eine Geschäftsadresse hast, nutze die Adresse, die auch ins Impressum kommt.*
+
 ---
 
 ## 3. Nachfassen (einmal, nach 3–4 Tagen)
