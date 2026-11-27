@@ -50,7 +50,7 @@ Beispielseiten für Kundenprojekte und meinen Vermögens- & Zakat-Rechner.
 | `index.html` | Firmen-Webseite (Startseite) |
 | `impressum.html` | Impressum und Datenschutzerklärung |
 | `beispiele/barbershop/`, `beispiele/imbiss/`, `beispiele/baeckerei/` | Beispielseiten für erfundene Läden |
-| `zakat-rechner/index.html` | Vermögens- & Zakat-Rechner (mein erstes Projekt, nicht kaputt machen) |
+| `zakat-rechner/index.html` | Vermögens- & Zakat-Rechner (mein erstes Projekt, nicht kaputt machen). Wird auf der Webdesign-Seite NICHT mehr verlinkt, ist aber weiter erreichbar |
 | `webdesign/` | nur Weiterleitungen von alten Links, nicht löschen |
 | `CNAME` | Domain für GitHub Pages, nicht anfassen |
 | `sitemap.xml`, `robots.txt` | für Google/Bing. Neue öffentliche Seiten in die Sitemap eintragen |
